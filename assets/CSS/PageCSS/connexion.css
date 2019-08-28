@@ -1,0 +1,17 @@
+/* CSS modal connexion/inscription */
+#connection {
+  font-family: 'Permanent Marker', cursive;
+}
+
+#loginButton {
+float:right;
+}
+
+.errorMessage {
+  color: red;
+  font-family: 'Permanent Marker', cursive;
+  }
+
+  .modal-backdrop {
+    background-color: rgba(255, 255, 255, 0.65);
+}

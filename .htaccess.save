@@ -1,0 +1,2 @@
+ErrorDocument 400 /view/error/errors400.php
+ ls -d .*

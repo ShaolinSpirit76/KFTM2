@@ -1,0 +1,9 @@
+ErrorDocument 400 /view/error/errors400.php
+ErrorDocument 401 /view/error/errors401.php
+ErrorDocument 403 /view/error/errors403.php
+ErrorDocument 404 /view/error/errors404.php
+ErrorDocument 410 /view/error/errors410.php
+ErrorDocument 500 /view/error/errors500.php
+ErrorDocument 502 /view/error/errors502.php
+ErrorDocument 503 /view/error/errors503.php
+ErrorDocument 504 /view/error/errors504.php

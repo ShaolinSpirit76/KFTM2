@@ -1,0 +1,146 @@
+/* CSS formulaire d'inscription */
+
+body {
+  /* Code pour que l'image reste fixe et responsive */
+  margin: 0;
+  padding: 0;
+  background: url(../../images/theme/china-1651550_960_720.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  /* pour anciens Chrome et Safari */
+  background-size: cover;
+  /* version standardisée */
+}
+
+
+
+/* Bouton switch on/off */
+
+
+.onoffswitch {
+  margin-top: -1.5rem;
+  position: relative; width: 90px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  float: right;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #F5ED05; color: #050505;
+}
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block; width: 8px; margin: 11px;
+  background: #FFFFFF;
+  position: absolute; top: 1; bottom: 1;
+  right: 56px;
+  border: 2px solid #999999; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; 
+}
+/* Fin bouton switch on/off */
+
+
+
+#inscriptionTitle {
+  margin-top: 20rem;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+#inscriptionEnd {
+  margin-bottom: 25rem;
+}
+
+.police {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.space {
+  margin-bottom: 2rem;
+}
+
+.inputInscription{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #9ee0c4;
+  background-color: transparent;
+  width: 18rem;
+  color: #336699;
+  font-weight: bold;
+}
+
+textarea {
+  color: #336699;
+  font-weight: bold;
+}
+
+
+
+#legend1 {
+margin-top: -12rem;
+font-family: 'Permanent Marker', cursive;
+letter-spacing: 0.5rem;
+}
+
+#submitInscriptionForm {
+background-color: #336699;
+color: white;
+}
+
+#submitInscriptionForm:hover {
+background-color: #fcd600;
+color: #0a0901;
+} 
+
+#headingOne {
+background-color: #7f6e7f;
+}
+
+#collapseOne {
+background-color: white;
+}
+
+#accordion {
+margin-bottom: -6rem;
+}
+
+.card {
+margin-top: 3rem;
+background-color: rgba(255, 255, 255, 0.65);
+}
+
+.red {
+border: red solid 2px;
+}
+
+.errorMessage {
+color: red;
+font-family: 'Permanent Marker', cursive;
+}
+
+/* Fin CSS formulaire d'inscription */

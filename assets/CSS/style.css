@@ -1,0 +1,203 @@
+/* CSS général */
+body {
+  /* Code pour que l'image reste fixe et responsive */
+  margin-top: 0;
+  padding: 0;
+  /* background-color: #f5f5f5; */
+  -webkit-background-size: cover;
+  /* pour anciens Chrome et Safari */
+  background-size: cover;
+  /* version standardisée */
+  background-color: #f1f0ee;
+}
+
+/* Pour avoir des marges */
+#contents {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Class pour la police */
+.permanent-marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+/* Distance entre le contenu des pages et la navbar min */
+#home, #body {
+  margin-top: 10rem;
+  }
+
+/* A utiliser avec class="img-fluid" à appliquer à chaque image déclarée dans le html, pour que toutes les images soient responsives */
+.img-fluid {
+    max-width: 100%;
+  height: auto;
+}
+
+/* Couleur de hover des liens */
+a:hover {
+  color: #fcd600;
+}
+
+#textNavButton:hover {
+  color: #fcd600;
+}
+
+#textNavButton {
+  color: white;
+}
+
+
+
+/* CSS du scroll to top */
+#buttonScroll {
+  display: inline-block;
+  background-color: rgba(21, 22, 19, 0.9);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+ }
+
+#buttonScroll::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #ffffff;
+  background-image: url('../images/chevron-up-solid.svg');
+}
+
+#buttonScroll:hover {
+  cursor: pointer;
+  background-color: #070807;
+}
+
+#buttonScroll:active {
+  background-color: #555;
+}
+
+#buttonScroll.show {
+  opacity: 1;
+  visibility: visible;
+}
+/* Fin CSS scroll to top */
+
+
+
+
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+
+
+
+
+
+
+
+
+
+
+/* Navbar principale */
+#menu {
+  line-height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  height: auto !important;
+  width: 100% !important;
+  font-family: 'Permanent Marker', cursive;
+  z-index:2;
+}
+
+/* CSS navbarMin */
+
+#navbarMin {
+  margin-top: -5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-family: 'Permanent Marker', cursive;
+  z-index:1;
+}
+
+.yellow-hover:hover {
+  color: #fcd600;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.spaceTop {
+padding-top: 0.75rem;
+}
+
+.spaceBottom {
+  padding-bottom: 1.5rem;
+}
+
+#navbarSupportedContent {
+  align-items: center;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+
+.nav-link {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#navButton {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#textNavButton {
+  font-size: 1rem;
+}
+
+#home {
+  margin-top: 4rem;
+  margin-bottom: 12rem;
+}
+/* Fin CSS navbar min */
+
+
+
+
+
+

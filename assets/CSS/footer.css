@@ -1,0 +1,40 @@
+/* CSS du Footer */
+footer {
+  width: 100%;
+  margin-top: 12rem;
+  padding-top: 0.5rem;
+  height: auto;
+  color: rgb(255, 255, 255);
+  background-color: #282828;
+  font-size: 1.25rem;
+}
+
+.footer-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+#contact {
+  font-size: 0.95rem;
+}
+
+.footer-legis {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  color: rgb(255, 255, 255);
+}
+
+hr {
+  background-color: rgb(238, 83, 17);
+  width: 60px;
+  height: 1px;
+}
+
+.footer-copyright {
+  font-family: 'Merienda', cursive;
+  font-size: 1rem;
+}
+
+/* Fin css du footer */
