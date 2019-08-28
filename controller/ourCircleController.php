@@ -35,7 +35,6 @@ $User = new User();
 
 $displayUsersResult = $User->displayUser();
 
-// $rankCheckingResult = $User->rankChecking();
 
 
 // Variables dynamiques pour la navbar à partir à partir de pages

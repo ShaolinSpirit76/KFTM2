@@ -1,7 +1,6 @@
 <?php
 require_once '../../controller/ourCircleController.php';
 include '../templates/head.php';
-include '../../controller/regex.php';
 ?>
 
 
@@ -178,8 +177,8 @@ include '../../controller/regex.php';
 
 
 
-<?php
-if ( ($displayUser['teacherCourse'] === 'Kung-Fu') || (($displayUser['studentCourse'] === 'Kung-Fu')) ) : ?>
+
+<!-- if ( ($displayUser['teacherCourse'] === 'Kung-Fu') || (($displayUser['studentCourse'] === 'Kung-Fu')) ) : -->
 
 <div id="kungFuDiv">
 
@@ -910,7 +909,7 @@ if ( ($displayUser['teacherCourse'] === 'Kung-Fu') || (($displayUser['studentCou
 </div>
 <!-- Fin div Kung-Fu -->
 
-<?php endif; ?>
+
 
 
 

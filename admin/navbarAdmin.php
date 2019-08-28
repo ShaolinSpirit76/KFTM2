@@ -28,7 +28,7 @@
                         <a href="newEvent.php">Créer un événement</a>
                     </li>
                     <li>
-                        <a href="#">Voir les événements</a>
+                        <a href="viewEvent.php">Voir les événements</a>
                     </li>
                     <li>
                         <a href="#">Emploi du temps</a>

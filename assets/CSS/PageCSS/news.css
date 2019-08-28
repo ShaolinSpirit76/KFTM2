@@ -1,0 +1,66 @@
+
+
+#ourCircleTitle {
+    margin-top: -8rem;
+  }
+  
+  @media (max-width: 991px) {
+    #ourCircleTitle {
+      margin-top: -5rem;
+    }
+  }
+  
+  .police {
+    font-family: 'Permanent Marker', cursive;
+  }
+  
+  .inputInscription{
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #9ee0c4;
+      background-color: transparent;
+      width: 18rem;
+      color: white;
+    }
+    
+    #legend1 {
+    margin-top: -12rem;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 0.5rem;
+    }
+    
+    #submitInscriptionForm {
+    background-color: #336699;
+    color: white;
+    }
+    
+    #submitInscriptionForm:hover {
+    background-color: #fcd600;
+    color: #0a0901;
+    } 
+    
+    #headingOne {
+    background-color: #7f6e7f;
+    }
+    
+    #collapseOne {
+    background-color: white;
+    }
+    
+    #accordion {
+    margin-bottom: -6rem;
+    }
+    
+    .card {
+    margin-top: 3rem;
+    background: #32746d;
+    }
+    
+    .red {
+    border: red solid 2px;
+    }
+    
+    .errorMessage {
+    color: red;
+    font-family: 'Permanent Marker', cursive;
+    }

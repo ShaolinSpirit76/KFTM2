@@ -32,8 +32,8 @@ endif;
 if (isset($_POST['submitNewEventForm'])) {
 
 if(empty($error)):
-    var_dump($_POST);
-     if (!empty($_POST['otherEventType'])) :
+    
+    if (!empty($_POST['otherEventType'])) :
      $eventType = $_POST['otherEventType'];
 endif;
 $events->eventType = $eventType;
@@ -45,7 +45,7 @@ $events->eventType = $eventType;
     $events->eventDescription = $eventDescription;
     // alert success s'il n'y a pas d'erreur
     $events->addEvent();
- //$newEventSuccess = true;
+ $newEventSuccess = true;
 else:
     $swalErrorForm = true;
 endif;

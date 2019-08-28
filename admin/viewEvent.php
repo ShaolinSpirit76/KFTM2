@@ -1,19 +1,22 @@
 <?php
-require_once '../../controller/newsController.php';
-include '../templates/head.php';
+require '../controller/viewEventControllerStart.php';
+require '../controller/adminController.php';
+require_once '../controller/viewEventController.php';
+include '../view/templates/headHome.php';
+include 'navbarAdmin.php';
 ?>
 
 <h1 class="police text-center" id="ourCircleTitle">Les évènements du moment</h1>
 
 
 
-<div class="container-fluid">
+<div class="container-fluid space">
   <div class="row">
 <?php foreach($displayEventsResult as $displayEvent){ ?>
 
   
-  <div class="col-md-8 col-sm-12 mx-auto text-center">
-      <div class="card mx-auto text-center" style="width: 40rem;">
+  <div class="col-md-6 col-sm-12 mx-auto text-center">
+      <div class="card mx-auto text-center" style="width: 30rem;">
 
       <h1 class="card-title text-center"> <?=$displayEvent['eventType']?> </h1>
 
@@ -30,6 +33,9 @@ include '../templates/head.php';
    
           <a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
 
+          <a class="btn btn-primary text-center mx-auto" href="#" role="button">Modifier</a>
+
+          <a class="btn btn-primary text-center mx-auto" href="#" role="button">Supprimer</a>
                    
 </div>
 
@@ -78,4 +84,4 @@ include '../templates/head.php';
 
 
 <?php
-include '../templates/footer.php';
+include '../view/templates/footer.php';

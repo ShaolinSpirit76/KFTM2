@@ -40,6 +40,22 @@ class Event extends DB{
 
 
 
+    public function displayEvent(){
+        $query = 'SELECT * FROM `KFTM_EVENTS`';
+        $selectEvent = $this->db->prepare($query);
+        $selectEvent->execute();
+        $displayEvents=$selectEvent->fetchAll(PDO::FETCH_ASSOC);
+        return $displayEvents;
+     }
+     public function displayEventPicture(){
+        $query = 'SELECT * FROM `KFTM_EVENTS` WHERE eventPicture = :eventPicture';
+        $displayEventPicture = $this->db->prepare($query);
+        $displayEventPicture->bindValue(':eventPicture', $this->eventPicture, PDO::PARAM_STR);
+        if($displayEventPicture->execute()):
+            $displayEventPictureResult = $displayEventPicture->fetchAll(PDO::FETCH_ASSOC);
+            return $displayEventPictureResult;
+        endif;
+     }
 
 
 
