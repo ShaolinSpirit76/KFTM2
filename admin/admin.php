@@ -10,7 +10,7 @@ include 'navbarAdmin.php';
 <h1 class="police text-white">BIENVENUE SUR LA PAGE ADMIN</h1>
 <p class="police text-white"><?= $_SESSION['userInfos'][0]['firstName'] ?></p>
 
-<p class="text-white">Il y a actuellement membres de l'école inscrits sur le site.</p>
+<p class="text-white">Il y a actuellement <?= $userCount[0]['number']-1 ?> membres de l'école inscrits sur le site.</p>
 
 
 

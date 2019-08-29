@@ -159,7 +159,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 
 <div id="studentYear" class="space">
-<li class="font-weight-bolder  "><label for="studentYear">Année : </label>
+<li class="font-weight-bolder"><label for="studentYear">Année : </label>
             <select name="studentYear" id="studentYear" class="inputInscription">
             <option value="" selected disabled>Choisissez</option>
                 <option value="1ère année">1ère</option> 
@@ -178,7 +178,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 
 <div id="childBelt" class="space">
-          <li class="font-weight-bolder  "><label for="childBelt">Ceinture : </label>
+          <li class="font-weight-bolder"><label for="childBelt">Ceinture : </label>
             <select name="childBelt" class="inputInscription">
             <option value="" selected disabled>Choisissez</option>
 
@@ -206,7 +206,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 
 <div id="studentBelt" class="space">
-          <li class="font-weight-bolder  "><label for="studentBelt">Ceinture : </label>
+          <li class="font-weight-bolder"><label for="studentBelt">Ceinture : </label>
             <select name="studentBelt" class="inputInscription">
             <option value="" selected disabled>Choisissez</option>
             <optgroup label="Blanche">
@@ -235,7 +235,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 
 <div id="teacherRank" class="space">
-          <li class="font-weight-bolder  "><label for="teacherRank">Grade : </label>
+          <li class="font-weight-bolder"><label for="teacherRank">Grade : </label>
             <select name="teacherRank" class="inputInscription">
             <option value="" selected disabled>Choisissez</option>
                 <option value="Sisook">Sisook</option>

@@ -120,8 +120,11 @@ class User extends DB{
         endif;
     }
     
+    // Méthode qui permet, en même temps d'afficher les membres inscrits,
+    // et de le faire de façon hiérarchique grâce au rankNumber, qui relie
+    // un int croissant en fonction du grade.
      public function displayUser(){
-        $query = 'SELECT * FROM `KFTM_USERS`';
+        $query = 'SELECT * FROM `KFTM_USERS` ORDER BY `rankNumber` ASC';
         $selectUser = $this->db->prepare($query);
         $selectUser->execute();
         $displayUsers=$selectUser->fetchAll(PDO::FETCH_ASSOC);
@@ -195,6 +198,13 @@ public function updateIDUser(){
         if($adminDeleteUser->execute()){
            return true;
         }
+     }
+
+     public function countUsers(){
+         $query = "SELECT COUNT(`ID`) AS `number` FROM `KFTM_USERS`";
+         $countUsers = $this->db->query($query);
+         $countUsersResult = $countUsers->fetchAll(PDO::FETCH_ASSOC);
+         return $countUsersResult;
      }
    
      

@@ -101,6 +101,13 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 } 
+
+.navbarSelect {
+   border-bottom: 1px solid #9ee0c4;
+color: #fff;
+background-color: #6d7fcc;
+  font-weight: bold;
+}
 /* -------------------------------Fin side navbar------------------------------ */
 
 

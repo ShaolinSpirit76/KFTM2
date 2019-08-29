@@ -11,13 +11,11 @@ $displayUsersResult = $User->displayUser();
 
 // Supprimer le profil
 if (isset($_POST['adminDeleteRequest'])) {
-    $passwordConnect = htmlspecialchars($_POST['passwordConnect']);
-    if ((isset($_POST['passwordConnect'])) && !password_verify($_POST['passwordConnect'], $_SESSION['userInfos'][0]['password'])):
-        $error['errorCheckPassword'] = 'Ceci n\'est pas votre mot de passe actuel.';
-        $mdpFailed = true;
-    else:
+    $ID = (int)$_POST['adminDeleteRequest'];
+    $User->ID = $ID;
+    if($User->adminDeleteUser()){
         $adminDeleteSuccess = true;
-        $user->adminDeleteUser();
-        endif;
-
+        header('Location: member.php');
+    }    
 }
+

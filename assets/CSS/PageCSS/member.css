@@ -15,9 +15,12 @@ body {
   font-family: 'Permanent Marker', cursive;
   }
 
+  #spaceBottom {
+    margin-bottom: 15rem;
+  }
 
 
-/* CSS side-navbar */
+/* CSS side-navbar 1*/
 
 .wrapper {
   width: 100%;
@@ -117,6 +120,14 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+
+
+
+
+
+
+
+
 
 .inputInscription{
     outline: none;
