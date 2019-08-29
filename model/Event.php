@@ -47,6 +47,7 @@ class Event extends DB{
         $displayEvents=$selectEvent->fetchAll(PDO::FETCH_ASSOC);
         return $displayEvents;
      }
+     
      public function displayEventPicture(){
         $query = 'SELECT * FROM `KFTM_EVENTS` WHERE eventPicture = :eventPicture';
         $displayEventPicture = $this->db->prepare($query);

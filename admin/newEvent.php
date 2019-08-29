@@ -86,6 +86,8 @@ enctype="multipart/form-data">
 
 
 <!-- Code pour upload la photo de profil. On ne récupère que le nom dans la BDD -->
+<!-- Pour que l'image se copie dans le dossier prévu à cet effet, il faut ajouter
+une ligne de commande dans le terminal : sudo chmod 777 affiches/ -->
 <?php 
 // on test si un fichier a été sélectionné en upload
 if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPicture']['tmp_name'])) ) { 
@@ -105,7 +107,7 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
   
   imagecopyresampled($im_miniature, $im, 0, 0, 0, 0, $largeur_miniature, $hauteur_miniature, $largeur, $hauteur);
   
-  imagejpeg($im_miniature, 'miniatures/'.$_FILES['eventPicture']['name'], 90);
+  imagejpeg($im_miniature, 'affiches/'.$_FILES['eventPicture']['name'], 90);
   
 }
 

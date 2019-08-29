@@ -104,7 +104,7 @@
                 <a href="admin.php">Accueil admin</a>
             </li>
             <li>
-                <a href="../index.php">Accueil du site</a>
+                <a href="../index.php">Retour sur le site</a>
             </li>
             <li>
                 <a href="../view/templates/deconnexion.php">Déconnexion</a>

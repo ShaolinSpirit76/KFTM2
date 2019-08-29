@@ -21,11 +21,15 @@ $('#eventType').click(function(){
 
 
 // Gestion de l'affichage de la navbar Admin
-$('#navbarAdmin').hide();
 $("#sidebarCollapse").click(function() {
   $('#navbarAdmin').show();
 }); 
 
+// Gestion de l'affichage de la navbar ourCircle
+$('#navbarOurCircle').hide();
+$("#sidebarCollapse").click(function() {
+  $('#navbarOurCircle').show();
+}); 
 
 
 

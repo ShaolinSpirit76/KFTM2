@@ -100,7 +100,7 @@
              
               <?php elseif ( (isset($_SESSION['connection']) && $_SESSION['connection'] == true ) && (!empty($_SESSION['userInfos'][0]['picture'])) ): ?>
                 <br /><br />
-                <a href="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" target="_blank" title="Cliquez pour agrandir"><img src="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" class="img-fluid rounded" alt="photo de profil" width="100%" height="100%" /></a>
+                <a href="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" target="_blank" title="Cliquez pour agrandir"><img src="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" class="img-fluid rounded" style="width: 8rem; height: 6rem;" alt="photo de profil" width="100%" height="100%" /></a>
                 <a href="<?= $myAccount ?>" title="Mon Compte"><small > <?= ($_SESSION['userInfos'][0]['firstName']) ?></small></a>
                 <?php else: ?>
                 <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle" alt="logo YinYang ThieuLam" width="100%" height="100%" />
@@ -234,7 +234,7 @@
           <div class="col-1">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item text-center">
-              <a href="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" target="_blank" title="Cliquez pour agrandir"><img src="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" class="img-fluid rounded" alt="photo de profil" width="50%" height="50%" /></a>
+              <a href="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" target="_blank" title="Cliquez pour agrandir"><img src="../../view/form/miniatures/<?=$_SESSION['userInfos'][0]['picture']?>" class="img-fluid rounded" alt="photo de profil" style="width: 3rem; height: 3rem;" width="50%" height="50%" /></a>
               </li>
             </ul>
           </div>

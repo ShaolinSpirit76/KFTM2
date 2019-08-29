@@ -18,7 +18,17 @@ if (count($_POST) > 0):
     
     $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la sécurité : interdit l'injection de script (balises non autorisées)
     
-   
+    if (empty($eventPicture)):
+        $eventPicture = NULL;
+    else:
+        $events->eventPicture = $eventPicture;
+    endif;
+
+    if( (empty($eventDescription)) || ($eventDescription == '') ):
+$eventDescription = NULL;
+    else:
+        $events->eventDescription = $eventDescription;
+    endif;
   
 
     // modal error s'il y a une erreur
