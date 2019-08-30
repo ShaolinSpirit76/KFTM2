@@ -28,9 +28,16 @@ if (count($_POST) > 0):
     $studentYear = $_POST['studentYear'];
     $childBelt = $_POST['childBelt'];
     $studentBelt = $_POST['studentBelt'];
-    $teacherRank = $_POST['teacherRank'];
+    // Afin de récupérer 2 valeurs pour 2 colonnes dans un même post,
+    // on remplie d'abord la value de l'input en séparant les valeurs par un /
+    // Puis on créé un tableau qui explode le POST. Il ne reste plus qu'à hydrater
+    $teacherRankNumber = explode('/', $_POST['teacherRank']); 
+    $teacherRank = $teacherRankNumber[0];
+    $rankNumber =  $teacherRankNumber[1]; 
     $presentation = $_POST['presentation'];
     $showProfil = $_POST['showProfil'];
+
+
     // $verification = $_POST['verification'];
 
 
@@ -151,46 +158,8 @@ endif;
     if (empty($teacherRank)):
         $teacherRank = NULL;
     else:
-
-        if ($teacherRank == 'Sisook') :
         $users->teacherRank = $teacherRank;
-        $users->rankNumber = 8;
-    endif;
-
-    if ($teacherRank == 'Simui') :
-    $users->teacherRank = $teacherRank;
-    $users->rankNumber = 7;
-endif;
-
-if ($teacherRank == 'Sibak') :
-$users->teacherRank = $teacherRank;
-$users->rankNumber = 6;
-endif;
-
-if ($teacherRank == 'Jiaoshe') :
-$users->teacherRank = $teacherRank;
-$users->rankNumber = 5;
-endif;
-
-if ($teacherRank == 'Taïjiaoshe') :
-$users->teacherRank = $teacherRank;
-$users->rankNumber = 4;
-endif;
-
-if ($teacherRank == 'Laoshe') :
-    $users->teacherRank = $teacherRank;
-    $users->rankNumber = 3;
-    endif;
-
-    if ($teacherRank == 'Taïlaoshe') :
-        $users->teacherRank = $teacherRank;
-        $users->rankNumber = 2;
-        endif;
-
-        if ($teacherRank == 'Sifu') :
-            $users->teacherRank = $teacherRank;
-            $users->rankNumber = 1;
-            endif;
+        $users->rankNumber = $rankNumber;
 
     endif;
 

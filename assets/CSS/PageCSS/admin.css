@@ -17,7 +17,15 @@ body {
   font-family: 'Permanent Marker', cursive;
   }
 
+#littleBG {
+  position: relative; z-index: 2;
+  float: right;
+}
 
+#countMembers {
+  position: relative; z-index: 1;
+  margin-top: -10rem;
+}
 
 /* CSS side-navbar */
 

@@ -20,7 +20,7 @@ body {
   }
 
 
-/* CSS side-navbar 1*/
+/* CSS side-navbar */
 
 .wrapper {
   width: 100%;
@@ -121,7 +121,7 @@ ul ul a {
     background: #6d7fcc;
 }
 
-
+/* Fin CSS side navbar */
 
 
 
@@ -170,10 +170,19 @@ ul ul a {
   margin-top: 3rem;
   background: #32746d;
   }
+
+  /* CSS modal */
   
   .red {
   border: red solid 2px;
+  color: red;
   }
+
+  .modal-header {
+    background-color: #0a0901;
+  }
+
+
   
   .errorMessage {
   color: red;

@@ -217,10 +217,17 @@ public function updateIDUser(){
      }
 
      public function countMen(){
-        $query = "SELECT COUNT(`gender`) AS `numberMen` FROM `KFTM_USERS` WHERE `gender` === 'Homme'";
+        $query = "SELECT COUNT(`gender`) AS `numberMen` FROM `KFTM_USERS` WHERE `gender` = 'Homme'";
         $countMen = $this->db->query($query);
         $countMenResult = $countMen->fetchAll(PDO::FETCH_ASSOC);
         return $countMenResult;
+    }
+
+    public function countWomen(){
+        $query = "SELECT COUNT(`gender`) AS `numberWomen` FROM `KFTM_USERS` WHERE `gender` = 'Femme'";
+        $countWomen = $this->db->query($query);
+        $countWomenResult = $countWomen->fetchAll(PDO::FETCH_ASSOC);
+        return $countWomenResult;
     }
    
      

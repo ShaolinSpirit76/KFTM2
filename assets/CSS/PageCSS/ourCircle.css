@@ -5,9 +5,13 @@
 }
 
 .fixedButton {
-  position: fixed;
+  position: fixed; z-index: 1;
   left: 70rem;
   top: 4rem;
+}
+
+.search {
+  position: absolute;
 }
 
 #sidebar {

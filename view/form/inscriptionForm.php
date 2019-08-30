@@ -22,7 +22,7 @@ require_once '../../controller/inscriptionFormController.php';
     
               <ul>
               
-              <li class="font-weight-bolder"><label for="gender">Genre : </label>
+              <li class="font-weight-bolder"><label for="gender">Genre * : </label>
             <select name="gender" class="inputInscription" required>
             <option value="" selected disabled>Choisissez</option>
                 <option value="Femme">Femme</option> 
@@ -246,13 +246,13 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
           <li class="font-weight-bolder"><label for="teacherRank">Grade : </label>
             <select name="teacherRank" class="inputInscription">
             <option value="" selected disabled>Choisissez</option>
-                <option value="Sisook">Sisook</option>
-                <option value="Simui">Simui</option>
-                <option value="Sibak">Sibak</option>
-                <option value="Jiaoshe">Jiaoshe</option> 
-                <option value="Taïjiaoshe">Taïjiaoshe</option>
-                <option value="Laoshe">Laoshe</option>
-                <option value="Tailaoshe">Tailaoshe</option> 
+                <option value="Sisook/8">Sisook</option>
+                <option value="Simui/7">Simui</option>
+                <option value="Sibak/6">Sibak</option>
+                <option value="Jiaoshe/5">Jiaoshe</option> 
+                <option value="Taïjiaoshe/4">Taïjiaoshe</option>
+                <option value="Laoshe/3">Laoshe</option>
+                <option value="Taïlaoshe/2">Taïlaoshe</option> 
                 <option value="" selected disabled>Sifu - Jean-Marie Levray</option> 
                 <option value="" selected disabled>Taïsifu</option>
                 <option value="" selected disabled>Sikung - Jean-Paul Cabrol</option>

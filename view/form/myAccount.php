@@ -525,13 +525,13 @@ type="file" name="firstPicture" id="firstPicture" />
           <span class="font-weight-bolder"><label for="newTeacherRank">Modifier : </label>
             <select name="newTeacherRank" class="inputInscription" value="<?= (!empty($_POST['newTeacherRank']))? $_POST['newTeacherRank'] : $_SESSION['userInfos'][0]['teacherRank']?>">
               <option value="" selected disabled>Grade</option>
-              <option value="Sisook">Sisook</option>
-              <option value="Simui">Simui</option>
-              <option value="Sibak">Sibak</option>
-              <option value="Jiaoshe">Jiaoshe</option>
-              <option value="Taïjiaoshe">Taïjiaoshe</option>
-              <option value="Laoshe">Laoshe</option>
-              <option value="Tailaoshe">Tailaoshe</option>
+              <option value="Sisook/8">Sisook</option>
+              <option value="Simui/7">Simui</option>
+              <option value="Sibak/6">Sibak</option>
+              <option value="Jiaoshe/5">Jiaoshe</option>
+              <option value="Taïjiaoshe/4">Taïjiaoshe</option>
+              <option value="Laoshe/3">Laoshe</option>
+            <option value="Taïlaoshe/2">Taïlaoshe</option>
               <option value="" selected disabled>Sifu - Jean-Marie Levray</option>
               <option value="" selected disabled>Taïsifu</option>
               <option value="" selected disabled>Sikung - Jean-Paul Cabrol</option>
@@ -544,13 +544,13 @@ type="file" name="firstPicture" id="firstPicture" />
           <li class="font-weight-bolder"><label for="newTeacherRank">Ajouter un grade : </label>
             <select name="newTeacherRank" class="inputInscription" value="<?=(!empty($_POST['newTeacherRank']))? $_POST['newTeacherRank'] : $_SESSION['userInfos'][0]['teacherRank']?>">
               <option value="" selected disabled>Grade</option>
-              <option value="Sisook">Sisook</option>
-              <option value="Simui">Simui</option>
-              <option value="Sibak">Sibak</option>
-              <option value="Jiaoshe">Jiaoshe</option>
-              <option value="Taïjiaoshe">Taïjiaoshe</option>
-              <option value="Laoshe">Laoshe</option>
-              <option value="Tailaoshe">Tailaoshe</option>
+              <option value="Sisook/8">Sisook</option>
+              <option value="Simui/7">Simui</option>
+              <option value="Sibak/6">Sibak</option>
+              <option value="Jiaoshe/5">Jiaoshe</option>
+              <option value="Taïjiaoshe/4">Taïjiaoshe</option>
+              <option value="Laoshe/3">Laoshe</option>
+              <option value="Taïlaoshe/2">Taïlaoshe</option>
               <option value="" selected disabled>Sifu - Jean-Marie Levray</option>
               <option value="" selected disabled>Taïsifu</option>
               <option value="" selected disabled>Sikung - Jean-Paul Cabrol</option>

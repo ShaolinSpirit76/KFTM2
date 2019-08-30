@@ -86,6 +86,7 @@ if(isset($adminDeleteSuccess) && $adminDeleteSuccess == true){
     title: "Suppression réussie ! ",
     text: "Une place s'est libérée...",
     type: "success"
+        );
 }).then(function() {
   document.location.href = "member.php";
 });              

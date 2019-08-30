@@ -36,7 +36,12 @@ if (count($_POST) > 0):
     $newStudentYear = $_POST['newStudentYear'];
     $newChildBelt = $_POST['newChildBelt'];
     $newStudentBelt = $_POST['newStudentBelt'];
-    $newTeacherRank = $_POST['newTeacherRank'];
+    // Afin de récupérer 2 valeurs pour 2 colonnes dans un même post,
+    // on remplie d'abord la value de l'input en séparant les valeurs par un /
+    // Puis on créé un tableau qui explode le POST. Il ne reste plus qu'à hydrater
+    $newTeacherRankNumber = explode('/', $_POST['newTeacherRank']); 
+    $newTeacherRank = $newTeacherRankNumber[0];
+    $newRankNumber =  $newTeacherRankNumber[1]; 
     $newPresentation = $_POST['newPresentation'];
     $newShowProfil = $_POST['newShowProfil'];
 
@@ -177,6 +182,7 @@ if (isset($_POST['newStatus'])):
             $user->rankNumber = 9;
             else:
                 $user->status = $newStatus;
+                $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];
             endif;
         
     endif;
@@ -184,6 +190,7 @@ else:
     $user->status = $_SESSION['userInfos'][0]['status']; 
     $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];  
 endif;
+
 
 
 if (isset($_POST['newStudentCourse'])):
@@ -257,47 +264,9 @@ if (isset($_POST['newTeacherRank'])):
         $user->teacherRank = $_SESSION['userInfos'][0]['teacherRank'];
         $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];
     else: 
-        if ($newTeacherRank == 'Sisook') :
-            $user->teacherRank = $newTeacherRank;
-            $user->rankNumber = 8;
-        endif;
-    
-        if ($newTeacherRank == 'Simui') :
-            $user->teacherRank = $newTeacherRank;
-        $user->rankNumber = 7;
-    endif;
-    
-    if ($newTeacherRank == 'Sibak') :
         $user->teacherRank = $newTeacherRank;
-    $user->rankNumber = 6;
-    endif;
-    
-    if ($newTeacherRank == 'Jiaoshe') :
-        $user->teacherRank = $newTeacherRank;
-    $user->rankNumber = 5;
-    endif;
-    
-    if ($newTeacherRank == 'Taïjiaoshe') :
-        $user->teacherRank = $newTeacherRank;
-    $user->rankNumber = 4;
-    endif;
-    
-    if ($newTeacherRank == 'Laoshe') :
-        $user->teacherRank = $newTeacherRank;
-        $user->rankNumber = 3;
-        endif;
-    
-        if ($newTeacherRank == 'Taïlaoshe') :
-            $user->teacherRank = $newTeacherRank;
-            $user->rankNumber = 2;
-            endif;
-    
-            if ($newTeacherRank == 'Sifu') :
-                $user->teacherRank = $newTeacherRank;
-                $user->rankNumber = 1;
-                endif;
-
-        
+        $user->rankNumber = $newRankNumber;
+     
     endif;
 else: 
     $user->teacherRank = $_SESSION['userInfos'][0]['teacherRank'];  

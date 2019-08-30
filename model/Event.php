@@ -41,11 +41,19 @@ class Event extends DB{
 
 
     public function displayEvent(){
-        $query = 'SELECT * FROM `KFTM_EVENTS`';
+        $query = 'SELECT * FROM `KFTM_EVENTS` ORDER BY `eventDate` ASC';
         $selectEvent = $this->db->prepare($query);
         $selectEvent->execute();
         $displayEvents=$selectEvent->fetchAll(PDO::FETCH_ASSOC);
         return $displayEvents;
+     }
+
+     public function displayUser(){
+        $query = 'SELECT * FROM `KFTM_USERS` ORDER BY `rankNumber` ASC';
+        $selectUser = $this->db->prepare($query);
+        $selectUser->execute();
+        $displayUsers=$selectUser->fetchAll(PDO::FETCH_ASSOC);
+        return $displayUsers;
      }
      
      public function displayEventPicture(){
@@ -57,6 +65,8 @@ class Event extends DB{
             return $displayEventPictureResult;
         endif;
      }
+
+
 
 
 
