@@ -32,9 +32,9 @@ include 'navbarAdmin.php';
           <p class="card-text text-center">Le <?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?> </p>
    
           <a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
-
-<a class="btn btn-primary text-center mx-auto" href="#" role="button">Modifier</a>
-
+<form  method="POST" action="updateEvent.php">
+<button name="changeEvent" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Modifier</button>
+</form>
 <a class="btn btn-primary text-center mx-auto" href="#" role="button">Supprimer</a>
 
                    

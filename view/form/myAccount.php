@@ -569,8 +569,7 @@ type="file" name="firstPicture" id="firstPicture" />
             <p class="font-weight-bolder">
             <label for="newPresentation"><i>Modifier votre présentation : </i> </label></p>
           <textarea id="newPresentation" name="newPresentation" rows="5" cols="33" maxlength="518" value="<?= (!empty($_POST['newPresentation']))? $_POST['newPresentation'] : $_SESSION['userInfos'][0]['presentation']?>">
-         <?= ($_SESSION['userInfos'][0]['presentation']) ?>
-</textarea>
+         <?= ($_SESSION['userInfos'][0]['presentation']) ?></textarea>
 <p class="card-text"><small><i>Max. 500 caractères</i></small></p>
           <p class="font-weight-bolder text-justify"><label class="space" for="presentation">Un slogan, une
               citation préférée, ou tout simplement votre parcours dans les arts martiaux ? Dites-nous en plus !</label>

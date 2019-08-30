@@ -124,9 +124,7 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
         <div>
 <p class="font-weight-bolder text-justify"><label for="eventDescription">Description de l'évènement :</label></p> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
-                <textarea id="eventDescription" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>">
-
-                </textarea>
+                <textarea id="eventDescription" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>"></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
 

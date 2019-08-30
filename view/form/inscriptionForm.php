@@ -263,9 +263,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 <div>
 <p class="font-weight-bolder text-justify"><label for="presentation">Un slogan, une citation préférée, ou tout simplement votre parcours dans les arts martiaux ? Dites-nous en plus !</label></p> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
-                <textarea id="presentation" name="presentation" rows="5" cols="33" maxlength="518">
-
-                </textarea>
+                <textarea id="presentation" name="presentation" rows="5" cols="33" maxlength="518"></textarea>
                 <p class="card-text"><small class=" "><i>Max. 500 caractères<br /><br /></i></small></p>
 </div>
 
