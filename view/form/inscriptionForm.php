@@ -22,6 +22,14 @@ require_once '../../controller/inscriptionFormController.php';
     
               <ul>
               
+              <li class="font-weight-bolder"><label for="gender">Genre : </label>
+            <select name="gender" class="inputInscription" required>
+            <option value="" selected disabled>Choisissez</option>
+                <option value="Femme">Femme</option> 
+                <option value="Homme">Homme</option>
+  </select>
+</li>
+
               <li class="font-weight-bolder  "><label for="lastName">Nom * : </label> <input class="inputInscription <?php echo (isset($_POST['lastName']) && !preg_match($regexName, $_POST['lastName']))? 'red':'';  ?>" value="<?= $_POST['lastName']?>" id="lastName" type="text" name="lastName" placeholder="Nom" required /><p class="errorMessage"><?= (isset($error['errorLastName'])) ? $error['errorLastName'] : ''; ?></p></li>
 
                  <li class="font-weight-bolder  "><label for="firstName">Prénom * : </label> <input class="inputInscription <?php echo (isset($_POST['firstName']) && !preg_match($regexName, $_POST['firstName']))? 'red':'';  ?>" value="<?= $_POST['firstName']?>" id="firstName" type="text" name="firstName" placeholder="Prénom" required /><p class="errorMessage"><?= (isset($error['errorFirstName'])) ? $error['errorFirstName'] : ''; ?></p></li>

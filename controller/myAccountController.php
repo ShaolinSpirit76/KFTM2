@@ -170,11 +170,19 @@ endif;
 if (isset($_POST['newStatus'])):
     if (empty($_POST['newStatus'])):
         $user->status = $_SESSION['userInfos'][0]['status'];
+        $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];
     else:
-        $user->status = $newStatus;
+        if ($status == 'élève') :
+            $user->status = $newStatus;
+            $user->rankNumber = 9;
+            else:
+                $user->status = $newStatus;
+            endif;
+        
     endif;
 else: 
-    $user->status = $_SESSION['userInfos'][0]['status'];   
+    $user->status = $_SESSION['userInfos'][0]['status']; 
+    $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];  
 endif;
 
 
@@ -247,11 +255,53 @@ endif;
 if (isset($_POST['newTeacherRank'])):
     if (empty($_POST['newTeacherRank'])):
         $user->teacherRank = $_SESSION['userInfos'][0]['teacherRank'];
+        $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber'];
     else: 
+        if ($newTeacherRank == 'Sisook') :
+            $user->teacherRank = $newTeacherRank;
+            $user->rankNumber = 8;
+        endif;
+    
+        if ($newTeacherRank == 'Simui') :
+            $user->teacherRank = $newTeacherRank;
+        $user->rankNumber = 7;
+    endif;
+    
+    if ($newTeacherRank == 'Sibak') :
         $user->teacherRank = $newTeacherRank;
+    $user->rankNumber = 6;
+    endif;
+    
+    if ($newTeacherRank == 'Jiaoshe') :
+        $user->teacherRank = $newTeacherRank;
+    $user->rankNumber = 5;
+    endif;
+    
+    if ($newTeacherRank == 'Taïjiaoshe') :
+        $user->teacherRank = $newTeacherRank;
+    $user->rankNumber = 4;
+    endif;
+    
+    if ($newTeacherRank == 'Laoshe') :
+        $user->teacherRank = $newTeacherRank;
+        $user->rankNumber = 3;
+        endif;
+    
+        if ($newTeacherRank == 'Taïlaoshe') :
+            $user->teacherRank = $newTeacherRank;
+            $user->rankNumber = 2;
+            endif;
+    
+            if ($newTeacherRank == 'Sifu') :
+                $user->teacherRank = $newTeacherRank;
+                $user->rankNumber = 1;
+                endif;
+
+        
     endif;
 else: 
-    $user->teacherRank = $_SESSION['userInfos'][0]['teacherRank'];   
+    $user->teacherRank = $_SESSION['userInfos'][0]['teacherRank'];  
+    $user->rankNumber = $_SESSION['userInfos'][0]['rankNumber']; 
 endif;
 
 

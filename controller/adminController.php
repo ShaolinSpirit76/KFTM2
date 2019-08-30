@@ -9,4 +9,4 @@ require '../model/Event.php';
 
 $user = new User();
 $userCount = $user->countUsers();
-
+// $userCountMen = $user->countMen();

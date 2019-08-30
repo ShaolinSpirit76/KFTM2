@@ -15,7 +15,6 @@ if (isset($_POST['adminDeleteRequest'])) {
     $User->ID = $ID;
     if($User->adminDeleteUser()){
         $adminDeleteSuccess = true;
-        header('Location: member.php');
-    }    
+        }    
 }
 

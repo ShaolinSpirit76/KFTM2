@@ -81,7 +81,7 @@ include '../templates/head.php';
 
 
   <?php foreach($displayUsersResult as $displayUser){?>
-  <?php if ( $displayUser['showProfil'] == '1'): ?>
+  <?php if ($displayUser['showProfil'] == '1'): ?>
 
 
   <div class="col-md-4 col-sm-12 mx-auto">
@@ -94,7 +94,11 @@ include '../templates/head.php';
 </div>
 <?php else: ?>
 <div class="mx-auto text-center">
-      <img src="../../assets/images/iconfinder_Asian_boss_131491.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+  <?php if ($displayUser['gender'] == 'Femme') :?>
+      <img src="../../assets/images/female-306407_960_720.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+     <?php else: ?>
+     <img src="../../assets/images/iconfinder_Asian_boss_131491.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+  <?php endif; ?>
       </div>
       <?php endif; ?>
 

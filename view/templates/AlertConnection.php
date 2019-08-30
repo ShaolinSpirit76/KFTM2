@@ -83,11 +83,11 @@ if(isset($adminDeleteSuccess) && $adminDeleteSuccess == true){
   ?>
         <script>
         Swal.fire({
-    title: "Vous venez de supprimer",
-    text: "<?= $_SESSION['userInfos'][0]['firstName'] ?>",
+    title: "Suppression réussie ! ",
+    text: "Une place s'est libérée...",
     type: "success"
 }).then(function() {
-  header("Refresh:0");
+  document.location.href = "member.php";
 });              
         </script>
         <?php

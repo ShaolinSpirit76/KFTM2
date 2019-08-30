@@ -12,6 +12,7 @@ $users = new User();
 if (count($_POST) > 0):
 
     // Déclaration de variables qui prennent les valeurs des $_POST respectives
+    $gender = $_POST['gender'];
     $lastName = $_POST['lastName'];
     $firstName = $_POST['firstName'];
     $birthDate = $_POST['birthDate'];
@@ -34,6 +35,12 @@ if (count($_POST) > 0):
 
 
     $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la sécurité : interdit l'injection de script (balises non autorisées)
+
+    if (empty($gender)):
+        $gender = NULL;
+    else:
+        $users->gender = $gender;
+    endif;
 
     if ( !preg_match ($regexName, $_POST['lastName'] ) ):
         $error['errorLastName'] = 'Votre nom de famille est incorrect.';
@@ -97,7 +104,12 @@ endif;
     if (empty($status)):
         $status = NULL;
     else:
+        if ($status == 'élève') :
         $users->status = $status;
+        $users->rankNumber = 9;
+        else:
+            $users->status = $status;
+        endif;
     endif;
 
     if (empty($studentCourse)):
@@ -139,7 +151,47 @@ endif;
     if (empty($teacherRank)):
         $teacherRank = NULL;
     else:
+
+        if ($teacherRank == 'Sisook') :
         $users->teacherRank = $teacherRank;
+        $users->rankNumber = 8;
+    endif;
+
+    if ($teacherRank == 'Simui') :
+    $users->teacherRank = $teacherRank;
+    $users->rankNumber = 7;
+endif;
+
+if ($teacherRank == 'Sibak') :
+$users->teacherRank = $teacherRank;
+$users->rankNumber = 6;
+endif;
+
+if ($teacherRank == 'Jiaoshe') :
+$users->teacherRank = $teacherRank;
+$users->rankNumber = 5;
+endif;
+
+if ($teacherRank == 'Taïjiaoshe') :
+$users->teacherRank = $teacherRank;
+$users->rankNumber = 4;
+endif;
+
+if ($teacherRank == 'Laoshe') :
+    $users->teacherRank = $teacherRank;
+    $users->rankNumber = 3;
+    endif;
+
+    if ($teacherRank == 'Taïlaoshe') :
+        $users->teacherRank = $teacherRank;
+        $users->rankNumber = 2;
+        endif;
+
+        if ($teacherRank == 'Sifu') :
+            $users->teacherRank = $teacherRank;
+            $users->rankNumber = 1;
+            endif;
+
     endif;
 
     if (empty($presentation)):
@@ -147,6 +199,8 @@ endif;
     else:
         $users->presentation = $presentation;
     endif;
+    
+
 
 
     if ($_POST['showProfil'] == 'on'):
