@@ -26,17 +26,19 @@ include 'navbarAdmin.php';
       <img src="../../assets/images/theme/karate-971341_960_720.png" class="card-img-top img-fluid mx-auto" style="width: 18rem; height: 16rem;" alt="Photo de profil par défaut">
       <?php endif; ?>
 
-      <div class="card-body">
+      <div class="card-body police2">
         
         
           <p class="card-text text-center">Le <?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?> </p>
    
-          <a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
+         
 <form  method="POST" action="updateEvent.php">
 <button name="changeEvent" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Modifier</button>
-</form>
-<a class="btn btn-primary text-center mx-auto" href="#" role="button">Supprimer</a>
 
+<button name="" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Supprimer</button>
+<br /><br />
+</form>
+<a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
                    
 
 

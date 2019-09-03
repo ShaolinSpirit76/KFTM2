@@ -4,9 +4,9 @@ include '../templates/head.php';
 include '../../controller/regex.php';
 ?>
 
-<h1 class="text-center">Informations légales de l'association</h1>
+<h1 class="text-center police">Informations légales de l'association</h1>
 
-<div class="container-fluid">
+<div class="container-fluid police2">
   <div class="row">
     <div class="col-6 mx-auto">
 <ul>

@@ -4,7 +4,7 @@
 
 <!-- Début du footer -->
 
-<div id="foot">
+<div id="foot" class="police2">
     <footer class="main-footer">
 
       <!-- Footer Links -->

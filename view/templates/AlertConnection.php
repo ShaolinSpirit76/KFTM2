@@ -14,6 +14,22 @@ if(isset($connectionSuccess) && $connectionSuccess == true){
         </script>
         <?php
 }
+
+if(isset($connectAdmin) && $connectAdmin == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Bonjour <?= $_SESSION['userInfos'][0]['firstName'] ?> !',
+          'Ravi de vous revoir...',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "../../admin/admin.php"; 
+        }, 2000);
+        </script>
+        <?php
+}
+
 if(isset($connectionFailed) && $connectionFailed == true){
   ?>
         <script>
@@ -85,6 +101,22 @@ if(isset($adminDeleteSuccess) && $adminDeleteSuccess == true){
         Swal.fire({
     title: "Suppression réussie ! ",
     text: "Une place s'est libérée...",
+    type: "success"
+        );
+}).then(function() {
+  document.location.href = "member.php";
+});              
+        </script>
+        <?php
+}
+
+// Alert de passage d'un membre en mode admin
+if(isset($adminRequestPower) && $adminRequestPower == true){
+  ?>
+        <script>
+        Swal.fire({
+    title: "Mode admin activé ! ",
+    text: "Quelqu'un a pris du galon...",
     type: "success"
         );
 }).then(function() {

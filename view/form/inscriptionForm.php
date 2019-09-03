@@ -9,11 +9,11 @@ require_once '../../controller/inscriptionFormController.php';
 
 <div id="inscriptionTitle" class="col-md-10 col-lg-5 col-sm-10 offset-sm-1 col mx-auto">
 <h1 id="legend1" class="text-center">Inscription</h1>
-<p class="text-center"><small>* champs obligatoires</small></p>
+<p class="text-center police2"><small>* champs obligatoires</small></p>
 </div>
 
-            <form method="POST" action="inscriptionForm.php" id="inscriptionForm" name="inscriptionForm" enctype="multipart/form-data">
-               <div class="card mx-auto" id="connexion" style="width: 30rem;">
+            <form method="POST" action="inscriptionForm.php" id="inscriptionForm" name="inscriptionForm" enctype="multipart/form-data" class="police2">
+               <div class="card mx-auto" id="connexion" style="width: 32rem;">
   <div class="card-body">
       <fieldset>
 
@@ -284,7 +284,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 </ul>
 
 
-<label for="checkForm" class="font-weight-bolder">Je certifie sur l'honneur l'exactitude des informations<br /> renseignées ci-dessus. *</label>
+<label for="checkForm" class="font-weight-bolder">Je certifie sur l'honneur l'exactitude des informations renseignées ci-dessus. *</label>
 <input type="checkbox" id="checkForm" name="checkForm" value="checkForm" required />
 <br /><br />
 <div class="g-recaptcha" id="recaptcha" data-sitekey="6Leno7MUAAAAAMZSGnEvxMzJCw-k7fX556kdwqUz">
@@ -305,7 +305,7 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 
 <div id="inscriptionEnd">
 
-<div id="accordion" style="width: 30rem;" class="mx-auto">
+<div id="accordion" style="width: 30rem;" class="mx-auto police2">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0 text-center">

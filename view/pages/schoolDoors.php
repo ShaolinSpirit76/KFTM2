@@ -10,7 +10,7 @@ include '../../controller/regex.php';
       <img width="50%" height="50%" src="../../assets/images/26165403_1835956926445621_4354469161784219587_n.jpg" class="img-fluid" alt="Logo école" sizes="(max-width: 800px) 100vw, 800px"  />							
 </header>
 
-  		<div class="entry-content">
+  		<div class="entry-content police2">
 
   <h3 id="schoolDoorsTitle" class="text-center">Histoire de l'école</h3>
 

@@ -22,6 +22,14 @@ body {
   font-family: 'Permanent Marker', cursive;
 }
 
+.police {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.police2 {
+  font-family: 'Merriweather Sans', cursive;
+}
+
 /* Distance entre le contenu des pages et la navbar min */
 #home, #body {
   margin-top: 10rem;
@@ -68,7 +76,7 @@ a:hover {
 
 #buttonScroll::after {
   content: "\f077";
-  font-family: FontAwesome;
+  font-family: FontAwesome;important!
   font-weight: normal;
   font-style: normal;
   font-size: 2em;

@@ -23,6 +23,7 @@ class User extends DB{
     public $presentation;
     public $verification;
     public $showProfil;
+    public $admin;
     
     public function __construct(){
         //On récupere le constructeur de la page DataBase.php qui est le parent de la class User
@@ -169,8 +170,7 @@ public function updateUser(){
     $updateUser->bindValue(':newShowProfil', $this->showProfil, PDO::PARAM_INT);
     
     
-   
-    
+       
     if($updateUser->execute()){
         return true;
     }
@@ -229,7 +229,18 @@ public function updateIDUser(){
         $countWomenResult = $countWomen->fetchAll(PDO::FETCH_ASSOC);
         return $countWomenResult;
     }
+
+
+    public function adminPower(){
+        $query = "UPDATE `KFTM_USERS` SET admin = '1' WHERE ID = :ID";
+    }
    
      
     
 }
+
+// $query = 'UPDATE `KFTM_USERS` SET userLog = :newUserLog, password = :newPassword WHERE ID = :ID';
+//  $updateUser = $this->db->prepare($query);
+//  $updateUser->bindValue(':ID', $_SESSION['userInfos'][0]['ID'], PDO::PARAM_INT);
+//  $updateUser->bindValue(':newUserLog', $this->userLog, PDO::PARAM_STR);
+//  $updateUser->bindValue(':newPassword', $this->password, PDO::PARAM_STR);

@@ -1,13 +1,16 @@
 <?php
-if ($_SESSION['userInfos'][0]['mail'] !== 'levray.jm@wanadoo.fr'){
+if ($_SESSION['userInfos'][0]['admin'] !== '1'){
     header('Location: ../view/templates/error.php');
 }
 
-require '../model/DataBase.php';
-require '../model/User.php';
-require '../model/Event.php';
+require_once '../model/DataBase.php';
+require_once '../model/User.php';
+require_once '../model/Event.php';
 
 $user = new User();
 $userCount = $user->countUsers();
 $userCountMen = $user->countMen();
 $userCountWomen = $user->countWomen();
+
+$event = new Event();
+$eventCountEvent = $event->countEvent();

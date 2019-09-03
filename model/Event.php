@@ -75,9 +75,47 @@ class Event extends DB{
 
 
 
+     public function updateEvent(){
+   
+        $query = 'UPDATE `KFTM_EVENTS` SET eventType = :newEventType, eventCourse = :newEventCourse, eventDate = :newEventDate, eventHour = :newEventHour, eventMaxUser = :newEventMaxUser, eventDescription = :newEventDescription, eventPicture = :newEventPicture WHERE ID = :ID';
+        $updateEvent = $this->db->prepare($query);
+        $updateEvent->bindValue(':ID', $this->ID, PDO::PARAM_INT);
+        $updateEvent->bindValue(':newEventType', $this->eventType, PDO::PARAM_STR);
+        $updateEvent->bindValue(':newEventCourse', $this->eventCourse, PDO::PARAM_STR);
+        $updateEvent->bindValue(':newEventDate', $this->eventDate, PDO::PARAM_STR);
+        $updateEvent->bindValue(':newEventHour', $this->eventHour, PDO::PARAM_STR); 
+        $updateEvent->bindValue(':newEventMaxUser', $this->eventMaxUser, PDO::PARAM_INT); 
+        $updateEvent->bindValue(':newEventDescription', $this->eventDescription, PDO::PARAM_STR); 
+        $updateEvent->bindValue(':newEventPicture', $this->eventPicture, PDO::PARAM_STR);        
+        
+           
+        if($updateEvent->execute()){
+            return true;
+        }
+    }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+     public function countEvent(){
+        $query = "SELECT COUNT(`ID`) AS `number` FROM `KFTM_EVENTS`";
+        $countEvent = $this->db->query($query);
+        $countEventResult = $countEvent->fetchAll(PDO::FETCH_ASSOC);
+        return $countEventResult;
+    }
+
+    
 
 
 }

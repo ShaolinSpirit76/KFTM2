@@ -40,9 +40,13 @@ if(isset($_POST['loginButton'])):
                 $_SESSION['id'] = $connectUserResult[0]['id'];
                 $_SESSION['userInfos'] = $connectUserResult;
                 $_SESSION['connection'] = true;
-                $connectionSuccess = true;
-              
-        } else {
+                if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'):
+                    $connectAdmin = true;
+                else:
+                    $connectionSuccess = true;
+                    endif;
+                
+            } else {
                 $mdpFailed = true;
             }
 

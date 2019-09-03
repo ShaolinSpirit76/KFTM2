@@ -21,6 +21,7 @@ $('#eventType').click(function(){
 
 
 // Gestion de l'affichage de la navbar Admin
+$('#navbarAdmin').hide();
 $("#sidebarCollapse").click(function() {
   $('#navbarAdmin').show();
 }); 

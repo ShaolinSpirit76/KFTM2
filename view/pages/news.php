@@ -23,7 +23,7 @@ include '../templates/head.php';
       <img src="../../assets/images/theme/karate-971341_960_720.png" class="card-img-top img-fluid mx-auto" style="width: 18rem; height: 16rem;" alt="Photo de profil par défaut">
       <?php endif; ?>
 
-      <div class="card-body">
+      <div class="card-body police2">
         
         
           <p class="card-text text-center">Le <?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?> </p>

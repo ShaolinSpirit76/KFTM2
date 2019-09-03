@@ -4,6 +4,10 @@ include '../templates/head.php';
 include '../../controller/regex.php';
 ?>
 
+<h1 class="text-center police">Réglement Général sur la Protection des Données</h1>
+
+<div class="police2">
+
 <h3>Définitions</h3>
                 <p><b>Client&nbsp;:</b>&nbsp;tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>
                 <b>Prestations et Services&nbsp;:</b> <a href="https://shaolinspirit76.github.io/KungFu.ThieuLam.Montivilliers/">https://shaolinspirit76.github.io/KungFu.ThieuLam.Montivilliers/</a> met à disposition des Clients&nbsp;:</p>
@@ -212,6 +216,8 @@ include '../../controller/regex.php';
                  <p>
                 Tout litige en relation avec l’utilisation du site&nbsp;<a href="https://shaolinspirit76.github.io/KungFu.ThieuLam.Montivilliers/">https://shaolinspirit76.github.io/KungFu.ThieuLam.Montivilliers/</a>&nbsp;est soumis au droit français. 
                 En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Le Havre</p>
+
+</div>
 
 
 <?php

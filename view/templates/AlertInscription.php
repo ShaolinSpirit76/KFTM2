@@ -120,7 +120,24 @@ if(isset($newEventSuccess) && $newEventSuccess == true){
           'success'
         );
         setTimeout(function(){
-           document.location.href = "admin.php"; 
+           document.location.href = "viewEvent.php"; 
+         }, 2000);
+        </script>
+        <?php
+}
+
+
+// Alert de mise à jour d'un évènement
+if(isset($newUpdateEventSuccess) && $newUpdateEventSuccess == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Bien joué !',
+          'Votre évènement a bien été modifié ;)',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "viewEvent.php"; 
          }, 2000);
         </script>
         <?php

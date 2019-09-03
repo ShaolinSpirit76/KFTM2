@@ -1,6 +1,6 @@
 <?php
-require '../controller/adminControllerStart.php';
-require '../controller/adminController.php';
+require_once '../controller/adminControllerStart.php';
+require_once '../controller/adminController.php';
 require_once '../controller/memberController.php';
 include '../view/templates/headHome.php';
 ?>
@@ -67,13 +67,142 @@ include 'navbarAdmin.php';
 
 
 
+
 <div class="container-fluid">
   <div class="row">
 
 
-  <?php foreach($displayUsersResult as $displayUser) { ?>
+  <?php foreach($displayUsersResult as $displayUser) { 
+    
+    if (($displayUser['teacherRank']) == 'Sifu') :  ?>
+
+  <div class="col-md-4 col-sm-12 mx-auto">
+    <p class="text-white text-center police"><?= (isset($displayUser['teacherRank'])) ? $displayUser['teacherRank'] : $displayUser['status'] ?></p>
+      <div class="card mx-auto police2" style="width: 24rem;">
+
+      <?php if (!empty($displayUser['picture'])): ?>
+      <div class="mx-auto text-center">
+      <img src="../view/form/miniatures/<?=$displayUser['picture'];?>"  style="width: 20rem; height: 24rem;" class="pictureSize card-img-top img-fluid" alt="Photo de profil <?=$displayUser['picture'];?>">
+</div>
+<?php else: ?>
+<div class="mx-auto text-center">
+<?php if ($displayUser['gender'] == 'Femme') :?>
+      <img src="../assets/images/female-306407_960_720.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+     <?php else: ?>
+     <img src="../assets/images/iconfinder_Asian_boss_131491.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+  <?php endif; ?>
+      </div>
+      <?php endif; ?>
+
+      <div class="card-body mx-auto">
+      <div class="mx-auto text-center">
+    <h5 class="card-title"> <?=$displayUser['firstName']?> <?=$displayUser['lastName']?></h5>
+    <p class="card-text text-center"><?=ucfirst($displayUser['status'])?></p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#<?=$displayUser['lastName']?><?=$displayUser['ID']?>" role="button" aria-expanded="false" aria-controls="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">En savoir plus</a>
+    
+</div>
+    
+        <div class="collapse" id="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">
+  <div class="card card-body">
+
+ 
+<?php if (isset($displayUser['phoneNumber'])): ?>
+  <p class="text-white">Téléphone : <?=$displayUser['phoneNumber']?> </p>
+  <?php endif; ?>                  
+                  
+  <p class="text-white">Login : <?= $displayUser['userLog']?> </p>
+
+
+
+  <?php if (isset($displayUser['birthDate'])): ?>
+  <p class="text-white">Date de naissance : <?=strftime('%d/%m/%Y',strtotime($displayUser['birthDate']))?> </p>
+  <?php endif; ?>
+
+    <p class="text-white">Mail : <?=$displayUser['mail']?> </p>
+
+  
   
 
+  <?php if (isset($displayUser['studentCourse'])): ?>
+  <p class="text-white">Cours en tant qu'élève : <?= $displayUser['studentCourse']?> </p>
+  <?php endif; ?>
+
+  <?php if (isset($displayUser['teacherCourse'])): ?>
+                   <p class="text-white">Cours en tant que maître : <?= $displayUser['teacherCourse']?> </p>
+                   <?php endif; ?>
+
+  <?php if (isset($displayUser['groupAge'])): ?>
+                   <p class="text-white">Groupe : <?= $displayUser['groupAge']?> </p>
+                   <?php endif; ?>
+
+                   <?php if (isset($displayUser['studentYear'])): ?>
+                   <p class="text-white">Année : <?= $displayUser['studentYear']?> </p>
+                   <?php endif; ?>
+
+                   <?php if (isset($displayUser['childBelt'])): ?>
+                   <p class="text-white">Ceinture enfant : <?= $displayUser['childBelt']?> </p>
+                   <?php endif; ?>
+
+                   <?php if (isset($displayUser['studentdBelt'])): ?>
+                   <p class="text-white">Ceinture adulte : <?= $displayUser['studentBelt']?> </p>
+                   <?php endif; ?>
+
+                   <?php if (isset($displayUser['teacherRank'])): ?>
+                   <p class="text-white">Grade : <?= $displayUser['teacherRank']?> </p>
+                   <?php endif; ?>
+
+                   <?php if (isset($displayUser['presentation'])): ?>
+                   <p class="text-white">Présentation : <?= $displayUser['presentation']?> </p>
+                   <?php endif; ?>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+       
+</div>
+
+<?php
+endif;
+  }?>
+  
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+
+  <?php foreach($displayUsersResult as $displayUser) { 
+    
+    if (($displayUser['teacherRank']) != 'Sifu') :  ?>
 
   <div class="col-md-4 col-sm-12 mx-auto">
     <p class="text-white text-center police"><?= (isset($displayUser['teacherRank'])) ? $displayUser['teacherRank'] : $displayUser['status'] ?></p>
@@ -156,6 +285,8 @@ include 'navbarAdmin.php';
                    <p class="text-white">Présentation : <?= $displayUser['presentation']?> </p>
                    <?php endif; ?>
 
+                   <a class="badge badge-secondary btn btn-warning" role="button" data-toggle="modal" data-target="#admin<?=$displayUser['ID']?>"><p>Passer en admin</p></a>
+
   </div>
 </div>
 
@@ -192,12 +323,44 @@ include 'navbarAdmin.php';
     </div>
   </div>
 </div>
+
+
+
+
+
+ <!-- Début modal sécurité pour le passage en statut admin -->
+
+<!-- Modal -->
+<div class="modal fade" id="admin<?=$displayUser['ID']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title red" id="exampleModalLabel">Action sensible</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p><i>Vous vous apprétez à passer le compte de <?=$displayUser['firstName']?> <?=$displayUser['lastName']?> en mode admin. Cela signifie que ce membre aura les mêmes pouvoirs que vous, sauf qu'il ne pourra jamais supprimer votre compte, tandis que vous, vous pourrez toujours le supprimer si besoin. Ainsi il pourra gérer les membres, créer des articles, des évènements, etc... Mais ne pourra jamais vous enlever votre statut. Êtes-vous sûr de vouloir faire cela ?</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Retour</button>
+        <form name="deleteForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
+        <button type="submit" value="<?=$displayUser['ID']?>" id="adminDeleteRequest" name="adminRequest" class="btn btn-primary">Confirmer le passage en mode admin</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
 <?php
+endif;
   }?>
   
 
   </div>
 </div>
+
+
 
 
 <div id="spaceBottom"></div>

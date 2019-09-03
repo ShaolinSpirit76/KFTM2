@@ -17,8 +17,8 @@ include 'navbarAdmin.php';
 </div>
 
 <form method="POST" action="newEvent.php" id="newEventForm" name="newEventForm" 
-enctype="multipart/form-data">
-               <div class="card mx-auto" id="generation" style="width: 30rem;">
+enctype="multipart/form-data" class="police2">
+               <div class="card mx-auto" id="generation" style="width: 31rem;">
   <div class="card-body">
       <fieldset>
 

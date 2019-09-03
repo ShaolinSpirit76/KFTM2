@@ -18,7 +18,7 @@ require_once '../../controller/myAccountController.php';
 
 
 
-<form method="POST" action="myAccount.php" id="updateForm" name="updateForm" enctype="multipart/form-data">
+<form method="POST" action="myAccount.php" id="updateForm" name="updateForm" enctype="multipart/form-data" class="police2">
   <div class="card mx-auto" id="update" style="width: 50rem;">
     <div class="card-body">
       <fieldset>

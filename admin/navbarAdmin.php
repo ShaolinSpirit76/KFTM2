@@ -20,7 +20,7 @@
         <div class="sidebar-header">
             <h3 class="police">Espace de travail KFTM</h3>
         </div>
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled components police2">
              <li class="active">
                 <a href="#calendarSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Agenda</a>
                 <ul class="collapse list-unstyled" id="calendarSubmenu">

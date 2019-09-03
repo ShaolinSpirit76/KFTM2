@@ -1,6 +1,6 @@
 <?php
-require '../controller/newEventControllerStart.php';
-require '../controller/adminController.php';
+require_once '../controller/newEventControllerStart.php';
+require_once '../controller/adminController.php';
 require_once '../controller/updateEventController.php';
 include '../controller/regex.php';
 include '../view/templates/headHome.php';
@@ -27,7 +27,7 @@ enctype="multipart/form-data">
       <li class="font-weight-bolder">
        <!-- Condition à gérer pour n'afficher le label que si l'évènement est autre -->
       <label for="eventType">Nom de l'évènement : <?= $showUpdateEventResult[0]['eventType'] ?></label>
-      <select id="eventType" name="eventType" class="inputNewEvent" required>
+      <select id="eventType" name="newEventType" class="inputNewEvent" required>
             <option selected disabled>Choisissez</option>
                 <option value="Tournoi" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Tournoi' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Tournoi' ? 'selected' : '') ?> >Tournoi</option> 
                 <option value="Compétition" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Compétition' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Compétition' ? 'selected' : '') ?> >Compétition</option>
@@ -50,16 +50,16 @@ enctype="multipart/form-data">
 <li class="font-weight-bolder"> 
 <label for="eventCourse">Groupe concerné : </label>
 
-  <p><input type="radio" id="Kung-Fu" name="eventCourse" value="Kung-Fu">
+  <p><input type="radio" id="Kung-Fu" name="newEventCourse" value="Kung-Fu">
   <label for="Kung-Fu">Kung-Fu <span class="formColor">~~~</span> </label>
 
-  <input type="radio" id="Taïchi Chuan & Qi Gong" name="eventCourse" value="Taïchi Chuan & Qi Gong">
+  <input type="radio" id="Taïchi Chuan & Qi Gong" name="newEventCourse" value="Taïchi Chuan & Qi Gong">
   <label for="Taïchi Chuan & Qi Gong">Taïchi <span class="formColor">~~~</span> </label>
 
-  <input type="radio" id="Sanda & Shoubo" name="eventCourse" value="Sanda & Shoubo">
+  <input type="radio" id="Sanda & Shoubo" name="newEventCourse" value="Sanda & Shoubo">
   <label for="Sanda & Shoubo">Sanda <span class="formColor">~~~</span> </label>
 
-  <input type="radio" id="Tout le monde" name="eventCourse" value="Tout le monde">
+  <input type="radio" id="Tout le monde" name="newEventCourse" value="Tout le monde">
   <label for="Tout le monde">Tous</label></p>
     
             
@@ -69,19 +69,19 @@ enctype="multipart/form-data">
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventDate']))? $_POST['eventDate'] : $showUpdateEventResult[0]['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></li>
+<li class="font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventDate']))? $_POST['eventDate'] : $showUpdateEventResult[0]['eventDate']?>" type="date" name="newEventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></li>
 
 </div>
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventHour']))? $_POST['eventHour'] : $showUpdateEventResult[0]['eventHour']?>" type="time" name="eventHour" id="eventHour" required /></li>
+<li class="font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventHour']))? $_POST['eventHour'] : $showUpdateEventResult[0]['eventHour']?>" type="time" name="newEventHour" id="eventHour" required /></li>
 
 </div>
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventMaxUser']))? $_POST['eventMaxUser'] : $showUpdateEventResult[0]['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" /></li>
+<li class="font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent" value="<?= (!empty($_POST['eventMaxUser']))? $_POST['eventMaxUser'] : $showUpdateEventResult[0]['eventMaxUser']?>" type="number" min="1" max="100" name="newEventMaxUser" id="eventMaxUser" /></li>
 
 </div>
 
@@ -91,12 +91,12 @@ enctype="multipart/form-data">
 
 <?php if (!empty($showUpdateEventResult[0]['eventPicture'])): ?>
             
-<li class="font-weight-bolder space"><label for="picture">Affiche : 
+<label for="picture" class="font-weight-bolder">Affiche : </label>
  
-  <a href="/affiches/<?=$showUpdateEventResult[0]['eventPicture']?>" target="_blank" title="Cliquez pour agrandir"><img src="affiches/<?=$showUpdateEventResult[0]['eventPicture']?>" class="img-fluid rounded" alt="Affiche" width="15%" height="15%" /></a>
+  <a href="affiches/<?=$showUpdateEventResult[0]['eventPicture']?>" target="_blank" title="Cliquez pour agrandir"><img src="affiches/<?=$showUpdateEventResult[0]['eventPicture']?>" class="img-fluid rounded" alt="Affiche" width="15%" height="15%" /></a>
 <?php
 // Nous faisons un echo du nom de l'image
-echo ($showUpdateEventResult[0]['eventPicture']) ?></label><br /><button type="button" class="badge badge-secondary" id="updatePicture">Changer l'affiche</button></li>
+echo ($showUpdateEventResult[0]['eventPicture']) ?><br /><button type="button" class="badge badge-secondary" id="updatePicture">Changer l'affiche</button>
     
     <div id="newPic">
        <!-- Code pour upload la photo de profil. On ne récupère que le nom dans la BDD -->
@@ -163,9 +163,9 @@ echo($_FILES['firstPicture']['name']);
 
  ?>
 
-<li class="font-weight-bolder space"><label for="firstPicture">Ajouter une affiche : </label> <input
+<label for="firstPicture">Ajouter une affiche : </label> <input
 type="file" name="firstPicture" id="firstPicture" />
-<small><br /><i>Un .jpg, c'est mieux ;)</i></small></li>
+<small><br /><i>Un .jpg, c'est mieux ;)</i></small>
 
 
 <?php endif; ?>
@@ -175,7 +175,7 @@ type="file" name="firstPicture" id="firstPicture" />
 
         <div>
 <p class="font-weight-bolder text-justify"><label for="eventDescription">Description de l'évènement :</label></p> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
-                <textarea id="eventDescription" name="eventDescription" rows="5" cols="33" maxlength="2018">
+                <textarea id="eventDescription" name="newEventDescription" rows="5" cols="33" maxlength="2018">
                 <?= (!empty($_POST['eventDescription']))? $_POST['eventDescription'] : $showUpdateEventResult[0]['eventDescription']?></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
@@ -228,3 +228,4 @@ type="file" name="firstPicture" id="firstPicture" />
 <?php
 include '../view/templates/footerAdmin.php';
 include '../view/templates/AlertInscription.php';
+include '../view/templates/AlertConnection.php';

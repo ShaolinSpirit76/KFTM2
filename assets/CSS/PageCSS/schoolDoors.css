@@ -8,7 +8,7 @@
     #schoolDoorsTitle {
       margin-bottom: 6rem;
       color: #336699;
-      font-family: 'Permanent Marker', cursive;
+      font-family: 'Permanent Marker', cursive;important!
       font-size: 3rem;
     }
 

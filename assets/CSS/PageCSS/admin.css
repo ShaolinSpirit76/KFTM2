@@ -12,19 +12,35 @@ body {
   /* version standardisée */
 }
 
+a:hover {
+  color: black !important;
+}
+
 
 .police {
   font-family: 'Permanent Marker', cursive;
   }
 
-#littleBG {
+.littleBG {
   position: relative; z-index: 2;
   float: right;
-}
+  margin-top: -2rem;
+  }
+
+.littleBG2 {
+  position: relative; z-index: 3;
+  margin-top: 15rem;
+  margin-left: 65rem;
+ }
 
 #countMembers {
   position: relative; z-index: 1;
   margin-top: -10rem;
+}
+
+#countEvents {
+  position: relative; z-index: 2;
+  margin-top: -7rem;
 }
 
 /* CSS side-navbar */

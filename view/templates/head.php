@@ -31,7 +31,7 @@
  <!-- Lien pour le reCAPTCHA v2 -->
  <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Lien éventuel pour l'utilisation d'une police -->
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Merienda|Permanent+Marker&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Chilanka|Indie+Flower|Josefin+Sans|Merienda|Merienda+One|Merriweather+Sans|Mukta|Permanent+Marker|Varela+Round&display=swap" rel="stylesheet"> 
   <link href="../../assets/CSS/police.css" rel="stylesheet">
   <!-- Lien pour placer une icone dans l'onglet, avant le titre de la page -->
   <link rel="icon" href="../../assets/images/logo.jpg">

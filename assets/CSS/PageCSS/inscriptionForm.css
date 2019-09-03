@@ -143,4 +143,8 @@ color: red;
 font-family: 'Permanent Marker', cursive;
 }
 
+#checkForm {
+  float: right;
+}
+
 /* Fin CSS formulaire d'inscription */

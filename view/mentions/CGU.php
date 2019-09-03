@@ -4,8 +4,9 @@ include '../templates/head.php';
 include '../../controller/regex.php';
 ?>
 
-<h1>Conditions générales d'utilisation du site http://KungFu.ThieuLam.Montivilliers.fr</h1>
+<h1 class="text-center police">Conditions générales d'utilisation du site http://KungFu.ThieuLam.Montivilliers.fr</h1>
 
+<div class="police2">
 
 <h3>ARTICLE 1 : Objet</h3>
 
@@ -146,6 +147,8 @@ Le site http://KungFu.ThieuLam.Montivilliers.fr est édité par [nom et prénom 
 
 </p>Le présent contrat dépend de la législation française. <br />
 En cas de litige non résolu à l’amiable entre l’Utilisateur et l’Éditeur, les tribunaux de la ville du Havre sont compétents pour régler le contentieux.</p>
+
+</div>
 
 
 <?php

@@ -17,7 +17,7 @@ include '../templates/head.php';
 
     </div>
 
-    <form class="form-inline my-2 my-lg-0 search">
+    <form class="form-inline my-2 my-lg-0 search police2">
       <input class="form-control mr-sm-2" type="search" placeholder="Nom, prénom..." aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
     </form>
@@ -31,7 +31,7 @@ include '../templates/head.php';
         <div class="sidebar-header">
             <h3 class="police">Les membres de KFTM</h3>
         </div>
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled components police2">
 
         <li>
        <select class="custom-select navbarSelect">
@@ -78,7 +78,7 @@ include '../templates/head.php';
 
 
 
-<div class="container-fluid">
+<div class="container-fluid police2">
   <div class="row">
 
 
@@ -117,7 +117,7 @@ include '../templates/head.php';
         <div class="collapse" id="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">
   <div class="card card-body">
 
-  <?php if (isset($_SESSION['userInfos'][0]['mail']) && ($_SESSION['userInfos'][0]['mail']) === 'levray.jm@wanadoo.fr'):?>
+  <?php  if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'): ?>
 
 <?php if (isset($displayUser['phoneNumber'])): ?>
   <p class="text-white">Téléphone : <?=$displayUser['phoneNumber']?> </p>

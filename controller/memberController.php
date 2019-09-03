@@ -18,3 +18,11 @@ if (isset($_POST['adminDeleteRequest'])) {
         }    
 }
 
+if (isset($_POST['adminRequest'])) {
+    $ID = (int)$_POST['adminRequest'];
+    $User->ID = $ID;
+    if($User->adminPower()){
+        $adminRequestPower = true;
+        } 
+}
+
