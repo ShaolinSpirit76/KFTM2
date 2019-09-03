@@ -114,14 +114,48 @@ if(isset($adminDeleteSuccess) && $adminDeleteSuccess == true){
 if(isset($adminRequestPower) && $adminRequestPower == true){
   ?>
         <script>
-        Swal.fire({
-    title: "Mode admin activé ! ",
-    text: "Quelqu'un a pris du galon...",
-    type: "success"
+        Swal.fire(
+          'Bien joué !',
+          'Un nouvel admin va vous épauler...',
+          'success'
         );
-}).then(function() {
-  document.location.href = "member.php";
-});              
+        setTimeout(function(){
+           document.location.href = "member.php"; 
+        }, 2000);
+        </script>
+        <?php
+}
+
+
+// Alert de fin de mode admin pour un membre
+if(isset($adminFired) && $adminFired == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Bien joué !',
+          'Un admin nous a quitté...',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "member.php"; 
+        }, 2000);
+        </script>
+        <?php
+}
+
+
+// Alert de suppression d'un évènement
+if(isset($eventDeleted) && $eventDeleted == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Bien joué !',
+          'L\'évènement a bien été supprimé...',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "viewEvent.php"; 
+        }, 2000);
         </script>
         <?php
 }

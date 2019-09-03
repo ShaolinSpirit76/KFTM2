@@ -49,7 +49,7 @@ class Event extends DB{
      }
 
     
-     
+    //  Permet de montrer la photo actuelle dans le formulaire de modification
      public function displayEventPicture(){
         $query = 'SELECT * FROM `KFTM_EVENTS` WHERE eventPicture = :eventPicture';
         $displayEventPicture = $this->db->prepare($query);
@@ -95,7 +95,15 @@ class Event extends DB{
     }
 
 
-
+    public function adminDeleteEvent(){
+        $query = "DELETE FROM `KFTM_EVENTS` WHERE ID = :ID";
+        $adminDeleteEvent = $this->db->prepare($query);
+        $adminDeleteEvent->bindValue(':ID', $this->ID, PDO::PARAM_INT);
+        if($adminDeleteEvent->execute()){
+            var_dump($adminDeleteEvent->execute());
+           return true;
+        }
+     }
 
 
 

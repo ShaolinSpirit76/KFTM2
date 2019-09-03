@@ -225,7 +225,12 @@ endif;
       <div class="card-body mx-auto">
       <div class="mx-auto text-center">
     <h5 class="card-title"> <?=$displayUser['firstName']?> <?=$displayUser['lastName']?></h5>
-    <p class="card-text text-center"><?=ucfirst($displayUser['status'])?></p>
+    <p class="card-text text-center"><?=ucfirst($displayUser['status'])?>
+    <?php if (($displayUser['admin']) == 1) : ?>
+    - Statut admin
+  <?php endif; ?>
+  </p>
+
     <a class="btn btn-primary" data-toggle="collapse" href="#<?=$displayUser['lastName']?><?=$displayUser['ID']?>" role="button" aria-expanded="false" aria-controls="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">En savoir plus</a>
     <p><button type="button" id="countDeleteButton" class="badge badge-secondary btn btn-primary" data-toggle="modal" data-target="#test<?=$displayUser['ID']?>">
   Supprimer le compte
@@ -283,9 +288,21 @@ endif;
 
                    <?php if (isset($displayUser['presentation'])): ?>
                    <p class="text-white">Présentation : <?= $displayUser['presentation']?> </p>
-                   <?php endif; ?>
+                   <?php endif; 
+
+                   if (($_SESSION['userInfos'][0]['teacherRank']) == 'Sifu') : 
+
+                    if (($displayUser['admin']) == 0) : ?>
 
                    <a class="badge badge-secondary btn btn-warning" role="button" data-toggle="modal" data-target="#admin<?=$displayUser['ID']?>"><p>Passer en admin</p></a>
+
+                   <?php else : ?>
+
+                   <a class="badge badge-secondary btn btn-warning" role="button" data-toggle="modal" data-target="#adminFired<?=$displayUser['ID']?>"><p>Retirer le statut admin</p></a>
+
+                   <?php endif; ?>
+
+                   <?php endif; ?>
 
   </div>
 </div>
@@ -341,12 +358,40 @@ endif;
         </button>
       </div>
       <div class="modal-body">
-      <p><i>Vous vous apprétez à passer le compte de <?=$displayUser['firstName']?> <?=$displayUser['lastName']?> en mode admin. Cela signifie que ce membre aura les mêmes pouvoirs que vous, sauf qu'il ne pourra jamais supprimer votre compte, tandis que vous, vous pourrez toujours le supprimer si besoin. Ainsi il pourra gérer les membres, créer des articles, des évènements, etc... Mais ne pourra jamais vous enlever votre statut. Êtes-vous sûr de vouloir faire cela ?</i></p>
+      <p><i>Vous vous apprétez à passer le compte de <?=$displayUser['firstName']?> <?=$displayUser['lastName']?> en mode admin. Cela signifie que ce membre aura les mêmes pouvoirs que vous, sauf qu'il n'aura aucun pouvoir sur la gestion des statuts admin (seul le Sifu le peut). Par ailleurs, il ne pourra jamais supprimer votre compte, tandis que vous, vous pourrez toujours le supprimer si besoin, ou lui retirer son statut admin. Ainsi il pourra voir les membres, créer des articles, des évènements, etc... Mais ne pourra jamais vous enlever votre statut. Êtes-vous sûr de vouloir faire cela ?</i></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Retour</button>
         <form name="deleteForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
         <button type="submit" value="<?=$displayUser['ID']?>" id="adminDeleteRequest" name="adminRequest" class="btn btn-primary">Confirmer le passage en mode admin</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Début modal sécurité pour retirer le statut admin -->
+
+<!-- Modal -->
+<div class="modal fade" id="adminFired<?=$displayUser['ID']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title red" id="exampleModalLabel">Action sensible</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p><i>Vous vous apprétez à retirer le mode admin du compte de <?=$displayUser['firstName']?> <?=$displayUser['lastName']?>. Cela signifie que ce membre redeviendra un membre comme les autres, sans aucun accès à la plateforme admin. Vous pourrez toujours le repasser en mode admin si besoin. Êtes-vous sûr de vouloir faire cela ?</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Retour</button>
+        <form name="deleteForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
+        <button type="submit" value="<?=$displayUser['ID']?>" id="adminDeleteRequest" name="adminFiredRequest" class="btn btn-primary">Confirmer la fin du mode admin</button>
 </form>
       </div>
     </div>

@@ -26,3 +26,11 @@ if (isset($_POST['adminRequest'])) {
         } 
 }
 
+if (isset($_POST['adminFiredRequest'])) {
+    $ID = (int)$_POST['adminFiredRequest'];
+    $User->ID = $ID;
+    if($User->adminFired()){
+        $adminFired = true;
+        } 
+}
+

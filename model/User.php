@@ -232,15 +232,24 @@ public function updateIDUser(){
 
 
     public function adminPower(){
-        $query = "UPDATE `KFTM_USERS` SET admin = '1' WHERE ID = :ID";
+        $query = 'UPDATE `KFTM_USERS` SET admin = 1 WHERE ID = :ID';
+        $adminPower = $this->db->prepare($query);
+        $adminPower->bindValue(':ID', $this->ID, PDO::PARAM_INT);
+        if($adminPower->execute()){
+            return true;
+        }
+    }
+
+    public function adminFired(){
+        $query = 'UPDATE `KFTM_USERS` SET admin = 0 WHERE ID = :ID';
+        $adminFired = $this->db->prepare($query);
+        $adminFired->bindValue(':ID', $this->ID, PDO::PARAM_INT);
+        if($adminFired->execute()){
+            return true;
+        }
     }
    
      
     
 }
 
-// $query = 'UPDATE `KFTM_USERS` SET userLog = :newUserLog, password = :newPassword WHERE ID = :ID';
-//  $updateUser = $this->db->prepare($query);
-//  $updateUser->bindValue(':ID', $_SESSION['userInfos'][0]['ID'], PDO::PARAM_INT);
-//  $updateUser->bindValue(':newUserLog', $this->userLog, PDO::PARAM_STR);
-//  $updateUser->bindValue(':newPassword', $this->password, PDO::PARAM_STR);
