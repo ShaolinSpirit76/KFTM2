@@ -113,11 +113,36 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
                   ?>
 
-<div class="space">
+
+<li class="font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<p><input type="radio" id="personalPictureChoice" name="pictureChoice">
+  <label for="personalPictureChoice">Personnelle <span class="formColor">~~~</span> </label>
+
+  <input type="radio" id="registeredPictureChoice" name="pictureChoice">
+  <label for="registeredPictureChoice">Modèles pré-enregistrés </label>
+</li>
+
+<div id="personalPicture" class="space">
                  
-                 <li class="font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label>
+                 <li class="font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
         <input type="file" name="eventPicture" id="eventPicture" />
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
+</div>
+
+<div id="registeredPicture" class="space">
+
+<li class="font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tournoi">
+  <span class="badge badge-primary">Tournoi</span></button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#competition"><span class="badge badge-secondary">Compétition</span></button>
+<span class="badge badge-success">Représentation</span>
+<span class="badge badge-danger">Passage de grade</span>
+<span class="badge badge-warning">Stage de casse</span>
+<span class="badge badge-info">Entraînement spécial</span>
+<span class="badge badge-light">Séminaire d'été</span>
+<span class="badge badge-dark">Barbecue de fin d'année</span>
+
 </div>
 
 
@@ -137,6 +162,80 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 </fieldset>
           </div>
 </div>
+
+
+
+
+<!-- Modal Tournoi -->
+<div class="modal fade" id="tournoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour un tournoi</h5>
+        <button type="button" id="clear-button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      <input type="radio" id="tournoi01.jpg" name="eventPicture" value="tournoi01.jpg" />
+        <img src="affiches/tournoi01.jpg" alt="" width="30%" height="90%" />
+        <input type="radio" id="tournoi02.jpg" name="eventPicture" value="tournoi02.jpg" />
+        <img src="affiches/tournoi02.jpg" alt="" width="30%" height="90%" />
+        <input type="radio" id="tournoi03.jpg" name="eventPicture" value="tournoi03.jpg" />
+        <img src="affiches/tournoi03.jpg" alt="" width="30%" height="90%" />
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Compétition-->
+<div class="modal fade" id="competition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour une compétition</h5>
+        <button type="button" id="clear-button1" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="radio" id="competition01.jpg" name="eventPicture" value="competition01.jpg" />
+        <img src="affiches/competition01.jpg" alt="" width="30%" height="90%" />
+        <input type="radio" id="competition02.jpg" name="eventPicture" value="competition02.jpg" />
+        <img src="affiches/competition02.jpg" alt="" width="30%" height="90%" />
+        <input type="radio" id="competition03.jpg" name="eventPicture" value="competition03.jpg" />
+        <img src="affiches/competition03.jpg" alt="" width="30%" height="90%" />
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </form>
 
