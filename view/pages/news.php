@@ -1,6 +1,7 @@
 <?php
 require_once '../../controller/newsController.php';
 include '../templates/head.php';
+
 ?>
 
 <h1 class="police text-center" id="ourCircleTitle">Les évènements du moment</h1>
@@ -55,8 +56,16 @@ include '../templates/head.php';
   <p class="text-white">Description : <?= $displayEvent['eventDescription']?> </p>
   <?php endif; ?>
 
-  <?php if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ): ?>
-  <a class="btn btn-warning text-center mx-auto" role="button">S'inscrire</a>
+  <?php if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ): 
+    if ((isset($registration[$displayEvent['ID']][0]['CHECKED']))): ?>
+  <form method="POST" action="news.php">
+  <button type="submit" class="btn btn-warning text-center mx-auto" name="eventRegistrationDelete" value="<?=$displayEvent['ID']?>" >Se désinscrire</button>
+</form>
+   <?php else : ?>
+  <form method="POST" action="news.php">
+  <button type="submit" class="btn btn-warning text-center mx-auto" name="userRegistration" value="<?=$displayEvent['ID']?>" >S'inscrire</button>
+</form>
+<?php endif; ?>
   <?php endif; ?>
 
 
@@ -74,7 +83,7 @@ include '../templates/head.php';
 
 
     
-  <?php 
+  <?php
   } ?>
 </div>
 </div>
@@ -83,3 +92,4 @@ include '../templates/head.php';
 
 <?php
 include '../templates/footer.php';
+include '../templates/AlertConnection.php';

@@ -21,17 +21,17 @@
               </li>
               <li class="nav-item">
                 <div class="schoolDoors">
-                  <a class="clickTop nav-link" href="<?= $schoolDoors ?>"><img src="../../assets/images/yuuyake/iconfinder_Firewall_17573.png" alt="portes chinoises" class="img-fluid" title="" width="100%" height="100%" /><br />Portes de l'école</a>
+                  <a class="clickTop nav-link" href="<?= $schoolDoors ?>"><img src="../../assets/images/yuuyake/iconfinder_Firewall_17573.png" alt="portes chinoises" class="img-fluid" title="Venez découvrir l'histoire de notre école" width="100%" height="100%" /><br />Portes de l'école</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
                 <div class="news">
-                  <a class="clickTop nav-link" href="<?= $news ?>"><img src="../../assets/images/yuuyake/iconfinder_Trash (Empty)_17596.png" alt="bol fumant" class="img-fluid" title="" width="100%" height="100%" /><br />Fil d'actualités</a>
+                  <a class="clickTop nav-link" href="<?= $news ?>"><img src="../../assets/images/yuuyake/iconfinder_Trash (Empty)_17596.png" alt="bol fumant" class="img-fluid" title="Voir les évènements du moment" width="100%" height="100%" /><br />Fil d'actualités</a>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="kungfu dropdown">
-                <a style="background-color:black; color:white;" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/yuuyake/iconfinder_My documents_17583.png" alt="dossiers" class="img-fluid" title="" width="85%" height="85%" /><span class="yellow-hover"><br />Nos disciplines</span></a>
+                <a style="background-color:black; color:white;" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/yuuyake/iconfinder_My documents_17583.png" alt="dossiers" class="img-fluid" title="Découvrez nos différentes pratiques en détail" width="85%" height="85%" /><span class="yellow-hover"><br />Nos disciplines</span></a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <a class="dropdown-item" href="<?= $kungfu ?>">Kung Fu</a>
     <a class="dropdown-item" href="<?= $taichi ?>">Taïchi Chuan & Qi Gong</a>
@@ -40,12 +40,12 @@
               </li>
               <li class="nav-item">
                 <div class="ourCircle">
-                  <a class="clickTop nav-link" href="<?= $ourCircle ?>"><img src="../../assets/images/yuuyake/iconfinder_Ichat_17578.png" alt="panneau en bois" class="img-fluid" title="" width="100%" height="100%" /><br />Notre cercle</a>
+                  <a class="clickTop nav-link" href="<?= $ourCircle ?>"><img src="../../assets/images/yuuyake/iconfinder_Ichat_17578.png" alt="panneau en bois" class="img-fluid" title="Rencontrez les membres de notre école" width="100%" height="100%" /><br />Notre cercle</a>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="links dropdown">
-                <a style="background-color:black; color:white;" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/yuuyake/iconfinder_Photoshop_17588.png" alt="PS en calligraphie" class="img-fluid" title="" width="100%" height="100%" /><span class="yellow-hover"><br />Liens</span></a>
+                <a style="background-color:black; color:white;" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/yuuyake/iconfinder_Photoshop_17588.png" alt="PS en calligraphie" class="img-fluid" title="Découvrez notre réseau ou contactez-nous !" width="100%" height="100%" /><span class="yellow-hover"><br />Liens</span></a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
   <?php if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ):?>
     <a class="dropdown-item" href="<?= $pictures ?>">Photos</a>
@@ -58,14 +58,14 @@
              </li>
               <li class="nav-item">
                 <div class="shop">
-                  <a class="clickTop nav-link" href="<?= $shop ?>"><img src="../../assets/images/yuuyake/iconfinder_Services_17595.png" class="img-fluid spaceTop" alt="échoppe chinoise" title="" width="90%" height="90%" /><p class="spaceTop">Boutique</p></a>
+                  <a class="clickTop nav-link" href="<?= $shop ?>"><img src="../../assets/images/yuuyake/iconfinder_Services_17595.png" class="img-fluid spaceTop" alt="échoppe chinoise" title="Découvrez les produits de notre école" width="90%" height="90%" /><p class="spaceTop">Boutique</p></a>
                 </div>
               </li>
               <li class="nav-item">
               <?php if (isset($_SESSION['userInfos']) && $_SESSION['connection'] == true): ?>
               <a href="<?= $deconnexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Internet Explorer_17581.png" alt="Tigre chinois" class="img-fluid" title="Déconnexion" width="90%" height="90%" /></a>
               <?php else: ?>
-              <a href="<?= $connexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Firefox_17572.png" alt="Tigre chinois" class="img-fluid" title="Connexion" width="90%" height="90%" /></a>
+              <a href="<?= $connexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Firefox_17572.png" alt="Tigre chinois" class="img-fluid" title="Connexion / inscription" width="90%" height="90%" /></a>
               <?php endif; ?>
                 <div class="shop dropdown">
                   <a style="background-color:black; color:white;" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="yellow-hover">

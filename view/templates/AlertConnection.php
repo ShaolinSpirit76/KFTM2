@@ -159,3 +159,35 @@ if(isset($eventDeleted) && $eventDeleted == true){
         </script>
         <?php
 }
+
+// Alert d'inscription à un évènement'
+if(isset($registrationAdded) && $registrationAdded == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Sifu compte sur vous !',
+          'Vous venez de vous inscrire à cet évènement... :)',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "news.php"; 
+        }, 2000);
+        </script>
+        <?php
+}
+
+// Alert de désinscription à un évènement'
+if(isset($registrationDeleted) && $registrationDeleted == true){
+  ?>
+        <script>
+        Swal.fire(
+          'Dommage !',
+          'Vous venez de vous désinscrire de cet évènement... :(',
+          'success'
+        );
+        setTimeout(function(){
+           document.location.href = "news.php"; 
+        }, 2000);
+        </script>
+        <?php
+}
