@@ -87,7 +87,7 @@ endif;
     if (!preg_match ($regexPhone, $_POST['phoneNumber'])):
         $error['errorPhone'] = 'Votre numéro de téléphone est incorrect.';
         elseif (empty($phoneNumber)):
-            $phoneNumber = NULL;
+            $users->phoneNumber = NULL;
         elseif(preg_match ($regexPhone, $_POST['phoneNumber'])):
             $users->phoneNumber = $phoneNumber;
     endif;

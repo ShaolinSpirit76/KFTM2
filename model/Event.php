@@ -100,8 +100,7 @@ class Event extends DB{
         $adminDeleteEvent = $this->db->prepare($query);
         $adminDeleteEvent->bindValue(':ID', $this->ID, PDO::PARAM_INT);
         if($adminDeleteEvent->execute()){
-            var_dump($adminDeleteEvent->execute());
-           return true;
+            return true;
         }
      }
 

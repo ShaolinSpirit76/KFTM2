@@ -82,7 +82,7 @@ a:hover {
   font-size: 2em;
   line-height: 50px;
   color: #ffffff;
-  background-image: url('../images/chevron-up-solid.svg');
+  /* background-image: url('../images/chevron-up-solid.svg'); */
 }
 
 #buttonScroll:hover {

@@ -106,7 +106,7 @@ include 'navbarAdmin.php';
   <div class="card card-body">
 
  
-<?php if (isset($displayUser['phoneNumber'])): ?>
+<?php if (!empty($displayUser['phoneNumber'])): ?>
   <p class="text-white">Téléphone : <?=$displayUser['phoneNumber']?> </p>
   <?php endif; ?>                  
                   
@@ -227,7 +227,7 @@ endif;
     <h5 class="card-title"> <?=$displayUser['firstName']?> <?=$displayUser['lastName']?></h5>
     <p class="card-text text-center"><?=ucfirst($displayUser['status'])?>
     <?php if (($displayUser['admin']) == 1) : ?>
-    - Statut admin
+    - <span class="font-weight-bolder">Statut admin</span>
   <?php endif; ?>
   </p>
 

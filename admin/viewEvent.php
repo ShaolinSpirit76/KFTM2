@@ -31,15 +31,21 @@ include 'navbarAdmin.php';
         
           <p class="card-text text-center">Le <?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?> </p>
    
-          <button type="button" name="" class="btn btn-primary text-center mx-auto" data-toggle="modal" data-target="#deleteEvent<?=$displayUser['ID']?>">Supprimer</button>
+          
 
+         
 <form  method="POST" action="updateEvent.php">
+
+<a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
+
 <button name="changeEvent" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Modifier</button>
+
+<button type="button" id="eventDeleteButton" class="badge badge-secondary btn btn-primary" data-toggle="modal" data-target="#deleteEvent<?=$displayEvent['ID']?>">Supprimer</button>
 
 
 <br /><br />
 </form>
-<a class="btn btn-primary text-center mx-auto" data-toggle="collapse" href="#eventDetails<?=$displayEvent['ID']?>" role="button" aria-expanded="false" aria-controls="eventDetails<?=$displayEvent['ID']?>">Voir les modalités</a>
+
                    
 
 
@@ -83,7 +89,7 @@ include 'navbarAdmin.php';
 <!-- Début modal sécurité pour supprimer un évènement -->
 
 <!-- Modal -->
-<div class="modal fade" id="deleteEvent<?=$displayUser['ID']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteEvent<?=$displayEvent['ID']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -93,13 +99,14 @@ include 'navbarAdmin.php';
         </button>
       </div>
       <div class="modal-body">
-      <p><i>Vous vous apprétez à supprimer l'évènement : <?=$displayEvent['eventType']?>. Cela signifie que toutes les informations qui y sont liées seront définitivement perdues. Êtes-vous sûr de vouloir faire cela ?</i></p>
+      <p><i>Vous vous apprétez à supprimer l'évènement : <span class="font-weight-bolder"><?=$displayEvent['eventType']?></span> du <span class="font-weight-bolder"><?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?></span>. Cela signifie que toutes les informations qui y sont liées seront définitivement perdues. Êtes-vous sûr de vouloir faire cela ?</i></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Retour</button>
         <form name="deleteForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
-        <button value="<?=$displayUser['ID']?>" id="deleteEvent" name="deleteEvent" class="btn btn-primary">Confirmer la suppression</button>
-</form>
+        <button type="submit" value="<?=$displayEvent['ID']?>" id="deleteEvent" name="deleteEvent" class="btn btn-primary">Confirmer la suppression</button>
+
+        </form>
       </div>
     </div>
   </div>

@@ -18,6 +18,7 @@ if (isset($_POST['adminDeleteRequest'])) {
         }    
 }
 
+// Passer en admin
 if (isset($_POST['adminRequest'])) {
     $ID = (int)$_POST['adminRequest'];
     $User->ID = $ID;
@@ -26,6 +27,7 @@ if (isset($_POST['adminRequest'])) {
         } 
 }
 
+// Retirer l'admin
 if (isset($_POST['adminFiredRequest'])) {
     $ID = (int)$_POST['adminFiredRequest'];
     $User->ID = $ID;
