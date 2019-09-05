@@ -25,10 +25,10 @@
                 <a href="#calendarSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Agenda</a>
                 <ul class="collapse list-unstyled" id="calendarSubmenu">
                     <li>
-                        <a href="newEvent.php">Créer un événement</a>
+                        <a href="newEvent.php">Créer un évènement</a>
                     </li>
                     <li>
-                        <a href="viewEvent.php">Voir les événements</a>
+                        <a href="viewEvent.php">Voir les évènements</a>
                     </li>
                     <li>
                         <a href="#">Emploi du temps</a>

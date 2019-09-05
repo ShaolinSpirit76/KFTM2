@@ -17,9 +17,11 @@ endif;
 $events->ID = $_SESSION['eventID'];
 $showUpdateEventResult = $events->showUpdateEvent();
 
-// On récupère les valeurs déjà rentrées si non remplies grâce à la Session
+// On récupère les valeurs déjà rentrées (si non remplies) grâce à la Session
 $_SESSION['eventPicture'] = $showUpdateEventResult[0]['eventPicture'];
+$_SESSION['registeredPicture'] = $showUpdateEventResult[0]['registeredPicture'];
 $_SESSION['eventCourse'] = $showUpdateEventResult[0]['eventCourse'];
+
 
 
 // On teste les regex si le formulaire est rempli et on attribue les valeurs passées en POST
@@ -30,23 +32,53 @@ if (isset($_POST['submitUpdateEventForm'])) {
    
    
     // Déclaration de variables qui prennent les valeurs des $_POST respectives
-    if (empty($_POST['otherEventType'])) :
-    $newEventType = $_POST['newEventType'];
+    if ( ($_POST['newEventType'] == 'Autre') && (!empty($_POST['otherEventType'])) ) :
+        $newEventType = $_POST['otherEventType'];
     else :
-    $newEventType = $_POST['otherEventType'];
+        $newEventType = $_POST['newEventType'];
 endif;
 
+if (empty($_POST['newEventCourse'])):
+    $newEventCourse = $showUpdateEventResult[0]['eventCourse'];
+    else:
     $newEventCourse = $_POST['newEventCourse'];
+endif;
+
     $newEventDate = $_POST['newEventDate'];
     $newEventHour = $_POST['newEventHour'];
     
-    if(isset($_FILES['newEventPicture']) && !empty($_FILES['newEventPicture']['name'])){
+
+
+    if (!empty($_POST['newRegisteredPicture'])):
+        
+        $newRegisteredPicture = $_POST['newRegisteredPicture'];
+        $newEventPicture = NULL;
+    elseif (!empty($_FILES['newEventPicture']['name'])) :
+        
         $newEventPicture = $_FILES['newEventPicture']['name'];
-    }else if(isset($_FILES['firstPicture']) && !empty($_FILES['firstPicture']['name'])){
+        $newRegisteredPicture = NULL;
+    elseif (!empty($_FILES['firstPicture']['name'])):
+        
         $newEventPicture = $_FILES['firstPicture']['name'];
-    }else{
+        $newRegisteredPicture = NULL;
+        elseif (!empty($_POST['firstRegisteredPicture'])):
+      
+        $newEventPicture = NULL;
+        $newRegisteredPicture = $_POST['firstRegisteredPicture'];
+
+    elseif ( (empty($_FILES['newEventPicture']['name'])) || ($_FILES['newEventPicture']['name'] == '') || (empty($_POST['newRegisteredPicture'])) || ($_POST['newRegisteredPicture'] == '') || (empty($_FILES['firstPicture']['name'])) || ($_FILES['firstPicture']['name'] == '') || (empty($_POST['firstRegisteredPicture'])) || ($_POST['firstRegisteredPicture'] == '') ) :
         $newEventPicture = $_SESSION['eventPicture'];
-    }
+        $newRegisteredPicture = $_SESSION['registeredPicture'];
+    endif;
+
+
+    // if(isset($_FILES['newEventPicture']) && !empty($_FILES['newEventPicture']['name'])){
+    //     $newEventPicture = $_FILES['newEventPicture']['name'];
+    // }else if(isset($_FILES['firstPicture']) && !empty($_FILES['firstPicture']['name'])){
+    //     $newEventPicture = $_FILES['firstPicture']['name'];
+    // }else{
+    //     $newEventPicture = $_SESSION['eventPicture'];
+    // }
 
     $newEventMaxUser = (int)$_POST['newEventMaxUser'];
     $newEventDescription = $_POST['newEventDescription'];
@@ -61,13 +93,9 @@ endif;
     endif;
 
 
-    if (isset($_POST['newEventCourse'])):
-        if (empty($_POST['newEventCourse'])):
-            $events->eventCourse = $_SESSION['eventCourse'];
-        else:
+    
             $events->eventCourse = $newEventCourse;  
-    endif;
-endif;
+ 
 
     if (isset($_POST['newEventDate'])):
           $events->eventDate = $newEventDate;
@@ -77,11 +105,10 @@ endif;
         $events->eventHour = $newEventHour;
   endif;
 
-  if (isset($newEventPicture)):
+ 
     $events->eventPicture = $newEventPicture;
-else:
-$events->eventPicture = $_SESSION['eventPicture'];
-endif;
+    $events->registeredPicture = $newRegisteredPicture;
+
 
 if (isset($_POST['newEventMaxUser'])):
     $events->eventMaxUser = $newEventMaxUser;
@@ -92,7 +119,6 @@ if (isset($_POST['newEventDescription'])):
 endif;
 
 
-
     // modal error s'il y a une erreur
     if(!empty($error)):
         $swalErrorForm = true;
@@ -100,8 +126,8 @@ endif;
    
  
     // alert success s'il n'y a pas d'erreur
-    $events->updateEvent();
+       $events->updateEvent();
 
-     $newUpdateEventSuccess = true;
+    $newUpdateEventSuccess = true;
 
 }

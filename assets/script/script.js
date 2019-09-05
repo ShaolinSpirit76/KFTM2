@@ -6,56 +6,8 @@
 // $('#sandaDiv').show();
 
 
-// Gestion des photos dans l'ajout d'un évènement
-$('#personalPicture').hide();
-$('#registeredPicture').hide();
-
-$('#personalPictureChoice').click(function(){
-  $('#personalPicture').show();
-  $('#registeredPicture').hide();
-});
-
-$('#registeredPictureChoice').click(function(){
-  $('#personalPicture').hide();
-  $('#registeredPicture').show();
-  // Permet de vider la valeur de l'input affiche personnelle
-  $('#eventPicture').val('');
-});
-
-// Modèle qui permet à la croix d'effacer le choix en type radio
-document.getElementById('clear-button').addEventListener('click', function () {
-  ["tournoi01.jpg", "tournoi02.jpg", "tournoi03.jpg"].forEach(function(id) {
-    document.getElementById(id).checked = false;
-  });
-  return false;
-})
-// A faire pour les 9 types d'évènements
-document.getElementById('clear-button1').addEventListener('click', function () {
-  ["competition01.jpg", "competition02.jpg", "competition03.jpg"].forEach(function(id) {
-    document.getElementById(id).checked = false;
-  });
-  return false;
-})
-
-// A faire une fois avec toutes les photos modèles : permet de vider le choix
-document.getElementById('personalPictureChoice').addEventListener('click', function () {
-  ["tournoi01.jpg", "tournoi02.jpg", "tournoi03.jpg", "competition01.jpg", "competition02.jpg", "competition03.jpg"].forEach(function(id) {
-    document.getElementById(id).checked = false;
-  });
-  return false;
-})
-
-  
 
 
-
-
-// $('#back1').addEventListener('click', function(){
-//   ["tournoi01.jpg", "tournoi02.jpg", "tournoi03.jpg"].forEach(function(id) {
-//     document.getElementById(id).checked = false;
-//   });
-//   return false;
-// });
  
 
 

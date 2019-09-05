@@ -171,3 +171,26 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+
+
+
+
+
+
+/* CSS modal */
+  
+.red {
+  border: red solid 2px;
+  color: red;
+  }
+
+  .modal-header {
+    background-color: #0a0901;
+  }
+
+
+  
+  .errorMessage {
+  color: red;
+  font-family: 'Permanent Marker', cursive;
+  }

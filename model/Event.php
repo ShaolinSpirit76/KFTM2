@@ -10,6 +10,7 @@ class Event extends DB{
     public $eventMaxUser;
     public $eventDescription;
     public $eventPicture;
+    public $registeredPicture;
    
 
     public function __construct(){
@@ -21,8 +22,8 @@ class Event extends DB{
     public function addEvent(){
 
         $query = 'INSERT INTO `KFTM_EVENTS`(`eventType`, `eventCourse`, `eventDate`, `eventHour`, `eventMaxUser`,
-        `eventDescription`, `eventPicture`) VALUES (:eventType, :eventCourse, :eventDate, :eventHour, :eventMaxUser,
-        :eventDescription, :eventPicture)';
+        `eventDescription`, `eventPicture`, `registeredPicture`) VALUES (:eventType, :eventCourse, :eventDate, :eventHour, :eventMaxUser,
+        :eventDescription, :eventPicture, :registeredPicture)';
         // création de la variable $addEvent qui nous a permis de préparer la requête
         $addEvent = $this->db->prepare($query);
         $addEvent->bindValue(':eventType', $this->eventType, PDO::PARAM_STR);
@@ -32,6 +33,7 @@ class Event extends DB{
         $addEvent->bindValue(':eventMaxUser',$this->eventMaxUser, PDO::PARAM_INT);
         $addEvent->bindValue(':eventDescription', $this->eventDescription, PDO::PARAM_STR);
         $addEvent->bindValue(':eventPicture', $this->eventPicture, PDO::PARAM_STR);
+        $addEvent->bindValue(':registeredPicture', $this->registeredPicture, PDO::PARAM_STR);
         
         if($addEvent->execute()){
             return true;
@@ -77,7 +79,7 @@ class Event extends DB{
 
      public function updateEvent(){
    
-        $query = 'UPDATE `KFTM_EVENTS` SET eventType = :newEventType, eventCourse = :newEventCourse, eventDate = :newEventDate, eventHour = :newEventHour, eventMaxUser = :newEventMaxUser, eventDescription = :newEventDescription, eventPicture = :newEventPicture WHERE ID = :ID';
+        $query = 'UPDATE `KFTM_EVENTS` SET eventType = :newEventType, eventCourse = :newEventCourse, eventDate = :newEventDate, eventHour = :newEventHour, eventMaxUser = :newEventMaxUser, eventDescription = :newEventDescription, eventPicture = :newEventPicture, registeredPicture = :newRegisteredPicture WHERE ID = :ID';
         $updateEvent = $this->db->prepare($query);
         $updateEvent->bindValue(':ID', $this->ID, PDO::PARAM_INT);
         $updateEvent->bindValue(':newEventType', $this->eventType, PDO::PARAM_STR);
@@ -86,7 +88,8 @@ class Event extends DB{
         $updateEvent->bindValue(':newEventHour', $this->eventHour, PDO::PARAM_STR); 
         $updateEvent->bindValue(':newEventMaxUser', $this->eventMaxUser, PDO::PARAM_INT); 
         $updateEvent->bindValue(':newEventDescription', $this->eventDescription, PDO::PARAM_STR); 
-        $updateEvent->bindValue(':newEventPicture', $this->eventPicture, PDO::PARAM_STR);        
+        $updateEvent->bindValue(':newEventPicture', $this->eventPicture, PDO::PARAM_STR);
+        $updateEvent->bindValue(':newRegisteredPicture', $this->registeredPicture, PDO::PARAM_STR);         
         
            
         if($updateEvent->execute()){

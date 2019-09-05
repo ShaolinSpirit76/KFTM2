@@ -18,8 +18,8 @@ include '../templates/head.php';
 
       <h1 class="card-title text-center police"> <?=$displayEvent['eventType']?> </h1>
 
-      <?php if (!empty($displayEvent['eventPicture'])): ?>
-            <img src="../../admin/affiches/<?=$displayEvent['eventPicture'];?>" class="card-img-top img-fluid mx-auto" style="width: 24rem; height: 22rem;" alt="Affiche de l'évènement <?=$displayEvent['eventPicture'];?>">
+      <?php if ( (!empty($displayEvent['eventPicture'])) || (!empty($displayEvent['registeredPicture'])) ): ?>
+            <img src="../../admin/affiches/<?=(isset($displayEvent['eventPicture'])) ? $displayEvent['eventPicture'] : $displayEvent['registeredPicture'];?>" class="card-img-top img-fluid mx-auto" style="width: 24rem; height: 22rem;" alt="Affiche de l'évènement : <?=(isset($displayEvent['eventPicture'])) ? $displayEvent['eventPicture'] : $displayEvent['registeredPicture'];?>">
       <?php else: ?>
       <img src="../../assets/images/theme/karate-971341_960_720.png" class="card-img-top img-fluid mx-auto" style="width: 18rem; height: 16rem;" alt="Photo de profil par défaut">
       <?php endif; ?>

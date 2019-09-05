@@ -1,4 +1,5 @@
 <?php
+$_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la sécurité : interdit l'injection de script (balises non autorisées)
 
 // On crée un tableau error qui s'auto-incrémentera avec la valeur de l'erreur que nous lui assignerons au cas par cas, si la regex n'est pas franchie. Chaque cellule remplie comptera pour 1.
 $error = [];
@@ -12,17 +13,25 @@ if (count($_POST) > 0):
     $eventCourse = $_POST['eventCourse'];
     $eventDate = $_POST['eventDate'];
     $eventHour = $_POST['eventHour'];
-    $eventPicture = $_FILES['eventPicture']['name'];
+
+if (!empty($_POST['registeredPicture'])):
+        $registeredPicture = $_POST['registeredPicture'];
+        $eventPicture = NULL;
+    elseif (!empty($_FILES['eventPicture'])) :
+        $eventPicture = $_FILES['eventPicture']['name'];
+        $registeredPicture = NULL;
+    elseif ( (empty($eventPicture)) || ($eventPicture == '') || (empty($registeredPicture)) || ($registeredPicture == '') ) :
+        $eventPicture = NULL;
+        $registeredPicture = NULL;
+    endif;
+
     $eventMaxUser = (int)$_POST['eventMaxUser'];
     $eventDescription = $_POST['eventDescription'];
     
-    $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la sécurité : interdit l'injection de script (balises non autorisées)
     
-    if (empty($eventPicture)):
-        $eventPicture = NULL;
-    else:
-        $events->eventPicture = $eventPicture;
-    endif;
+    
+    $events->eventPicture = $eventPicture;
+    $events->registeredPicture = $registeredPicture;
 
     if( (empty($eventDescription)) || ($eventDescription == '') ):
 $eventDescription = NULL;
@@ -51,11 +60,12 @@ $events->eventType = $eventType;
     $events->eventDate = $eventDate;
     $events->eventHour = $eventHour;
     $events->eventPicture = $eventPicture;
+    $events->registeredPicture = $registeredPicture;
     $events->eventMaxUser = $eventMaxUser;
     $events->eventDescription = $eventDescription;
     // alert success s'il n'y a pas d'erreur
     $events->addEvent();
- $newEventSuccess = true;
+    $newEventSuccess = true;
 else:
     $swalErrorForm = true;
 endif;

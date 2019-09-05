@@ -26,6 +26,7 @@
   <!-- Lien avec la page JS (toujours après les CDN de JQuery) -->
   <script src="../../assets/script/scroll.js"></script>
   <script src="../../assets/script/script.js"></script>
+  <script src="../../assets/script/avatar.js"></script>
   <?php if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ) : ?>
   <script src="../../assets/script/timeoutSession.js"></script>
   <?php endif; ?>
