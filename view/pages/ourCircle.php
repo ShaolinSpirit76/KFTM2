@@ -89,33 +89,40 @@ include '../templates/head.php';
   <?php if ($displayUser['showProfil'] == '1'): ?>
 
 
-  <div class="col-md-4 col-sm-12 mx-auto">
-    <?= (isset($displayUser['teacherRank'])) ? $displayUser['teacherRank'] : $displayUser['status'] ?>
-      <div class="card mx-auto" style="width: 24rem;">
+  <div class="col-md-4 col-sm-12 mx-auto <?= ( ($displayUser['teacherRank'] == 'Sifu') ) ? 'col-md-12' : '' ?>">
+    
+      <div class="card mx-auto" style="width: 22rem;">
 
       <?php if (!empty($displayUser['picture'])): ?>
       <div class="mx-auto text-center">
-      <img src="../form/miniatures/<?=$displayUser['picture'];?>"  style="width: 20rem; height: 24rem;" class="pictureSize card-img-top img-fluid" alt="Photo de profil <?=$displayUser['picture'];?>">
+        <br />
+      <img src="../form/miniatures/<?=$displayUser['picture'];?>"  style="width: 20rem; height: 18rem;" class="pictureSize card-img-top img-fluid" alt="Photo de profil <?=$displayUser['picture'];?>">
 </div>
 <?php else: ?>
 <div class="mx-auto text-center">
+<br />
   <?php if ($displayUser['gender'] == 'Femme') :?>
-      <img src="../../assets/images/female-306407_960_720.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+      <img src="../../assets/images/female-306407_960_720.png" class="card-img-top img-fluid" style="width: 20rem; height: 18rem;" alt="Photo de profil par défaut">
      <?php else: ?>
-     <img src="../../assets/images/iconfinder_Asian_boss_131491.png" class="card-img-top img-fluid" style="width: 20rem; height: 24rem;" alt="Photo de profil par défaut">
+     <img src="../../assets/images/iconfinder_Asian_boss_131491.png" class="card-img-top img-fluid" style="width: 20rem; height: 18rem;" alt="Photo de profil par défaut">
   <?php endif; ?>
       </div>
       <?php endif; ?>
 
       <div class="card-body mx-auto">
       <div class="mx-auto text-center">
-    <h5 class="card-title"> <?=$displayUser['firstName']?> <?=$displayUser['lastName']?></h5>
-    <p class="card-text text-center"><?=ucfirst($displayUser['status'])?></p>
-    <a class="btn btn-primary" data-toggle="collapse" href="#<?=$displayUser['lastName']?><?=$displayUser['ID']?>" role="button" aria-expanded="false" aria-controls="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">En savoir plus</a>
+    <h5 class="card-title red"> <?=$displayUser['firstName']?> <?=$displayUser['lastName']?></h5>
+    <p class="white police"><?= (isset($displayUser['teacherRank'])) ? $displayUser['teacherRank'] : $displayUser['status'] ?></p>
+    
+    <a class="btn btn-outline-warning" data-toggle="collapse" href="#<?=$displayUser['lastName']?><?=$displayUser['ID']?>" role="button" aria-expanded="false" aria-controls="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">En savoir plus</a>
 </div>
     
         <div class="collapse" id="<?=$displayUser['lastName']?><?=$displayUser['ID']?>">
-  <div class="card card-body">
+  <div class="card-body">
+    
+  <?php if (isset($displayUser['status'])): ?>
+  <p class="card-text red text-center"><?= $displayUser['status'] != 'élève' ? ucfirst($displayUser['status']) : ''?></p>
+  <?php endif; ?>
 
   <?php  if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'): ?>
 
@@ -137,7 +144,8 @@ include '../templates/head.php';
     <p class="text-white">Mail : <?=$displayUser['mail']?> </p>
 
   <?php endif; ?>
-  
+
+ 
 
   <?php if (isset($displayUser['studentCourse'])): ?>
   <p class="text-white">Cours en tant qu'élève : <?= $displayUser['studentCourse']?> </p>

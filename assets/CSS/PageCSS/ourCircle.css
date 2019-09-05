@@ -145,7 +145,7 @@ background-color: #6d7fcc;
   }
   
   #submitInscriptionForm {
-  background-color: #336699;
+  
   color: white;
   }
   
@@ -168,14 +168,26 @@ background-color: #6d7fcc;
   
   .card {
   margin-top: 3rem;
-  background: #32746d;
+  background-color: rgba(0,0,0, 0.85);
+  border: 0.2rem rgba(196,0,0, 0.85);
+  border-style: inset;
   }
   
   .red {
-  border: red solid 2px;
+  color: red;
+  }
+
+  .white {
+    color: whitesmoke;
+    letter-spacing: 0.5rem;
+  }
+
+  .collapse {
+    border: hidden;
   }
   
   .errorMessage {
   color: red;
   font-family: 'Permanent Marker', cursive;
   }
+

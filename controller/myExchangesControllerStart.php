@@ -1,9 +1,9 @@
 <?php
 session_start();
 // Variable pour le css
-$PageCSS = '../../assets/CSS/PageCSS/CGU.css';
+$PageCSS = '../../assets/CSS/PageCSS/myExchanges.css';
 
-// Variables dynamiques pour la navbar à partir de mentions
+// Variables dynamiques pour la navbar à partir de form
 $home = '../../index.php';
 $schoolDoors = '../pages/schoolDoors.php';
 $news = '../pages/news.php';
@@ -15,22 +15,19 @@ $pictures = '../pages/pictures.php';
 $video = '../pages/video.php';
 $techniques = '../pages/techniques.php';
 $otherSchools = '../pages/otherSchools.php';
-$contact = '../form/contact.php';
+$contact = 'contact.php';
 $shop = '../pages/shop.php';
-$connexion = '../form/connexion.php';
-$myAccount = '../form/myAccount.php';
-$checkCalendar = '../form/checkCalendar.php';
-$myExchanges = '../form/myExchanges.php';
-$inscriptionPage = '../form/inscriptionForm.php';
+$connexion = 'connexion.php';
+$myAccount = 'myAccount.php';
+$checkCalendar = 'checkCalendar.php';
+$myExchanges = 'myExchanges.php';
+$inscriptionPage = 'inscriptionForm.php';
 $connexionPage = '../templates/connexion.php';
 $deconnexionPage = '../templates/deconnexion.php';
 $admin = '../../admin/admin.php';
 
-
-
-// Variables dynamiques pour la navbar à partir à partir de mentions
-$AssoInfos = 'AssoInfos.php';
-$legalInfos = 'legalInfos.php';
-$CGU = 'CGU.php';
-$RGPD = 'RGPD.php';
-
+// Variables dynamiques pour la navbar à partir à partir de form
+$AssoInfos = '../mentions/AssoInfos.php';
+$legalInfos = '../mentions/legalInfos.php';
+$CGU = '../mentions/CGU.php';
+$RGPD = '../mentions/RGPD.php';

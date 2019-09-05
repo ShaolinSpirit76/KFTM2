@@ -31,8 +31,9 @@ body {
           <span aria-hidden="true">&times;</span>
         </button></a>
       </div>
+      <form id="loginForm" name="loginForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
       <div class="modal-body">
-<form id="loginForm" name="loginForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
+
   <div class="text-center">
 
   <span><label for="mailConnect">Identifiant </label><br /> <input class="<?php echo (isset($_POST['mailConnect']) && !preg_match($regexLogin, $_POST['mailConnect']))? 'red':' police2';  ?>" value="<?= $_POST['mailConnect']?>" type="text" name="mailConnect" id="mailConnect" placeholder="Pseudo ou mail" required /><p class="errorMessage"><?= (isset($error['errorLogin'])) ? $error['errorLogin'] : ''; ?></p></span>
@@ -45,11 +46,17 @@ body {
 
 <a href="../../index.php"><button type="button" class="btn btn-secondary">Retour</button></a>
   <button id="loginButton" name="loginButton" type="submit" onclick="checkPasswordLogin();" class="yellow-hover btn btn-primary text-white">C'est parti !</button>
-</form>
+  
+ 
 </div>
 <div class="modal-footer" style="background-color:#282828;">
+
+<div class="g-recaptcha" id="recaptcha" data-sitekey="6Leno7MUAAAAAMZSGnEvxMzJCw-k7fX556kdwqUz">
+          </div>
       <a href="../../view/form/inscriptionForm.php" class="mx-auto"><p><small><u>Pas encore inscrit ?</u></small></p></a>
         </div>
+        </form>
+        
     </div>
     </div>
 </div>
@@ -57,7 +64,7 @@ body {
   <!-- Fin modal login -->
 
 
-
+  
 
 
 
@@ -66,6 +73,7 @@ body {
   <?php
 require 'footerAdmin.php';
 include 'AlertConnection.php';
+include 'AlertInscription.php';
 
 
   

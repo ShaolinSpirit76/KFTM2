@@ -20,6 +20,7 @@ $shop = 'view/pages/shop.php';
 $connexion = 'view/form/connexion.php';
 $myAccount = 'view/form/myAccount.php';
 $checkCalendar = 'view/form/checkCalendar.php';
+$myExchanges = 'view/form/myExchanges.php';
 $inscriptionPage = 'view/form/inscriptionForm.php';
 $connexionPage = 'view/templates/connexion.php';
 $deconnexionPage = 'view/templates/deconnexion.php';

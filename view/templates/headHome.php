@@ -31,6 +31,8 @@
      <!-- Lien script pour animer -->
    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
  <link href="../../assets/CSS/aos.css" rel="stylesheet">
+ <!-- Lien pour le reCAPTCHA v2 -->
+ <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Lien éventuel pour l'utilisation d'une police -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Chilanka|Indie+Flower|Josefin+Sans|Merienda|Merienda+One|Merriweather+Sans|Mukta|Permanent+Marker|Varela+Round&display=swap" rel="stylesheet">   -->
   <link href="../../assets/CSS/police.css" rel="stylesheet">

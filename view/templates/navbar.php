@@ -63,7 +63,7 @@
               </li>
               <li class="nav-item">
               <?php if (isset($_SESSION['userInfos']) && $_SESSION['connection'] == true): ?>
-              <a href="<?= $deconnexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Internet Explorer_17581.png" alt="Tigre chinois" class="img-fluid" title="Déconnexion" width="90%" height="90%" /></a>
+              <a href="<?= $deconnexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Internet Explorer_17581.png" alt="Tigre chinois" class="img-fluid" title="Déconnexion" width="92%" height="92%" /></a>
               <?php else: ?>
               <a href="<?= $connexionPage ?>"><img src="../../assets/images/yuuyake/iconfinder_Firefox_17572.png" alt="Tigre chinois" class="img-fluid" title="Connexion / inscription" width="90%" height="90%" /></a>
               <?php endif; ?>
@@ -75,11 +75,16 @@
     <a class="dropdown-item" href="<?= $deconnexionPage ?>">Déconnexion</a>
         <a class="dropdown-item" href="<?= $myAccount ?>">Mon compte</a>
     <a class="dropdown-item" href="<?= $checkCalendar ?>">Gérer le calendrier</a>
+    <?php if ( (isset($_SESSION['connection'])) && ($_SESSION['connection'] == true) && (($_SESSION['userInfos'][0]['teacherRank']) != 'Sifu') ) : ?>
+    <a class="dropdown-item" href="<?= $myExchanges ?>">Mes échanges</a>
+    <?php endif; ?>
 
-    <!-- Condition pour accéder à la page admin grâce au mail -->
+    <!-- if ( ((isset($_SESSION['userInfos'][0]['teacherRank'])) && (($_SESSION['userInfos'][0]['teacherRank']) != 'Sifu') ) || ( (isset($_SESSION['userInfos'][0]['teacherRank'])) && (($_SESSION['userInfos'][0]['status']) == 'élève') ) ): -->
+      
+    <!-- Condition pour accéder à la page admin grâce au statut admin -->
     <?php  if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'): ?>
     <a class="dropdown-item" href="../../admin/admin.php">Admin</a>
-    <?php endif ?>
+<?php endif; ?>
 
     <?php else: ?>
 <a class="dropdown-item" href="<?= $connexionPage ?>">Connexion</a>
@@ -196,6 +201,9 @@
     <a class="dropdown-item" href="<?= $deconnexionPage ?>">Déconnexion</a>
         <a class="dropdown-item" href="<?= $myAccount ?>">Mon compte</a>
     <a class="dropdown-item" href="<?= $checkCalendar ?>">Gérer le calendrier</a>
+    <?php if ( (isset($_SESSION['connection'])) && ($_SESSION['connection'] == true) && (($_SESSION['userInfos'][0]['teacherRank']) != 'Sifu') ) : ?>
+    <a class="dropdown-item" href="<?= $myExchanges ?>">Mes échanges</a>
+    <?php endif; ?>
 
     <!-- Condition pour accéder à la page admin grâce au mail -->
     <?php  if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'): ?>

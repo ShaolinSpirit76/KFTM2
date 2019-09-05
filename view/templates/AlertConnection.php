@@ -191,3 +191,4 @@ if(isset($registrationDeleted) && $registrationDeleted == true){
         </script>
         <?php
 }
+

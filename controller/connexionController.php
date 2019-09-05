@@ -23,24 +23,41 @@ if (count($_POST) > 0)
 
 }
 
+    // Contrôle du recaptcha v2
+                    // Ma clé privée
+$secret = "6Leno7MUAAAAAOeWcoXZSyl3h6ZwQsmTG4YM58_M";
+// Paramètre renvoyé par le recaptcha
+$response = $_POST['g-recaptcha-response'];
+// On récupère l'IP de l'utilisateur
+$remoteip = $_SERVER['REMOTE_ADDR'];
 
-// Controller pour se connecter
-if(isset($_POST['loginButton'])):
+$api_url = "https://www.google.com/recaptcha/api/siteverify?secret="
+	    . $secret
+	    . "&response=" . $response
+	    . "&remoteip=" . $remoteip ;
+
+    $decode = json_decode(file_get_contents($api_url), true);
+
+
+     // Controller pour se connecter
+
+     if(isset($_POST['loginButton'])):
+
+
+    if ($decode['success'] == true) :
+
     $mailConnect = htmlspecialchars($_POST['mailConnect']);
     $passwordConnect = htmlspecialchars($_POST['passwordConnect']);
     if(!empty($mailConnect)):
         $connectUser = new User();
         $connectUser->userLog = $mailConnect;
         $connectUserResult = $connectUser->connectionUser();
-
         if (count($connectUserResult) > 0) {
-
-
             if (password_verify($_POST['passwordConnect'],$connectUserResult[0]['password'])){
                 $_SESSION['id'] = $connectUserResult[0]['id'];
                 $_SESSION['userInfos'] = $connectUserResult;
                 $_SESSION['connection'] = true;
-                if (isset($_SESSION['userInfos'][0]['admin']) && ($_SESSION['userInfos'][0]['admin']) === '1'):
+                if (isset($_SESSION['userInfos'][0]['teacherRank']) && ($_SESSION['userInfos'][0]['teacherRank']) == 'Sifu'):
                     $connectAdmin = true;
                 else:
                     $connectionSuccess = true;
@@ -49,13 +66,21 @@ if(isset($_POST['loginButton'])):
             } else {
                 $mdpFailed = true;
             }
-
         } else {
                 $connectionFailed = true;
         }
-
        endif;
+
+
+
+       else :
+       
+        $reCaptchaError = true;  
+        
+    endif;
+
 endif;
+
 // Fin controller pour se connecter
 
 
