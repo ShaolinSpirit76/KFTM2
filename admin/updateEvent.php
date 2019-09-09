@@ -129,9 +129,9 @@ echo($_FILES['newEventPicture']['name']);
                   ?>
 
 <li class="font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+
 <p><input type="button" id="personalPictureChoice" value="Personnelle" />
   
-
   <input type="button" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
  </li>
 
@@ -216,21 +216,21 @@ echo($_FILES['firstPicture']['name']);
 
 <li class="font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label></li>
 
-<button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoiF">
+<button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
-<button type="button" class="badge badge-secondary" data-toggle="modal" data-target="#competitionF">
+<button type="button" class="badge badge-secondary" data-toggle="modal" data-target="#competition">
   <span >Compétition</span></button>
-<button type="button" class="badge badge-success" data-toggle="modal" data-target="#representationF">
+<button type="button" class="badge badge-success" data-toggle="modal" data-target="#representation">
   <span >Représentation</span></button>
-<button type="button" class="badge badge-danger" data-toggle="modal" data-target="#passageDeGradeF">
+<button type="button" class="badge badge-danger" data-toggle="modal" data-target="#passageDeGrade">
     <span >Passage de grade</span></button>
-<button type="button" class="badge badge-warning" data-toggle="modal" data-target="#stageDeCasseF">
+<button type="button" class="badge badge-warning" data-toggle="modal" data-target="#stageDeCasse">
       <span >Stage de casse</span></button>
-<button type="button" class="badge badge-info" data-toggle="modal" data-target="#entrainementF">
+<button type="button" class="badge badge-info" data-toggle="modal" data-target="#entrainement">
         <span >Entraînement spécial</span></button>
-<button type="button" class="badge badge-light" data-toggle="modal" data-target="#seminaireF">
+<button type="button" class="badge badge-light" data-toggle="modal" data-target="#seminaire">
   <span >Séminaire d'été</span></button>
-<button type="button" class="badge badge-dark" data-toggle="modal" data-target="#barbecueF">
+<button type="button" class="badge badge-dark" data-toggle="modal" data-target="#barbecue">
     <span >Barbecue de fin d'année</span></button>
 
 </div>
@@ -270,11 +270,11 @@ echo($_FILES['firstPicture']['name']);
       </div>
       <div class="modal-body">
         
-      <input type="radio" id="tournoi01.jpg" name="newRegisteredPicture" value="tournoi01.jpg" />
+      <input type="radio" id="tournoi01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi01.jpg" />
         <img src="affiches/tournoi01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi02.jpg" name="newRegisteredPicture" value="tournoi02.jpg" />
+        <input type="radio" id="tournoi02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi02.jpg" />
         <img src="affiches/tournoi02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi03.jpg" name="newRegisteredPicture" value="tournoi03.jpg" />
+        <input type="radio" id="tournoi03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi03.jpg" />
         <img src="affiches/tournoi03.jpg" alt="" width="30%" height="90%" />
           
       </div>
@@ -297,11 +297,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="competition01.jpg" name="newRegisteredPicture" value="competition01.jpg" />
+        <input type="radio" id="competition01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition01.jpg" />
         <img src="affiches/competition01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition02.jpg" name="newRegisteredPicture" value="competition02.jpg" />
+        <input type="radio" id="competition02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition02.jpg" />
         <img src="affiches/competition02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition03.jpg" name="newRegisteredPicture" value="competition03.jpg" />
+        <input type="radio" id="competition03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition03.jpg" />
         <img src="affiches/competition03.jpg" alt="" width="30%" height="90%" />
           
       </div>
@@ -323,11 +323,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="representation01.jpg" name="newRegisteredPicture" value="representation01.jpg" />
+        <input type="radio" id="representation01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation01.jpg" />
         <img src="affiches/representation01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation02.jpg" name="newRegisteredPicture" value="representation02.jpg" />
+        <input type="radio" id="representation02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation02.jpg" />
         <img src="affiches/representation02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation03.jpg" name="newRegisteredPicture" value="representation03.jpg" />
+        <input type="radio" id="representation03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation03.jpg" />
         <img src="affiches/representation03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -350,11 +350,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="passagedegrade01.jpg" name="newRegisteredPicture" value="passagedegrade01.jpg" />
+        <input type="radio" id="passagedegrade01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade01.jpg" />
         <img src="affiches/passagedegrade01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade02.jpg" name="newRegisteredPicture" value="passagedegrade02.jpg" />
+        <input type="radio" id="passagedegrade02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade02.jpg" />
         <img src="affiches/passagedegrade02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade03.jpg" name="newRegisteredPicture" value="passagedegrade03.jpg" />
+        <input type="radio" id="passagedegrade03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade03.jpg" />
         <img src="affiches/passagedegrade03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -377,11 +377,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="cassetuile01.jpg" name="newRegisteredPicture" value="cassetuile01.jpg" />
+        <input type="radio" id="cassetuile01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile01.jpg" />
         <img src="affiches/cassetuile01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile02.jpg" name="newRegisteredPicture" value="cassetuile02.jpg" />
+        <input type="radio" id="cassetuile02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile02.jpg" />
         <img src="affiches/cassetuile02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile03.jpg" name="newRegisteredPicture" value="cassetuile03.jpg" />
+        <input type="radio" id="cassetuile03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile03.jpg" />
         <img src="affiches/cassetuile03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -404,11 +404,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="entrainement01.jpg" name="newRegisteredPicture" value="entrainement01.jpg" />
+        <input type="radio" id="entrainement01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement01.jpg" />
         <img src="affiches/entrainement01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement02.jpg" name="newRegisteredPicture" value="entrainement02.jpg" />
+        <input type="radio" id="entrainement02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement02.jpg" />
         <img src="affiches/entrainement02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement03.jpg" name="newRegisteredPicture" value="entrainement03.jpg" />
+        <input type="radio" id="entrainement03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement03.jpg" />
         <img src="affiches/entrainement03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -431,11 +431,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="seminaire01.jpg" name="newRegisteredPicture" value="seminaire01.jpg" />
+        <input type="radio" id="seminaire01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire01.jpg" />
         <img src="affiches/seminaire01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire02.jpg" name="newRegisteredPicture" value="seminaire02.jpg" />
+        <input type="radio" id="seminaire02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire02.jpg" />
         <img src="affiches/seminaire02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire03.jpg" name="newRegisteredPicture" value="seminaire03.jpg" />
+        <input type="radio" id="seminaire03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire03.jpg" />
         <img src="affiches/seminaire03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -458,11 +458,11 @@ echo($_FILES['firstPicture']['name']);
         </button>
       </div>
       <div class="modal-body">
-        <input type="radio" id="barbecue01.jpg" name="newRegisteredPicture" value="barbecue01.jpg" />
+        <input type="radio" id="barbecue01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue01.jpg" />
         <img src="affiches/barbecue01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue02.jpg" name="newRegisteredPicture" value="barbecue02.jpg" />
+        <input type="radio" id="barbecue02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue02.jpg" />
         <img src="affiches/barbecue02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue03.jpg" name="newRegisteredPicture" value="barbecue03.jpg" />
+        <input type="radio" id="barbecue03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue03.jpg" />
         <img src="affiches/barbecue03.jpg" alt="" width="30%" height="90%" />
         
           
@@ -473,251 +473,6 @@ echo($_FILES['firstPicture']['name']);
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Modal Tournoi -->
-<div class="modal fade" id="tournoiF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour un tournoi</h5>
-        <button type="button" id="clear-button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      <input type="radio" id="tournoi01.jpg" name="firstRegisteredPicture" value="tournoi01.jpg" />
-        <img src="affiches/tournoi01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi02.jpg" name="firstRegisteredPicture" value="tournoi02.jpg" />
-        <img src="affiches/tournoi02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi03.jpg" name="firstRegisteredPicture" value="tournoi03.jpg" />
-        <img src="affiches/tournoi03.jpg" alt="" width="30%" height="90%" />
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal Compétition-->
-<div class="modal fade" id="competitionF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour une compétition</h5>
-        <button type="button" id="clear-button1" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="competition01.jpg" name="firstRegisteredPicture" value="competition01.jpg" />
-        <img src="affiches/competition01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition02.jpg" name="firstRegisteredPicture" value="competition02.jpg" />
-        <img src="affiches/competition02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition03.jpg" name="firstRegisteredPicture" value="competition03.jpg" />
-        <img src="affiches/competition03.jpg" alt="" width="30%" height="90%" />
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Représentation-->
-<div class="modal fade" id="representationF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour une représentation</h5>
-        <button type="button" id="clear-button2" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="representation01.jpg" name="firstRegisteredPicture" value="representation01.jpg" />
-        <img src="affiches/representation01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation02.jpg" name="firstRegisteredPicture" value="representation02.jpg" />
-        <img src="affiches/representation02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation03.jpg" name="firstRegisteredPicture" value="representation03.jpg" />
-        <img src="affiches/representation03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Passage de grade-->
-<div class="modal fade" id="passageDeGradeF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour un passage de grade</h5>
-        <button type="button" id="clear-button3" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="passagedegrade01.jpg" name="firstRegisteredPicture" value="passagedegrade01.jpg" />
-        <img src="affiches/passagedegrade01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade02.jpg" name="firstRegisteredPicture" value="passagedegrade02.jpg" />
-        <img src="affiches/passagedegrade02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade03.jpg" name="firstRegisteredPicture" value="passagedegrade03.jpg" />
-        <img src="affiches/passagedegrade03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Stage de casse-->
-<div class="modal fade" id="stageDeCasseF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour un stage de casse</h5>
-        <button type="button" id="clear-button4" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="cassetuile01.jpg" name="firstRegisteredPicture" value="cassetuile01.jpg" />
-        <img src="affiches/cassetuile01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile02.jpg" name="firstRegisteredPicture" value="cassetuile02.jpg" />
-        <img src="affiches/cassetuile02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile03.jpg" name="firstRegisteredPicture" value="cassetuile03.jpg" />
-        <img src="affiches/cassetuile03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Entraînement spécial-->
-<div class="modal fade" id="entrainementF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour un entraînement spécial</h5>
-        <button type="button" id="clear-button5" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="entrainement01.jpg" name="firstRegisteredPicture" value="entrainement01.jpg" />
-        <img src="affiches/entrainement01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement02.jpg" name="firstRegisteredPicture" value="entrainement02.jpg" />
-        <img src="affiches/entrainement02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement03.jpg" name="firstRegisteredPicture" value="entrainement03.jpg" />
-        <img src="affiches/entrainement03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Séminaire-->
-<div class="modal fade" id="seminaireF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour le séminaire d'été</h5>
-        <button type="button" id="clear-button6" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="seminaire01.jpg" name="firstRegisteredPicture" value="seminaire01.jpg" />
-        <img src="affiches/seminaire01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire02.jpg" name="firstRegisteredPicture" value="seminaire02.jpg" />
-        <img src="affiches/seminaire02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire03.jpg" name="firstRegisteredPicture" value="seminaire03.jpg" />
-        <img src="affiches/seminaire03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Barbecue-->
-<div class="modal fade" id="barbecueF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modèles d'affiches pour le barbecue de fin d'année</h5>
-        <button type="button" id="clear-button7" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="radio" id="barbecue01.jpg" name="firstRegisteredPicture" value="barbecue01.jpg" />
-        <img src="affiches/barbecue01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue02.jpg" name="firstRegisteredPicture" value="barbecue02.jpg" />
-        <img src="affiches/barbecue02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue03.jpg" name="firstRegisteredPicture" value="barbecue03.jpg" />
-        <img src="affiches/barbecue03.jpg" alt="" width="30%" height="90%" />
-        
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Choisir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 

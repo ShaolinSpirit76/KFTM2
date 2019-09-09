@@ -52,6 +52,8 @@ include '../templates/head.php';
   <p class="text-white">Maximum de participants : <?= $displayEvent['eventMaxUser']?> </p>
   <?php endif; ?>
 
+  <p class="text-white">Places restantes : <?= $displayEvent['eventMaxUser']-$countEventInscriptions[0]['number'] ?> </p>
+
   <?php if (isset($displayEvent['eventDescription'])): ?>
   <p class="text-white">Description : <?= $displayEvent['eventDescription']?> </p>
   <?php endif; ?>

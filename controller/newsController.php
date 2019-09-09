@@ -30,6 +30,9 @@ $deconnexionPage = '../templates/deconnexion.php';
 $admin = '../../admin/admin.php';
 
 
+$Participating = new Participating;
+
+$countEventInscriptions = $Participating->countEventInscriptions();
 
 
 $Event = new Event();
@@ -56,11 +59,13 @@ $registration[$value['ID']] = $displayParticipatingResult;
 
 // Ajouter des valeurs dans la table Participating
 if (isset($_POST['userRegistration'])) {
+    // condition : si le nombre de place restante est supérieur à zéro, alors :
 $Participating->ID_EVENTS = $_POST['userRegistration'];
 $Participating->ID_USERS = $_SESSION['userInfos'][0]['ID'];
 $Participating->CHECKED = 1;
 $Participating->addRegistration();
 $registrationAdded = true;
+// sinon rien : alert
 }
 
 // Supprimer une inscription à un évènement

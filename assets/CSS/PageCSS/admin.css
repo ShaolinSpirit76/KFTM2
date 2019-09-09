@@ -24,7 +24,7 @@ a:hover {
 .littleBG {
   position: relative; z-index: 2;
   float: right;
-  margin-top: -2rem;
+  margin-top: 1rem;
   }
 
 .littleBG2 {
@@ -40,7 +40,7 @@ a:hover {
 
 #countEvents {
   position: relative; z-index: 2;
-  margin-top: -7rem;
+  margin-top: -9rem;
 }
 
 /* CSS side-navbar */
@@ -142,4 +142,10 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+}
+
+
+#searchAdmin {
+  margin-top: -2rem; 
+  margin-left : 27rem;
 }

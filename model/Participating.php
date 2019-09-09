@@ -48,9 +48,43 @@ class Participating extends DB{
         }
      }
 
+
+     public function displayEventRegistration(){
+         $query = "SELECT `KFTM_USERS`.ID, `KFTM_USERS`.lastName, `KFTM_USERS`.firstName FROM `KFTM_USERS` FULL JOIN `KFTM_PARTICIPATING` ON `KFTM_PARTICIPATING`.ID_USERS = `KFTM_USERS`.ID FULL JOIN `KFTM_EVENTS` ON `KFTM_PARTICIPATING`.ID_EVENTS = `KFTM_EVENTS`.ID WHERE KFTM.PARTICIPATING.ID_EVENTS = :ID_EVENTS";
+         $selectEventRegistration = $this->db->prepare($query);
+         
+        $selectEventRegistration->bindValue(':ID_EVENTS', $this->ID_EVENTS, PDO::PARAM_INT);
+        $selectEventRegistration->execute();
+        $displayEventRegistration = $selectEventRegistration->fetchAll(PDO::FETCH_ASSOC);
+        return $displayEventRegistration;
+     }
+
+     public function displayUserRegistration(){
+        $query = "SELECT `KFTM_EVENTS`.eventType, `KFTM_EVENTS`.eventDate, `KFTM_EVENTS`.eventHour,`KFTM_EVENTS`.eventPicture, `KFTM_EVENTS`.registeredPicture FROM `KFTM_EVENTS` FULL JOIN `KFTM_PARTICIPATING` ON `KFTM_PARTICIPATING`.ID_EVENTS = `KFTM_EVENTS`.ID FULL JOIN `KFTM_USERS` ON `KFTM_PARTICIPATING`.ID_USERS = `KFTM_USERS`.ID WHERE KFTM.PARTICIPATING.ID_USERS = :ID_USERS";
+        $selectUserRegistration = $this->db->prepare($query);
+        $selectUserRegistration->bindValue(':ID_USERS', $this->ID_USERS, PDO::PARAM_INT);
+        $selectUserRegistration->execute();
+       $displayUserRegistration = $selectUserRegistration->fetchAll(PDO::FETCH_ASSOC);
+       return $displayUserRegistration;
+    }
     
+    // Renvoie le nombre total d'inscrits tout évènement confondu
+   public function allInscriptions(){
+       $query = "SELECT COUNT(*) FROM `KFTM_PARTICIPATING`";
+       $allInscriptions = $this->db->query($query);
+       $countSuscribers = $allInscriptions->fetchAll(PDO::FETCH_ASSOC);
+       return $countSuscribers;
+    }
 
-
+    // Renvoie le nombre d'inscrit à un évènement
+    public function countEventInscriptions(){
+        $query = "SELECT COUNT(*) FROM `KFTM_PARTICIPATING` WHERE KFTM.PARTICIPATING.ID_EVENTS = :ID_EVENTS";
+        $countEventInscriptions = $this->db->prepare($query);
+        $countEventInscriptions->bindValue(':ID_EVENTS', $this->ID_EVENTS, PDO::PARAM_INT);
+        $countEventInscriptions->execute();
+        $displayCountEventInscriptions = $countEventInscriptions->fetchAll(PDO::FETCH_ASSOC);
+        return $displayCountEventInscriptions;
+    }
    
    
      
