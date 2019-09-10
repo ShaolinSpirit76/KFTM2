@@ -6,8 +6,10 @@ require '../../controller/calendarController.php';
 ?>
         <form method="post" action="index.php">
 
+        <div class="form-group">
+
             <label for="month">Mois : </label>
-            <select name="month">
+            <select name="month" class="form-control">
                 <option value="" disabled selected></option>
                 <option value="1" <?= ($month == 1) ? 'selected' : ''; ?>>01-Janvier</option>
                 <option value="2" <?= ($month == 2) ? 'selected' : ''; ?>>02-Février</option>
@@ -22,9 +24,11 @@ require '../../controller/calendarController.php';
                 <option value="11" <?= ($month == 11) ? 'selected' : ''; ?>>11-Novembre</option>
                 <option value="12" <?= ($month == 12) ? 'selected' : ''; ?>>12-Décembre</option>
             </select>
+</div>
 
-            <label for="year">Année : </label>
-            <select name="year">
+<div class="form-group">            
+<label for="year">Année : </label>
+            <select name="year" class="form-control">
                 <option value="" disabled selected></option>
                 <?php
 //            la boucle ci-dessous permet d'afficher les années de 2019 à 2070
@@ -35,6 +39,7 @@ require '../../controller/calendarController.php';
                 endfor;
                 ?>
             </select>
+            </div>
             <button type="submit">Envoyer</button>
         </form>
 

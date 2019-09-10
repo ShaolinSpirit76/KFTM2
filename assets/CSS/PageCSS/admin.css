@@ -23,14 +23,12 @@ a:hover {
 
 .littleBG {
   position: relative; z-index: 2;
-  float: right;
-  margin-top: 1rem;
+  
   }
 
 .littleBG2 {
   position: relative; z-index: 3;
-  margin-top: 15rem;
-  margin-left: 65rem;
+  
  }
 
 #countMembers {
@@ -144,8 +142,3 @@ ul ul a {
     background: #6d7fcc;
 }
 
-
-#searchAdmin {
-  margin-top: -2rem; 
-  margin-left : 27rem;
-}

@@ -268,14 +268,19 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
       <input type="radio" id="tournoi01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi01.jpg" />
-        <img src="affiches/tournoi01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/tournoi01.jpg" alt="" class="w-86" />
+</div>
+<div class="col-md-4 col-12 mb-1">
         <input type="radio" id="tournoi02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi02.jpg" />
-        <img src="affiches/tournoi02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/tournoi02.jpg" alt="" class="w-86" />
+</div>
+<div class="col-md-4 col-12 mb-1">
         <input type="radio" id="tournoi03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="tournoi03.jpg" />
-        <img src="affiches/tournoi03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/tournoi03.jpg" alt="" class="w-86" />
+</div>
           
       </div>
       <div class="modal-footer">
@@ -296,13 +301,19 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="competition01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition01.jpg" />
-        <img src="affiches/competition01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/competition01.jpg" alt="" class="w-86" />
+</div>
+<div class="col-md-4 col-12 mb-1">
         <input type="radio" id="competition02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition02.jpg" />
-        <img src="affiches/competition02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/competition02.jpg" alt="" class="w-86" />
+</div>
+<div class="col-md-4 col-12 mb-1">
         <input type="radio" id="competition03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="competition03.jpg" />
-        <img src="affiches/competition03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/competition03.jpg" alt="" class="w-86" />
+</div>
           
       </div>
       <div class="modal-footer">
@@ -322,13 +333,19 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="representation01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation01.jpg" />
-        <img src="affiches/representation01.jpg" alt="" width="30%" height="90%" />
+        <img class="w-86" src="affiches/representation01.jpg" alt="" />
+        </div>
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="representation02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation02.jpg" />
-        <img src="affiches/representation02.jpg" alt="" width="30%" height="90%" />
+        <img class="w-86" src="affiches/representation02.jpg" alt="" />
+        </div>
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="representation03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="representation03.jpg" />
-        <img src="affiches/representation03.jpg" alt="" width="30%" height="90%" />
+        <img class="w-86" src="affiches/representation03.jpg" alt="" />
+        </div>
         
           
       </div>
@@ -349,14 +366,19 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row row">
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="passagedegrade01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade01.jpg" />
-        <img src="affiches/passagedegrade01.jpg" alt="" width="30%" height="90%" />
+        <img class="w-86" src="affiches/passagedegrade01.jpg" alt=""  />
+        </div>
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="passagedegrade02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade02.jpg" />
-        <img src="affiches/passagedegrade02.jpg" alt="" width="30%" height="90%" />
+        <img class="w-86" src="affiches/passagedegrade02.jpg" alt=""  />
+        </div>
+        <div class="col-md-4 col-12 mb-1">
         <input type="radio" id="passagedegrade03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="passagedegrade03.jpg" />
-        <img src="affiches/passagedegrade03.jpg" alt="" width="30%" height="90%" />
-        
+        <img class="w-86" src="affiches/passagedegrade03.jpg" alt="" />
+        </div>
           
       </div>
       <div class="modal-footer">
@@ -376,13 +398,13 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
         <input type="radio" id="cassetuile01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile01.jpg" />
-        <img src="affiches/cassetuile01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/cassetuile01.jpg" alt="" class="w-86" />
         <input type="radio" id="cassetuile02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile02.jpg" />
-        <img src="affiches/cassetuile02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/cassetuile02.jpg" alt="" class="w-86" />
         <input type="radio" id="cassetuile03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="cassetuile03.jpg" />
-        <img src="affiches/cassetuile03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/cassetuile03.jpg" alt="" class="w-86" />
         
           
       </div>
@@ -403,13 +425,13 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
         <input type="radio" id="entrainement01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement01.jpg" />
-        <img src="affiches/entrainement01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/entrainement01.jpg" alt="" class="w-86" />
         <input type="radio" id="entrainement02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement02.jpg" />
-        <img src="affiches/entrainement02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/entrainement02.jpg" alt="" class="w-86" />
         <input type="radio" id="entrainement03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="entrainement03.jpg" />
-        <img src="affiches/entrainement03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/entrainement03.jpg" alt="" class="w-86" />
         
           
       </div>
@@ -430,13 +452,13 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
         <input type="radio" id="seminaire01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire01.jpg" />
-        <img src="affiches/seminaire01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/seminaire01.jpg" alt="" class="w-86" />
         <input type="radio" id="seminaire02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire02.jpg" />
-        <img src="affiches/seminaire02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/seminaire02.jpg" alt="" class="w-86" />
         <input type="radio" id="seminaire03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="seminaire03.jpg" />
-        <img src="affiches/seminaire03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/seminaire03.jpg" alt="" class="w-86" />
         
           
       </div>
@@ -457,13 +479,13 @@ echo($_FILES['firstPicture']['name']);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row">
         <input type="radio" id="barbecue01.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue01.jpg" />
-        <img src="affiches/barbecue01.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/barbecue01.jpg" alt="" class="w-86" />
         <input type="radio" id="barbecue02.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue02.jpg" />
-        <img src="affiches/barbecue02.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/barbecue02.jpg" alt="" class="w-86" />
         <input type="radio" id="barbecue03.jpg" name="<?= ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture']))) ? 'newRegisteredPicture' : 'firstRegisteredPicture' ?>" value="barbecue03.jpg" />
-        <img src="affiches/barbecue03.jpg" alt="" width="30%" height="90%" />
+        <img src="affiches/barbecue03.jpg" alt="" class="w-86" />
         
           
       </div>

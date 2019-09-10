@@ -12,6 +12,7 @@ $user = new User();
 $userCount = $user->countUsers();
 $userCountMen = $user->countMen();
 $userCountWomen = $user->countWomen();
+$userCountAdmin = $user->countAdmin();
 
 $event = new Event();
 $eventCountEvent = $event->countEvent();

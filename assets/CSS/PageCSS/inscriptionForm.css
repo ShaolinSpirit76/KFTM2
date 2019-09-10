@@ -88,7 +88,7 @@ body {
   outline: none;
   border: none;
   border-bottom: 1px solid #9ee0c4;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.65);
   width: 18rem;
   color: #336699;
   font-weight: bold;
@@ -129,10 +129,10 @@ background-color: white;
 margin-bottom: -6rem;
 }
 
-.card {
+/* #inscriptionForm {
 margin-top: 3rem;
 background-color: rgba(255, 255, 255, 0.65);
-}
+} */
 
 .red {
 border: red solid 2px;
@@ -148,3 +148,20 @@ font-family: 'Permanent Marker', cursive;
 }
 
 /* Fin CSS formulaire d'inscription */
+
+@media screen and (max-width:390px) {
+  #legend1 {
+  font-size: 2rem;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+/* @media screen and (max-width:992px) {
+  #inputInscription {
+
+  }
+} */
+

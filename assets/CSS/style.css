@@ -151,6 +151,12 @@ a:hover {
   z-index:2;
 }
 
+@media screen and (max-width:992px) {
+  .logo {
+display: none;
+  }
+}
+
 /* CSS navbarMin */
 
 #navbarMin {

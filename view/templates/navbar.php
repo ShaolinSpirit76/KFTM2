@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse">
           <div class="col-1">
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
+              <li class="nav-item logo">
                 <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle" alt="logo YinYang ThieuLam" width="100%" height="100%" />
               </li>
             </ul>
@@ -51,6 +51,7 @@
     <a class="dropdown-item" href="<?= $pictures ?>">Photos</a>
     <a class="dropdown-item" href="<?= $video ?>">Vidéos</a>
     <?php endif;?>
+    <a class="dropdown-item" href="../../view/pages/links.php">Articles de presse</a>
     <a class="dropdown-item" href="<?= $techniques ?>">Cahiers techniques</a>
     <a class="dropdown-item" href="<?= $otherSchools ?>">Autres écoles</a>
     <a class="dropdown-item" href="<?= $contact ?>">Contact</a>
@@ -139,7 +140,7 @@
           <div class="col-1">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle" alt="logo YinYang ThieuLam" width="60%" height="60%" />
+                <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle logo" alt="logo YinYang ThieuLam" width="60%" height="60%" />
               </li>
             </ul>
           </div>
@@ -182,6 +183,7 @@
     <a class="dropdown-item" href="<?= $pictures ?>">Photos</a>
     <a class="dropdown-item" href="<?= $video ?>">Vidéos</a>
     <?php endif;?>
+    <a class="dropdown-item" href="../../view/pages/links.php">Articles de presse</a>
     <a class="dropdown-item" href="<?= $techniques ?>">Cahiers techniques</a>
     <a class="dropdown-item" href="<?= $otherSchools ?>">Autres écoles</a>
     <a class="dropdown-item" href="<?= $contact ?>">Contact</a>
@@ -251,7 +253,7 @@
           <div class="col-1">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item text-center">
-                <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle" alt="logo YinYang ThieuLam" width="60%" height="60%" />
+                <img src="../../assets/images/756974331.gif" class="img-fluid rounded-circle logo" alt="logo YinYang ThieuLam" width="60%" height="60%" />
               </li>
             </ul>
           </div>

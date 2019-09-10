@@ -91,7 +91,7 @@ include '../templates/head.php';
 
   <div class="col-md-4 col-sm-12 mx-auto <?= ( ($displayUser['teacherRank'] == 'Sifu') ) ? 'col-md-12' : '' ?>">
     
-      <div class="card mx-auto" style="width: 22rem;">
+      <div class="card mx-auto">
 
       <?php if (!empty($displayUser['picture'])): ?>
       <div class="mx-auto text-center">

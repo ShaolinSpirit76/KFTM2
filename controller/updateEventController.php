@@ -127,7 +127,7 @@ endif;
  
     // alert success s'il n'y a pas d'erreur
         $events->updateEvent();
-var_dump($_POST);
-    // $newUpdateEventSuccess = true;
+
+    $newUpdateEventSuccess = true;
 
 }

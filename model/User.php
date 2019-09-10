@@ -230,6 +230,13 @@ public function updateIDUser(){
         return $countWomenResult;
     }
 
+    public function countAdmin(){
+        $query = "SELECT COUNT(`admin`) AS `numberAdmin` FROM `KFTM_USERS` WHERE `admin` = 1";
+        $countAdmin = $this->db->query($query);
+        $countAdminResult = $countAdmin->fetchAll(PDO::FETCH_ASSOC);
+        return $countAdminResult;
+    }
+
 
     public function adminPower(){
         $query = 'UPDATE `KFTM_USERS` SET admin = 1 WHERE ID = :ID';

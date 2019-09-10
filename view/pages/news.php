@@ -14,7 +14,7 @@ include '../templates/head.php';
 
   
   <div class="col-md-8 col-sm-12 mx-auto text-center">
-      <div class="card mx-auto text-center" style="width: 40rem;">
+      <div class="card mx-auto text-center" >
 
       <h1 class="card-title text-center police"> <?=$displayEvent['eventType']?> </h1>
 
@@ -36,7 +36,7 @@ include '../templates/head.php';
 
 
     
-        <div class="collapse mx-auto" style="width: 37rem;" id="eventDetails<?=$displayEvent['ID']?>">
+        <div class="collapse mx-auto" id="eventDetails<?=$displayEvent['ID']?>">
   <div class="card card-body">
 
   
