@@ -10,119 +10,93 @@ include 'navbarAdmin.php';
 
 
 
-<!-- Début formulaire d'inscription -->
+<form method="POST" action="inscriptionForm.php" id="inscriptionForm" name="inscriptionForm" enctype="multipart/form-data" class="police2 container-fluid text-center">
 
-<div id="newEventTitle">
-<h1 class="police text-white text-center font-weight-bolder">Modification de l'évènement </h1>
-</div>
-
-
-<form method="POST" action="updateEvent.php" class="formColor police2" id="newEventForm" name="newEventForm" 
-enctype="multipart/form-data">
-              
-      <fieldset>
+<fieldset>
 
 
 <div class="space">
-
       
-       <!-- Condition à gérer pour n'afficher le label que si l'évènement est autre -->
-       <div class="form-group font-weight-bolder text-center"><label for="eventType">Nom de l'évènement : <?= $showUpdateEventResult[0]['eventType'] ?></label>
-      <select id="eventType" name="newEventType" class="inputNewEvent form-control mx-auto" required>
-            <option selected disabled>Choisissez</option>
-                <option value="Tournoi" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Tournoi' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Tournoi' ? 'selected' : '') ?> >Tournoi</option> 
-                <option value="Compétition" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Compétition' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Compétition' ? 'selected' : '') ?> >Compétition</option>
-                <option value="Représentation" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Représentation' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Représentation' ? 'selected' : '') ?> >Représentation</option>
-                <option value="Passage de grade" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Passage de grade' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Passage de grade' ? 'selected' : '') ?> >Passage de grade</option>
-                <option value="Stage de casse" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Stage de casse' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Stage de casse' ? 'selected' : '') ?> >Stage de casse</option>
-                <option value="Entraînement spécial" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Entraînement spécial' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Entraînement spécial' ? 'selected' : '') ?> >Entraînement spécial</option>
-                <option value="Séminaire d'été" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Séminaire d\'été' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Séminaire d\'été' ? 'selected' : '') ?> >Séminaire d'été</option>
-                <option value="Barbecue de fin d'année" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Barbecue de fin d\'année' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Barbecue de fin d\'année' ? 'selected' : '') ?> >Barbecue de fin d'année</option>
-                <option value="Autre" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Autre' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Autre' ? 'selected' : '') ?> >Autre </option>
-</select>
+          
+      <div class="form-group font-weight-bolder"><label for="eventType">Nom de l'évènement : </label>
+      <select id="eventType" name="eventType" class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventType']?>" required>
+            <option value="<?= $_POST['eventType']?>" selected disabled>Choisissez</option>
+                <option value="Tournoi">Tournoi</option> 
+                <option value="Compétition">Compétition</option>
+                <option value="Représentation">Représentation</option>
+                <option value="Passage de grade">Passage de grade</option>
+                <option value="Stage de casse">Stage de casse</option>
+                <option value="Entraînement spécial">Entraînement spécial</option>
+                <option value="Séminaire d'été">Séminaire d'été</option>
+                <option value="Barbecue de fin d'année">Barbecue de fin d'année</option>
+                <option value="Autre">Autre </option>
+</select></div>
+<div class="form-group   font-weight-bolder"><input name="otherEventType" type="text" id="otherEventType" placeholder="Veuillez préciser..." /></div>
 
-
-<div class="form-group font-weight-bolder text-center"><input name="otherEventType" value="<?= isset($_POST['otherEventType']) && !empty($_POST['otherEventType']) ? $_POST['otherEventType'] : $showUpdateEventResult[0]['eventType'] ?>" type="text" id="otherEventType" placeholder="Veuillez préciser..." />
-</div>
-       </div>
 </div>
 
 
 <div id="eventCourse" class="space">
 <fieldset class="form-group font-weight-bolder">
 
-<legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe concerné : <?= $showUpdateEventResult[0]['eventCourse'] ?></legend>
+<legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe concerné : </legend>
 <div class="row">
-<div class="col-sm-10 text-center">
+<div class="col-sm-10">
 
 <div class="form-check">
-  <input type="radio" class="form-check-input" id="Kung-Fu" name="newEventCourse" value="Kung-Fu">
-  <label class="form-check-label" for="Kung-Fu">Kung-Fu</label>
-</div>
-
-<div class="form-check">
-  <input type="radio" class="form-check-input" id="Taïchi Chuan & Qi Gong" name="newEventCourse" value="Taïchi Chuan & Qi Gong">
-  <label class="form-check-label" for="Taïchi Chuan & Qi Gong">Taïchi</label>
+  <input type="radio" class="form-check-input" id="Kung-Fu" name="eventCourse" value="Kung-Fu">
+  <label class="form-check-label text-center" for="Kung-Fu">Kung-Fu</label>
 </div>
 
 <div class="form-check">
-  <input type="radio" class="form-check-input" id="Sanda & Shoubo" name="newEventCourse" value="Sanda & Shoubo">
-  <label class="form-check-label" for="Sanda & Shoubo">Sanda</label>
+  <input type="radio" class="form-check-input" id="Taïchi Chuan & Qi Gong" name="eventCourse" value="Taïchi Chuan & Qi Gong">
+  <label class="form-check-label  " for="Taïchi Chuan & Qi Gong">Taïchi</label>
 </div>
 
 <div class="form-check">
-  <input type="radio" class="form-check-input" id="Tout le monde" name="newEventCourse" value="Tout le monde">
-  <label class="form-check-label" for="Tout le monde">Tous</label></p>
-</div>
-    
-</div>
-</div>
-</fieldset>
+  <input type="radio" class="form-check-input" id="Sanda & Shoubo" name="eventCourse" value="Sanda & Shoubo">
+  <label class="form-check-label  " for="Sanda & Shoubo">Sanda</label>
 </div>
 
-
-<div class="space">
-
-<div class="form-group font-weight-bolder text-center"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventDate']))? $_POST['eventDate'] : $showUpdateEventResult[0]['eventDate']?>" type="date" name="newEventDate" id="eventDate" placeholder="jj/mm/aaaa" required  />
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="Tout le monde" name="eventCourse" value="Tout le monde">
+  <label class="form-check-label  " for="Tout le monde">Tous</label>
 </div>
 
+</div>
+
+</div>
+</fieldset>         
 </div>
 
 <div class="space">
 
-<div class="form-group font-weight-bolder text-center"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventHour']))? $_POST['eventHour'] : $showUpdateEventResult[0]['eventHour']?>" type="time" name="newEventHour" id="eventHour" required />
-</div>
+<div class="form-group   font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></div>
 
 </div>
 
 <div class="space">
 
-<div class="form-group font-weight-bolder text-center"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventMaxUser']))? $_POST['eventMaxUser'] : $showUpdateEventResult[0]['eventMaxUser']?>" type="number" min="1" max="100" name="newEventMaxUser" id="eventMaxUser" />
+<div class="form-group   font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventHour']?>" type="time" name="eventHour" id="eventHour" required />
 </div>
 
 </div>
-
 
 <div class="space">
 
-
-<?php if ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture'])) ): ?>
-            
-<div class="form-group font-weight-bolder space"><label for="picture" class="font-weight-bolder">Affiche : </label>
- 
-  <a href="affiches/<?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" target="_blank" title="Cliquez pour agrandir"><img src="affiches/<?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" class="img-fluid rounded" alt="Affiche : <?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" width="15%" height="15%" /></a>
-<?php
-// Nous faisons un echo du nom de l'image
-echo (isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture'] ?><br /><button type="button" class="badge badge-secondary mx-auto" id="updatePicture">Changer l'affiche</button>
+<div class="form-group   font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" />
 </div>
-    
-    <div id="newPic">
-       <!-- Code pour upload la photo de profil. On ne récupère que le nom dans la BDD -->
-       <?php 
+
+</div>
+
+<!-- Code pour upload la photo de profil. On ne récupère que le nom dans la BDD -->
+<!-- Pour que l'image se copie dans le dossier prévu à cet effet, il faut ajouter
+une ligne de commande dans le terminal : sudo chmod 777 affiches/ -->
+<?php 
 // on test si un fichier a été sélectionné en upload
-if (isset($_FILES['newEventPicture']['tmp_name'])) { 
+if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPicture']['tmp_name'])) ) { 
   // $taille est un Array contenant les infos de l'image
-  $taille = getimagesize($_FILES['newEventPicture']['tmp_name']); 
+  $taille = getimagesize($_FILES['eventPicture']['tmp_name']); 
 
   // on récupère la largeur et la hauteur de l'image
   $largeur = $taille[0]; 
@@ -132,111 +106,37 @@ if (isset($_FILES['newEventPicture']['tmp_name'])) {
   $largeur_miniature = 300;
   $hauteur_miniature = $hauteur / $largeur * 300;
 
-  $im = imagecreatefromjpeg($_FILES['newEventPicture']['tmp_name']);
+  $im = imagecreatefromjpeg($_FILES['eventPicture']['tmp_name']);
   $im_miniature = imagecreatetruecolor($largeur_miniature, $hauteur_miniature);
   
   imagecopyresampled($im_miniature, $im, 0, 0, 0, 0, $largeur_miniature, $hauteur_miniature, $largeur, $hauteur);
   
-  imagejpeg($im_miniature, 'affiches/'.$_FILES['newEventPicture']['name'], 90);
+  imagejpeg($im_miniature, 'affiches/'.$_FILES['eventPicture']['name'], 90);
   
-echo '<img src="affiches/' . $_FILES['newEventPicture']['name'] . '">';
 }
-// Nous faisons un echo du nom de l'image
-echo($_FILES['newEventPicture']['name']);                  
 
                   ?>
 
-<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
 
-<input type="button" class="mx-auto" id="personalPictureChoice" value="Personnelle" />
+
+<div class="form-group   font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<input type="button" class=" mx-auto" id="personalPictureChoice" value="Personnelle" />
   
-  <input type="button" class="mx-auto" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
 
+  <input type="button" class=" mx-auto" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
 </div>
- 
 
 <div id="personalPicture" class="space">
                  
-<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
-        <input type="file" class="form-control-file mx-auto text-center" name="newEventPicture" id="eventPicture" />
+<div class="form-group   font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label>
+        <input type="file" class="form-control-file mx-auto text-center" name="eventPicture" id="eventPicture" />
 </div>
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
 </div>
 
 <div id="registeredPicture" class="space">
 
-<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label>
-
-<button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
-  <span >Tournoi</span></button>
-<button type="button" class="badge badge-secondary" data-toggle="modal" data-target="#competition">
-  <span >Compétition</span></button>
-<button type="button" class="badge badge-success" data-toggle="modal" data-target="#representation">
-  <span >Représentation</span></button>
-<button type="button" class="badge badge-danger" data-toggle="modal" data-target="#passageDeGrade">
-    <span >Passage de grade</span></button>
-<button type="button" class="badge badge-warning" data-toggle="modal" data-target="#stageDeCasse">
-      <span >Stage de casse</span></button>
-<button type="button" class="badge badge-info" data-toggle="modal" data-target="#entrainement">
-        <span >Entraînement spécial</span></button>
-<button type="button" class="badge badge-light" data-toggle="modal" data-target="#seminaire">
-  <span >Séminaire d'été</span></button>
-<button type="button" class="badge badge-dark" data-toggle="modal" data-target="#barbecue">
-    <span >Barbecue de fin d'année</span></button>
-</div>
-
-</div>
-
-</div>
-
-      <?php else:
-
-//  Code pour upload la photo de profil. On ne récupère que le nom dans la BDD 
-
-// on test si un fichier a été sélectionné en upload
-if (isset($_FILES['firstPicture']['tmp_name'])) { 
-// $taille est un Array contenant les infos de l'image
-$taille = getimagesize($_FILES['firstPicture']['tmp_name']); 
-
-// on récupère la largeur et la hauteur de l'image
-$largeur = $taille[0]; 
-$hauteur = $taille[1];
-
-// Transformation selon les besoins de la miniature
-$largeur_miniature = 300;
-$hauteur_miniature = $hauteur / $largeur * 300;
-
-$im = imagecreatefromjpeg($_FILES['firstPicture']['tmp_name']);
-$im_miniature = imagecreatetruecolor($largeur_miniature, $hauteur_miniature);
-
-imagecopyresampled($im_miniature, $im, 0, 0, 0, 0, $largeur_miniature, $hauteur_miniature, $largeur, $hauteur);
-
-imagejpeg($im_miniature, 'affiches/'.$_FILES['firstPicture']['name'], 90);
-
-echo '<img src="affiches/' . $_FILES['firstPicture']['name'] . '">';
-}
-// Nous faisons un echo du nom de l'image
-echo($_FILES['firstPicture']['name']);                  
-
- ?>
-
-<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
-<input type="button" id="personalPictureChoice" value="Personnelle" />
-
-<input type="button" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
-</div>
-
-<div id="personalPicture" class="space">
-                 
-<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
-        <input type="file" class="form-control-file mx-auto text-center" name="firstPicture" id="eventPicture" />
-</div>
-        <small><i><br />Un .jpg, c'est mieux ;)</i></small>
-</div>
-
-<div id="registeredPicture" class="space">
-
-<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label></li>
+<div class="form-group   font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label>
 
 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
@@ -259,28 +159,24 @@ echo($_FILES['firstPicture']['name']);
 </div>
 
 
-<?php endif; ?>
-
-
-
-
-<div class="form-group font-weight-bolder text-justify">
-<label for="newEventDescription">Description de l'évènement :</label> 
-<!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
-                <textarea id="eventDescription" class="form-control" name="newEventDescription" rows="5" cols="33" maxlength="2018">
-                <?= (!empty($_POST['eventDescription']))? $_POST['eventDescription'] : $showUpdateEventResult[0]['eventDescription']?></textarea>
+<div class="form-group font-weight-bolder text-justify  ">
+<label for="eventDescription">Description de l'évènement :</label></p> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
+                <textarea id="eventDescription" class="form-control" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>"></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
 
 
-
 <div class="form-group row">
 <div class="col-sm-10">
-<p><br /><button id="submitUpdateEventForm" type="submit" name="submitUpdateEventForm" class="police float-right rounded">Créer</button></p>
+<p><br /><button id="submitNewEventForm" type="submit" name="submitNewEventForm" class="police float-right rounded">Créer</button></p>
 </div>
 </div>
+               
+                
+
 </fieldset>
-  
+
+
 
 <!-- Modal Tournoi -->
 <div class="modal fade" id="tournoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -547,22 +443,7 @@ echo($_FILES['firstPicture']['name']);
 
 
 
-
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

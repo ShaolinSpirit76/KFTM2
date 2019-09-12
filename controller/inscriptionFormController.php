@@ -246,3 +246,5 @@ $api_url = "https://www.google.com/recaptcha/api/siteverify?secret="
         $reCaptchaError = true;
     }
 }
+
+

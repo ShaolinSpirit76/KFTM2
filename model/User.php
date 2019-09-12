@@ -1,6 +1,9 @@
 <?php
 //class User qui hérite de DataBase.php (DB)
+// Je crée une classe users dont le parent est database donc users hérite de tous les attributs
+// La class User va permettre d'accéder à la table KFTM_USERS de la database ThieuLam.
 class User extends DB{
+// Attributs en public
     public $ID;
     public $gender;
     public $firstName;

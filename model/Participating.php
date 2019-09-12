@@ -85,9 +85,42 @@ class Participating extends DB{
         $displayCountEventInscriptions = $countEventInscriptions->fetchAll(PDO::FETCH_ASSOC);
         return $displayCountEventInscriptions;
     }
-   
-   
-     
+
+    public function deleteAllParticipant(){
+        $query = 'DELETE FROM `KFTM_PARTICIPATING` WHERE ID_EVENTS = :ID_EVENTS';
+        $deleteAll = $this->db->prepare($query);
+        $deleteAll->bindValue(':ID_EVENTS', $this->ID_EVENTS, PDO::PARAM_INT);
+        if($deleteAll->execute()){
+            return true;
+        }
+    }
+    
+    public function participantsNumber(){
+        $query = 'SELECT COUNT(*) AS number FROM `KFTM_PARTICIPATING` WHERE ID_EVENTS = :ID';
+        $number = $this->db->prepare($query);
+        $number->bindValue(':ID', $this->ID_EVENTS,PDO::PARAM_INT);
+        $number->execute();
+        $participantsNumber = $number->fetchAll(PDO::FETCH_ASSOC);
+        return $participantsNumber;
+    }
+
+    public function participationNumber(){
+        $query = 'SELECT COUNT(*) AS number FROM `KFTM_PARTICIPATING` WHERE ID_USERS = :ID';
+        $participation = $this->db->prepare($query);
+        $participation->bindValue(':ID', $this->ID_EVENTS,PDO::PARAM_INT);
+        $participation->execute();
+        $participationNumber = $participation->fetchAll(PDO::FETCH_ASSOC);
+        return $participationNumber;
+    }
+
+    public function deleteAllParticipation(){
+        $query = 'DELETE FROM `KFTM_PARTICIPATING` WHERE ID_USERS = :ID';
+        $deleteAll = $this->db->prepare($query);
+        $deleteAll->bindValue(':ID', $this->ID_USERS, PDO::PARAM_INT);
+        if($deleteAll->execute()){
+            return true;
+        }
+    }
     
 }
 

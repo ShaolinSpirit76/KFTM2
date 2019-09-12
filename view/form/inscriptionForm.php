@@ -97,9 +97,9 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
     <div id="status" class="space">
 
 <fieldset class="form-group font-weight-bolder">
-    <div class="row">
-<legend class="col-form-label col-sm-2 pt-0 text-white">Rang : </legend>
-
+    
+<legend class="col-form-label col-sm-2 pt-0 text-white mx-auto">Rang : </legend>
+<div class="row">
 <div class="col-sm-10">
 
         <div class="form-check">
@@ -151,9 +151,9 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
 <div id="groupAge" class="space">
 
 <fieldset class="form-group font-weight-bolder text-white">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Groupe : </legend>
-
+  
+      <legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe : </legend>
+      <div class="row">
       <div class="col-sm-10">
         <div class="form-check">
   <input class="form-check-input" type="radio" id="Enfants" name="groupAge" value="Enfants">
@@ -315,15 +315,15 @@ if ( (isset($_FILES['picture']['tmp_name'])) && (!empty($_FILES['picture']['tmp_
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0 text-center">
-      <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <span class="mx-auto text-center text-align-center align-items-center">En savoir plus sur la gestion de vos données</span>
+      <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <span class="police">En savoir plus sur la gestion de vos données</span>
         </button>
       </h2>
     </div>
 </div>
-<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body text-justify">
-      Nous vous garantissons que les informations renseignées ci-dessus sont recueillies par le maître de l'école (Sifu Jean-Marie) dans le seul objectif d'en simplifier la gestion.<br /> Par ailleurs, elles permettent également d'améliorer votre expérience sur le site de l'école, en tant que membre.<br /><br /> En aucun cas vos coordonnées personnelles ne seront sciemment communiquées à une personne ou une entité tierce ; Sifu Jean-Marie et le webmaster prennent la confidentialité des membres du cercle très au sérieux.<br /><br /> Vous pourrez choisir vous-mêmes les informations que vous souhaitez afficher sur le site en vous rendant sur la page "Mon compte" de l'onglet "Connexion".<br /><br />Si vous souhaitez en savoir plus sur la protection et l'utilisation de vos données, n'hésitez pas à visiter nos mentions légales situées en bas de page, notamment les <a href="../mentions/legalInfos.php">informations légales</a> du site et notre <a href="../mentions/RGPD.php">RGPD</a>.
+      Nous vous garantissons que les informations renseignées ci-dessus sont recueillies par le maître de l'école (Sifu Jean-Marie) dans le seul objectif d'en simplifier la gestion. Par ailleurs, elles permettent également d'améliorer votre expérience sur le site de l'école, en tant que membre.<br /><br /> En aucun cas vos coordonnées personnelles ne seront sciemment communiquées à une personne ou une entité tierce ; Sifu Jean-Marie et le webmaster prennent la confidentialité des membres du cercle très au sérieux.<br /><br /> Vous pourrez choisir vous-mêmes les informations que vous souhaitez afficher sur le site en vous rendant sur la page "Mon compte" de l'onglet "Options".<br /><br />Si vous souhaitez en savoir plus sur la protection et l'utilisation de vos données, n'hésitez pas à visiter nos mentions légales situées en bas de page, notamment les <a href="../mentions/legalInfos.php">informations légales</a> du site et notre <a href="../mentions/RGPD.php">RGPD</a>.
       </div>
     </div>
 </div>

@@ -12,22 +12,21 @@ include 'navbarAdmin.php';
 
 <!-- Début formulaire d'inscription -->
 
-<div id="newEventTitle" class="col-md-10 col-lg-5 col-sm-10 offset-sm-1 col mx-auto">
-<h1 class="police text-white text-center">Créer un nouvel évènement</h1>
+<div id="newEventTitle">
+<h1 class="police text-center space text-white font-weight-bolder">Créer un nouvel évènement</h1>
 </div>
 
-<form method="POST" action="newEvent.php" id="newEventForm" name="newEventForm" 
-enctype="multipart/form-data" class="police2">
-               <div class="card mx-auto" id="generation" style="width: 31rem;">
-  <div class="card-body">
-      <fieldset>
+
+<form method="POST" action="newEvent.php" id="inscriptionForm" name="inscriptionForm" enctype="multipart/form-data" class="police2 container-fluid text-center">
+
+<fieldset>
 
 
 <div class="space">
-      <li class="font-weight-bolder">
+      
           
-      <label for="eventType">Nom de l'évènement : </label>
-      <select id="eventType" name="eventType" class="inputNewEvent" value="<?= $_POST['eventType']?>" required>
+      <div class="form-group font-weight-bolder"><label for="eventType">Nom de l'évènement : </label>
+      <select id="eventType" name="eventType" class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventType']?>" required>
             <option value="<?= $_POST['eventType']?>" selected disabled>Choisissez</option>
                 <option value="Tournoi">Tournoi</option> 
                 <option value="Compétition">Compétition</option>
@@ -38,52 +37,64 @@ enctype="multipart/form-data" class="police2">
                 <option value="Séminaire d'été">Séminaire d'été</option>
                 <option value="Barbecue de fin d'année">Barbecue de fin d'année</option>
                 <option value="Autre">Autre </option>
-</select>
-      <input name="otherEventType" type="text" id="otherEventType" placeholder="Veuillez préciser..." />
-</li>
+</select></div>
+<div class="form-group font-weight-bolder"><input name="otherEventType" type="text" id="otherEventType" placeholder="Veuillez préciser..." /></div>
+
 </div>
 
 
 <div id="eventCourse" class="space">
-<li class="font-weight-bolder"> 
-<label for="eventCourse" value="<?= $_POST['eventCourse']?>">Groupe concerné : </label>
+<fieldset class="form-group font-weight-bolder">
 
-  <p><input type="radio" id="Kung-Fu" name="eventCourse" value="Kung-Fu">
-  <label for="Kung-Fu">Kung-Fu <span class="formColor">~~~</span> </label>
+<legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe concerné : </legend>
+<div class="row">
+<div class="col-sm-10">
 
-  <input type="radio" id="Taïchi Chuan & Qi Gong" name="eventCourse" value="Taïchi Chuan & Qi Gong">
-  <label for="Taïchi Chuan & Qi Gong">Taïchi <span class="formColor">~~~</span> </label>
-
-  <input type="radio" id="Sanda & Shoubo" name="eventCourse" value="Sanda & Shoubo">
-  <label for="Sanda & Shoubo">Sanda <span class="formColor">~~~</span> </label>
-
-  <input type="radio" id="Tout le monde" name="eventCourse" value="Tout le monde">
-  <label for="Tout le monde">Tous</label></p>
-    
-            
-            </li>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="Kung-Fu" name="eventCourse" value="Kung-Fu">
+  <label class="form-check-label text-center" for="Kung-Fu">Kung-Fu</label>
 </div>
 
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="Taïchi Chuan & Qi Gong" name="eventCourse" value="Taïchi Chuan & Qi Gong">
+  <label class="form-check-label" for="Taïchi Chuan & Qi Gong">Taïchi</label>
+</div>
+
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="Sanda & Shoubo" name="eventCourse" value="Sanda & Shoubo">
+  <label class="form-check-label" for="Sanda & Shoubo">Sanda</label>
+</div>
+
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="Tout le monde" name="eventCourse" value="Tout le monde">
+  <label class="form-check-label" for="Tout le monde">Tous</label>
+</div>
+
+</div>
+
+</div>
+</fieldset>         
+</div>
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent" value="<?= $_POST['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></li>
+<div class="form-group font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></div>
 
 </div>
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent" value="<?= $_POST['eventHour']?>" type="time" name="eventHour" id="eventHour" required /></li>
+<div class="form-group font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventHour']?>" type="time" name="eventHour" id="eventHour" required />
+</div>
 
 </div>
 
 <div class="space">
 
-<li class="font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent" value="<?= $_POST['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" /></li>
-
+<div class="form-group font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" />
 </div>
 
-
+</div>
 
 <!-- Code pour upload la photo de profil. On ne récupère que le nom dans la BDD -->
 <!-- Pour que l'image se copie dans le dossier prévu à cet effet, il faut ajouter
@@ -114,23 +125,25 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
                   ?>
 
 
-<li class="font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
-<p><input type="button" id="personalPictureChoice" value="Personnelle" />
+
+<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<input type="button" class="mx-auto" id="personalPictureChoice" value="Personnelle" />
   
 
-  <input type="button" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
- </li>
+  <input type="button" class="mx-auto" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
+</div>
 
 <div id="personalPicture" class="space">
                  
-                 <li class="font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
-        <input type="file" name="eventPicture" id="eventPicture" />
+<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label>
+        <input type="file" class="form-control-file mx-auto text-center" name="eventPicture" id="eventPicture" />
+</div>
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
 </div>
 
 <div id="registeredPicture" class="space">
 
-<li class="font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label></li>
+<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label>
 
 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
@@ -148,26 +161,27 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
   <span >Séminaire d'été</span></button>
 <button type="button" class="badge badge-dark" data-toggle="modal" data-target="#barbecue">
     <span >Barbecue de fin d'année</span></button>
+</div>
 
 </div>
 
 
-
-        <div>
-<p class="font-weight-bolder text-justify"><label for="eventDescription">Description de l'évènement :</label></p> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
-                <textarea id="eventDescription" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>"></textarea>
+<div class="form-group font-weight-bolder text-justify">
+<label for="eventDescription">Description de l'évènement :</label> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
+                <textarea id="eventDescription" class="form-control" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>"></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
 
 
-
-
-
+<div class="form-group row">
+<div class="col-sm-10">
 <p><br /><button id="submitNewEventForm" type="submit" name="submitNewEventForm" class="police float-right rounded">Créer</button></p>
+</div>
+</div>
+               
+                
 
 </fieldset>
-          </div>
-</div>
 
 
 
@@ -182,14 +196,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        
-      <input type="radio" id="tournoi01.jpg" name="registeredPicture" value="tournoi01.jpg" />
-        <img src="affiches/tournoi01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi02.jpg" name="registeredPicture" value="tournoi02.jpg" />
-        <img src="affiches/tournoi02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="tournoi03.jpg" name="registeredPicture" value="tournoi03.jpg" />
-        <img src="affiches/tournoi03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+      <input type="radio" id="tournoi01.jpg"  name="registeredPicture"    value="tournoi01.jpg" />
+        <img src="affiches/tournoi01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="tournoi02.jpg"  name="registeredPicture"    value="tournoi02.jpg" />
+        <img src="affiches/tournoi02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="tournoi03.jpg"  name="registeredPicture"    value="tournoi03.jpg" />
+        <img src="affiches/tournoi03.jpg"   alt="" class="w-86"   />
+      </div>
           
       </div>
       <div class="modal-footer">
@@ -210,13 +229,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="competition01.jpg" name="registeredPicture" value="competition01.jpg" />
-        <img src="affiches/competition01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition02.jpg" name="registeredPicture" value="competition02.jpg" />
-        <img src="affiches/competition02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="competition03.jpg" name="registeredPicture" value="competition03.jpg" />
-        <img src="affiches/competition03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="competition01.jpg"  name="registeredPicture"    value="competition01.jpg" />
+        <img src="affiches/competition01.jpg"   alt="" class="w-86" />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="competition02.jpg"  name="registeredPicture"    value="competition02.jpg" />
+        <img src="affiches/competition02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="competition03.jpg"  name="registeredPicture"    value="competition03.jpg" />
+        <img src="affiches/competition03.jpg"   alt="" class="w-86"   />
+      </div>
           
       </div>
       <div class="modal-footer">
@@ -236,13 +261,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="representation01.jpg" name="registeredPicture" value="representation01.jpg" />
-        <img src="affiches/representation01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation02.jpg" name="registeredPicture" value="representation02.jpg" />
-        <img src="affiches/representation02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="representation03.jpg" name="registeredPicture" value="representation03.jpg" />
-        <img src="affiches/representation03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="representation01.jpg"  name="registeredPicture"    value="representation01.jpg" />
+        <img src="affiches/representation01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="representation02.jpg"  name="registeredPicture"    value="representation02.jpg" />
+        <img src="affiches/representation02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="representation03.jpg"  name="registeredPicture"    value="representation03.jpg" />
+        <img src="affiches/representation03.jpg"   alt="" class="w-86"   />
+      </div>
         
           
       </div>
@@ -263,14 +294,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="passagedegrade01.jpg" name="registeredPicture" value="passagedegrade01.jpg" />
-        <img src="affiches/passagedegrade01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade02.jpg" name="registeredPicture" value="passagedegrade02.jpg" />
-        <img src="affiches/passagedegrade02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="passagedegrade03.jpg" name="registeredPicture" value="passagedegrade03.jpg" />
-        <img src="affiches/passagedegrade03.jpg" alt="" width="30%" height="90%" />
-        
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="passagedegrade01.jpg"  name="registeredPicture"    value="passagedegrade01.jpg" />
+        <img src="affiches/passagedegrade01.jpg"   alt="" class="w-86"   />
+      </div>
+        <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="passagedegrade02.jpg"  name="registeredPicture"    value="passagedegrade02.jpg" />
+        <img src="affiches/passagedegrade02.jpg"   alt="" class="w-86"   />
+        </div>
+        <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="passagedegrade03.jpg"  name="registeredPicture"    value="passagedegrade03.jpg" />
+        <img src="affiches/passagedegrade03.jpg"   alt="" class="w-86"   />
+        </div>
           
       </div>
       <div class="modal-footer">
@@ -290,13 +326,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="cassetuile01.jpg" name="registeredPicture" value="cassetuile01.jpg" />
-        <img src="affiches/cassetuile01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile02.jpg" name="registeredPicture" value="cassetuile02.jpg" />
-        <img src="affiches/cassetuile02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="cassetuile03.jpg" name="registeredPicture" value="cassetuile03.jpg" />
-        <img src="affiches/cassetuile03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="cassetuile01.jpg"  name="registeredPicture"    value="cassetuile01.jpg" />
+        <img src="affiches/cassetuile01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="cassetuile02.jpg"  name="registeredPicture"    value="cassetuile02.jpg" />
+        <img src="affiches/cassetuile02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="cassetuile03.jpg"  name="registeredPicture"    value="cassetuile03.jpg" />
+        <img src="affiches/cassetuile03.jpg"   alt="" class="w-86"   />
+      </div>
         
           
       </div>
@@ -317,13 +359,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="entrainement01.jpg" name="registeredPicture" value="entrainement01.jpg" />
-        <img src="affiches/entrainement01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement02.jpg" name="registeredPicture" value="entrainement02.jpg" />
-        <img src="affiches/entrainement02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="entrainement03.jpg" name="registeredPicture" value="entrainement03.jpg" />
-        <img src="affiches/entrainement03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="entrainement01.jpg"  name="registeredPicture"    value="entrainement01.jpg" />
+        <img src="affiches/entrainement01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="entrainement02.jpg"  name="registeredPicture"    value="entrainement02.jpg" />
+        <img src="affiches/entrainement02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="entrainement03.jpg"  name="registeredPicture"    value="entrainement03.jpg" />
+        <img src="affiches/entrainement03.jpg"   alt="" class="w-86"   />
+      </div>
         
           
       </div>
@@ -344,13 +392,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="seminaire01.jpg" name="registeredPicture" value="seminaire01.jpg" />
-        <img src="affiches/seminaire01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire02.jpg" name="registeredPicture" value="seminaire02.jpg" />
-        <img src="affiches/seminaire02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="seminaire03.jpg" name="registeredPicture" value="seminaire03.jpg" />
-        <img src="affiches/seminaire03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="seminaire01.jpg"  name="registeredPicture"    value="seminaire01.jpg" />
+        <img src="affiches/seminaire01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="seminaire02.jpg"  name="registeredPicture"    value="seminaire02.jpg" />
+        <img src="affiches/seminaire02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="seminaire03.jpg"  name="registeredPicture"    value="seminaire03.jpg" />
+        <img src="affiches/seminaire03.jpg"   alt="" class="w-86"   />
+      </div>
         
           
       </div>
@@ -371,13 +425,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <input type="radio" id="barbecue01.jpg" name="registeredPicture" value="barbecue01.jpg" />
-        <img src="affiches/barbecue01.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue02.jpg" name="registeredPicture" value="barbecue02.jpg" />
-        <img src="affiches/barbecue02.jpg" alt="" width="30%" height="90%" />
-        <input type="radio" id="barbecue03.jpg" name="registeredPicture" value="barbecue03.jpg" />
-        <img src="affiches/barbecue03.jpg" alt="" width="30%" height="90%" />
+      <div class="modal-body row">
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="barbecue01.jpg"  name="registeredPicture"    value="barbecue01.jpg" />
+        <img src="affiches/barbecue01.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="barbecue02.jpg"  name="registeredPicture"    value="barbecue02.jpg" />
+        <img src="affiches/barbecue02.jpg"   alt="" class="w-86"   />
+      </div>
+      <div class="col-md-4 col-12 mb-1">
+        <input type="radio" id="barbecue03.jpg"  name="registeredPicture"    value="barbecue03.jpg" />
+        <img src="affiches/barbecue03.jpg"   alt="" class="w-86"   />
+      </div>
         
           
       </div>
@@ -390,34 +450,12 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
 
 
-
-
-
-
-
-
-
-
-
 </form>
 
-<div id="newEventEnd">
-
-<div id="accordion" style="width: 30rem;" class="mx-auto">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0 text-center">
-        <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <span class="mx-auto text-center text-align-center align-items-center police">Visualiser un aperçu</span>
-        </button>
-      </h5>
-    </div>
-</div>
-</div>
 
 
 
-
+          
 
 
 

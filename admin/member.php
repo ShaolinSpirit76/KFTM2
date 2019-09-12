@@ -363,7 +363,7 @@ endif;
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Retour</button>
         <form name="deleteForm" method="POST" action="<?php $_SERVER['REQUEST_URI']; ?>">
-        <button type="submit" value="<?=$displayUser['ID']?>" id="adminDeleteRequest" name="adminRequest" class="btn btn-primary">Confirmer le passage en mode admin</button>
+        <button type="submit" value="<?=$displayUser['ID']?>" id="adminDeleteRequest" name="adminDeleteRequest" class="btn btn-primary">Confirmer le passage en mode admin</button>
 </form>
       </div>
     </div>
@@ -410,13 +410,6 @@ endif;
 
 <div id="spaceBottom"></div>
 
-
-
-
-
-
-
-
 <?php
 include '../view/templates/footerAdmin.php';
-include '../view/templates/AlertConnection.php';
+

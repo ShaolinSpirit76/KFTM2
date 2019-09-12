@@ -1,6 +1,6 @@
 <?php
-require '../controller/adminControllerStart.php';
-require '../controller/adminController.php';
+require_once '../controller/adminControllerStart.php';
+require_once '../controller/adminController.php';
 include '../view/templates/headHome.php';
 include 'navbarAdmin.php';
 ?>

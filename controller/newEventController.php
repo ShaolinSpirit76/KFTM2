@@ -63,8 +63,9 @@ $events->eventType = $eventType;
     $events->registeredPicture = $registeredPicture;
     $events->eventMaxUser = $eventMaxUser;
     $events->eventDescription = $eventDescription;
-    // alert success s'il n'y a pas d'erreur
+
     $events->addEvent();
+        // alert success s'il n'y a pas d'erreur
     $newEventSuccess = true;
 else:
     $swalErrorForm = true;

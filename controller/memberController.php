@@ -6,6 +6,7 @@ session_start();
 $PageCSS = '../assets/CSS/PageCSS/member.css';
 
 $User = new User();
+$participation = new Participating();
 
 $displayUsersResult = $User->displayUser();
 
@@ -13,8 +14,14 @@ $displayUsersResult = $User->displayUser();
 if (isset($_POST['adminDeleteRequest'])) {
     $ID = (int)$_POST['adminDeleteRequest'];
     $User->ID = $ID;
+    $participation->ID_USERS = $ID;
+    $participationNumber = $participation->participationNumber();
+    if((int)$participationNumber>0){
+        $participation->deleteAllParticipation();
+    }
     if($User->adminDeleteUser()){
         $adminDeleteSuccess = true;
+        
         }    
 }
 

@@ -38,8 +38,21 @@
   <script src="../../assets/script/particle.js"></script>
   <script src="../../assets/script/jquery_002.js"></script>
   <script src="../../assets/script/plugins.js"></script>
-    
-
+  <?php
+  if(isset($adminDeleteSuccess) && $adminDeleteSuccess == true){
+  ?>
+        <script>
+        Swal.fire({
+    title: "Suppression réussie ! ",
+    text: "Une place s'est libérée...",
+    type: "success"
+        
+}).then(function() {
+  document.location.href = "member.php";
+});              
+        </script>
+        <?php
+}?>
 </body>
 
 
