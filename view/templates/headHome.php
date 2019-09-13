@@ -55,6 +55,6 @@ if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ) : ?>
 
 <?php if(isset($_SESSION['connection']) && $_SESSION['connection'] == true ) : ?>
 <!-- Pour la déconnexion après inactivité -->
-<div id="statut" style="color:#ff0000;">Vous êtes inactif depuis 0 secondes.</div>
+<div id="statut" style="color:#ff0000;"> </div>
 <?php endif; ?>
 
