@@ -5,7 +5,6 @@ $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la 
 $error = [];
 $events = new Event();
 
-
 // On teste les regex si le formulaire est rempli
 if (count($_POST) > 0):
     // Déclaration de variables qui prennent les valeurs des $_POST respectives
@@ -27,9 +26,7 @@ if (!empty($_POST['registeredPicture'])):
 
     $eventMaxUser = (int)$_POST['eventMaxUser'];
     $eventDescription = $_POST['eventDescription'];
-    
-    
-    
+        
     $events->eventPicture = $eventPicture;
     $events->registeredPicture = $registeredPicture;
 
@@ -39,15 +36,15 @@ $eventDescription = NULL;
         $events->eventDescription = $eventDescription;
     endif;
   
-
-    // modal error s'il y a une erreur
+    // alert error s'il y a une erreur
     if(!empty($error)):
         $swalErrorForm = true;
         endif; 
    
 endif;
 
-
+// Si le bouton est enclenché et qu'il n'y a pas d'erreur,
+// on procède à l'hydratation des données.
 if (isset($_POST['submitNewEventForm'])) {
 
 if(empty($error)):
@@ -63,7 +60,7 @@ $events->eventType = $eventType;
     $events->registeredPicture = $registeredPicture;
     $events->eventMaxUser = $eventMaxUser;
     $events->eventDescription = $eventDescription;
-
+// On enclenche la méthode contenue dans le model Event.php
     $events->addEvent();
         // alert success s'il n'y a pas d'erreur
     $newEventSuccess = true;

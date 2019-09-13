@@ -8,12 +8,9 @@ include 'navbarAdmin.php';
 
 <h1 class="police text-center" id="ourCircleTitle">Les évènements du moment</h1>
 
-
-
 <div class="container-fluid">
   <div class="row">
 <?php foreach($displayEventsResult as $displayEvent){ ?>
-
   
   <div class="col-md-8 col-sm-12 mx-auto text-center">
       <div class="card mx-auto text-center">
@@ -27,12 +24,8 @@ include 'navbarAdmin.php';
       <?php endif; ?>
 
       <div class="card-body police2">
-        
-        
+                
           <p class="card-text text-center">Le <?=strftime('%A %d %B %Y',strtotime($displayEvent['eventDate']))?> </p>
-   
-          
-
          
 <form  method="POST" action="updateEvent.php">
 
@@ -42,18 +35,11 @@ include 'navbarAdmin.php';
 
 <button type="button" id="eventDeleteButton" class="badge badge-secondary btn btn-primary" data-toggle="modal" data-target="#deleteEvent<?=$displayEvent['ID']?>">Supprimer</button>
 
-
 <br /><br />
 </form>
 
-                   
-
-
-
-    
-        <div class="collapse mx-auto" id="eventDetails<?=$displayEvent['ID']?>">
+<div class="collapse mx-auto" id="eventDetails<?=$displayEvent['ID']?>">
   <div class="card card-body">
-
   
     <?php if (isset($displayEvent['eventCourse'])): ?>
   <p class="text-white">Groupe concerné : <?= $displayEvent['eventCourse']?> </p>
@@ -71,20 +57,13 @@ include 'navbarAdmin.php';
   <p class="text-white">Description : <?= $displayEvent['eventDescription']?> </p>
   <?php endif; ?>
 
-
-
   </div>
 </div>
 
-
-
   </div>
 </div>
-
        
 </div>
-
-
 
 <!-- Début modal sécurité pour supprimer un évènement -->
 
@@ -111,20 +90,12 @@ include 'navbarAdmin.php';
     </div>
   </div>
 </div>
-
-
     
   <?php 
   } ?>
 </div>
 </div>
-   
-         
-                   
-
-
-
 
 <?php
-include '../view/templates/footer.php';
+include '../view/templates/footerAdmin.php';
 include '../view/templates/AlertConnection.php';

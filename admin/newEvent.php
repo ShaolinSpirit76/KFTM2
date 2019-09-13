@@ -6,26 +6,20 @@ include '../controller/regex.php';
 include '../view/templates/headHome.php';
 include 'navbarAdmin.php';
 ?>
-
-
-
-
 <!-- Début formulaire d'inscription -->
 
 <div id="newEventTitle">
 <h1 class="police text-center space text-white font-weight-bolder">Créer un nouvel évènement</h1>
 </div>
 
-
 <form method="POST" action="newEvent.php" id="inscriptionForm" name="inscriptionForm" enctype="multipart/form-data" class="police2 container-fluid text-center">
 
 <fieldset>
 
-
-<div class="space">
-      
+<div class="space">      
           
-      <div class="form-group font-weight-bolder"><label for="eventType">Nom de l'évènement : </label>
+      <div class="form-group font-weight-bolder text-white"><label for="eventType"><p>Nom de l'évènement : </p></label>
+      <!-- La value permet de conserver la valeur de l'input au cas où le formulaire ne passe pas -->
       <select id="eventType" name="eventType" class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventType']?>" required>
             <option value="<?= $_POST['eventType']?>" selected disabled>Choisissez</option>
                 <option value="Tournoi">Tournoi</option> 
@@ -38,17 +32,16 @@ include 'navbarAdmin.php';
                 <option value="Barbecue de fin d'année">Barbecue de fin d'année</option>
                 <option value="Autre">Autre </option>
 </select></div>
-<div class="form-group font-weight-bolder"><input name="otherEventType" type="text" id="otherEventType" placeholder="Veuillez préciser..." /></div>
+<div class="form-group font-weight-bolder text-white"><input name="otherEventType" type="text" id="otherEventType" placeholder="Veuillez préciser..." /></div>
 
 </div>
 
-
 <div id="eventCourse" class="space">
-<fieldset class="form-group font-weight-bolder">
+<fieldset class="form-group font-weight-bolder text-white">
 
 <legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe concerné : </legend>
 <div class="row">
-<div class="col-sm-10">
+<div class="col-sm-10 offset-sm-1 text-center">
 
 <div class="form-check">
   <input type="radio" class="form-check-input" id="Kung-Fu" name="eventCourse" value="Kung-Fu">
@@ -78,20 +71,20 @@ include 'navbarAdmin.php';
 
 <div class="space">
 
-<div class="form-group font-weight-bolder"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></div>
+<div class="form-group font-weight-bolder text-white"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventDate']?>" type="date" name="eventDate" id="eventDate" placeholder="jj/mm/aaaa" required  /></div>
 
 </div>
 
 <div class="space">
 
-<div class="form-group font-weight-bolder"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventHour']?>" type="time" name="eventHour" id="eventHour" required />
+<div class="form-group font-weight-bolder text-white"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventHour']?>" type="time" name="eventHour" id="eventHour" required />
 </div>
 
 </div>
 
 <div class="space">
 
-<div class="form-group font-weight-bolder"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" />
+<div class="form-group font-weight-bolder text-white"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= $_POST['eventMaxUser']?>" type="number" min="1" max="100" name="eventMaxUser" id="eventMaxUser" />
 </div>
 
 </div>
@@ -100,7 +93,7 @@ include 'navbarAdmin.php';
 <!-- Pour que l'image se copie dans le dossier prévu à cet effet, il faut ajouter
 une ligne de commande dans le terminal : sudo chmod 777 affiches/ -->
 <?php 
-// on test si un fichier a été sélectionné en upload
+// on teste si un fichier a été sélectionné en upload
 if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPicture']['tmp_name'])) ) { 
   // $taille est un Array contenant les infos de l'image
   $taille = getimagesize($_FILES['eventPicture']['tmp_name']); 
@@ -121,21 +114,17 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
   imagejpeg($im_miniature, 'affiches/'.$_FILES['eventPicture']['name'], 90);
   
 }
+?>
 
-                  ?>
-
-
-
-<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<div class="form-group font-weight-bolder text-white space"> <label for="pictureChoice">Ajouter une affiche : </label>
 <input type="button" class="mx-auto" id="personalPictureChoice" value="Personnelle" />
   
-
   <input type="button" class="mx-auto" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
 </div>
 
 <div id="personalPicture" class="space">
                  
-<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label>
+<div class="form-group font-weight-bolder text-white space"> <label for="eventPicture">Affiche de l'évènement : </label>
         <input type="file" class="form-control-file mx-auto text-center" name="eventPicture" id="eventPicture" />
 </div>
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
@@ -143,7 +132,7 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
 <div id="registeredPicture" class="space">
 
-<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label>
+<div class="form-group font-weight-bolder text-white space"> <label for="registeredPicture">Affiche de l'évènement : </label>
 
 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
@@ -165,20 +154,19 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
 </div>
 
-
-<div class="form-group font-weight-bolder text-justify">
+<div class="form-group font-weight-bolder text-white text-justify">
+<div class="col-sm-10 offset-sm-1 text-center">
 <label for="eventDescription">Description de l'évènement :</label> <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
                 <textarea id="eventDescription" class="form-control" name="eventDescription" rows="5" cols="33" maxlength="2018" value="<?= $_POST['eventDescription']?>"></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
-
+</div>
 
 <div class="form-group row">
 <div class="col-sm-10">
 <p><br /><button id="submitNewEventForm" type="submit" name="submitNewEventForm" class="police float-right rounded">Créer</button></p>
 </div>
-</div>
-               
+</div>               
                 
 
 </fieldset>
@@ -451,26 +439,6 @@ if ( (isset($_FILES['eventPicture']['tmp_name'])) && (!empty($_FILES['eventPictu
 
 
 </form>
-
-
-
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 include '../view/templates/footerAdmin.php';

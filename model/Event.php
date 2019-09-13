@@ -12,13 +12,21 @@ class Event extends DB{
     public $eventPicture;
     public $registeredPicture;
    
-
     public function __construct(){
         //On récupere le constructeur de la page DataBase.php qui est le parent de la class Event
         parent::__construct();
  }
 
 
+// Nous allons utiliser la fonction prepare pour mettre en place des
+// bindValue pour récupérer les valeurs de l'objet. Une fois les valeurs récupérées,
+// nous exécutons la requête.
+// $this signifie l'objet courant. Lorsque nous appellerons cette méthode
+// via un objet, c'est de cet objet qu'il sera question.
+// l'opérateur -> permet ici par exemple d'affecter l'objet courant ($this)
+// à la variable (propriété) date.
+// Nous utilisons les constantes PDO "PDO::PARAM_STR" pour une chaîne de
+// caractères et "PDO::PARAM_INT" pour un entier.
     public function addEvent(){
 
         $query = 'INSERT INTO `KFTM_EVENTS`(`eventType`, `eventCourse`, `eventDate`, `eventHour`, `eventMaxUser`,
@@ -106,16 +114,6 @@ class Event extends DB{
             return true;
         }
      }
-
-
-
-
-
-
-
-
-
-
 
 
      public function countEvent(){

@@ -10,8 +10,6 @@ $participants = new Participating();
 
 $displayEventsResult = $Event->displayEvent();
 
-
-
 if (isset($_POST['changeEvent'])){
 $showUpdateEventResult = $Event->showUpdateEvent();
 }

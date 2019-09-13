@@ -56,14 +56,7 @@ body {
     transform: translateY(-50%);
   }
   
-  /* @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-  } */
+  
   
   .paragraph {
       font-size: 1.1em;
@@ -130,8 +123,8 @@ body {
 /*-------------------------------------- CSS du formulaire ------------------------------------------*/
 
 
-#inscriptionForm {
-  background-color: rgba(255,255,255,0.25);
+#inscriptionForm, #newEventForm {
+  background-color: rgba(0,0,0,0.45);
 }
 
 
@@ -153,12 +146,12 @@ body {
   border-bottom: 1px solid #9ee0c4;
   background-color: transparent;
   width: 18rem;
-  color: #336699;
+  color: #f3b61f;
   font-weight: bold;
 }
 
-textarea {
-  color: #336699;
+#eventDescription {
+  color: #f3b61f;
   font-weight: bold;
 }
 
@@ -170,12 +163,12 @@ font-family: 'Permanent Marker', cursive;
 letter-spacing: 0.5rem;
 }
 
-#submitNewEventForm {
+#submitNewEventForm, #submitUpdateEventForm {
 background-color: #336699;
 color: white;
 }
 
-#submitNewEventForm:hover {
+#submitNewEventForm:hover, #submitUpdateEventForm:hover {
 background-color: #fcd600;
 color: #0a0901;
 } 

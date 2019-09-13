@@ -167,7 +167,7 @@ include '../templates/head.php';
                    <p class="text-white">Ceinture enfant : <?= $displayUser['childBelt']?> </p>
                    <?php endif; ?>
 
-                   <?php if (isset($displayUser['studentdBelt'])): ?>
+                   <?php if (isset($displayUser['studentBelt'])): ?>
                    <p class="text-white">Ceinture adulte : <?= $displayUser['studentBelt']?> </p>
                    <?php endif; ?>
 
@@ -211,78 +211,7 @@ include '../templates/head.php';
 
 </div>
 <!-- Fin div Kung-Fu -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-                
+               
  
 
 <?php

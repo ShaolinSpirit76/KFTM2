@@ -2,6 +2,7 @@
 //il faut tjrs appeler la base de donnée dans le controller
 require '../../model/DataBase.php'; 
 require '../../model/User.php';
+require '../../model/Participating.php';
 
 $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la sécurité : interdit l'injection de script (balises non autorisées)
 
@@ -295,7 +296,7 @@ $user->ID = $_SESSION['userInfos'][0]['ID'];
 
     // $user->verification = $verification;
  
-    // modal error s'il y a une erreur
+    // alert error s'il y a une erreur
     if(!empty($error)):
         $swalErrorForm = true;
         endif; 
@@ -477,6 +478,7 @@ $IDmodifSuccess = true;
             $error['errorCheckPassword'] = 'Ceci n\'est pas votre mot de passe actuel.';
             $mdpFailed = true; 
         else:
+
             $deleteSuccess = true;
             $user->deleteUser();
             // fonction pour supprimer la photo du dossier miniatures
@@ -485,10 +487,7 @@ $IDmodifSuccess = true;
             endif;
            
     }
-
-
     
-
 
 
 

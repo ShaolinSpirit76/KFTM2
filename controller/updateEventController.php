@@ -22,15 +22,11 @@ $_SESSION['eventPicture'] = $showUpdateEventResult[0]['eventPicture'];
 $_SESSION['registeredPicture'] = $showUpdateEventResult[0]['registeredPicture'];
 $_SESSION['eventCourse'] = $showUpdateEventResult[0]['eventCourse'];
 
-
-
 // On teste les regex si le formulaire est rempli et on attribue les valeurs passées en POST
 
 if (isset($_POST['submitUpdateEventForm'])) {
     $events->ID = $_SESSION['eventID'];
-    
-   
-   
+       
     // Déclaration de variables qui prennent les valeurs des $_POST respectives
     if ( ($_POST['newEventType'] == 'Autre') && (!empty($_POST['otherEventType'])) ) :
         $newEventType = $_POST['otherEventType'];
@@ -47,8 +43,6 @@ endif;
     $newEventDate = $_POST['newEventDate'];
     $newEventHour = $_POST['newEventHour'];
     
-
-
     if (!empty($_POST['newRegisteredPicture'])):
         
         $newRegisteredPicture = $_POST['newRegisteredPicture'];
@@ -71,32 +65,17 @@ endif;
         $newRegisteredPicture = $_SESSION['registeredPicture'];
     endif;
 
-
-    // if(isset($_FILES['newEventPicture']) && !empty($_FILES['newEventPicture']['name'])){
-    //     $newEventPicture = $_FILES['newEventPicture']['name'];
-    // }else if(isset($_FILES['firstPicture']) && !empty($_FILES['firstPicture']['name'])){
-    //     $newEventPicture = $_FILES['firstPicture']['name'];
-    // }else{
-    //     $newEventPicture = $_SESSION['eventPicture'];
-    // }
-
-    $newEventMaxUser = (int)$_POST['newEventMaxUser'];
+      $newEventMaxUser = (int)$_POST['newEventMaxUser'];
     $newEventDescription = $_POST['newEventDescription'];
-
-
 
 // On procède à l'hydratation
 
     if (isset($_POST['newEventType'])):
         //objet qui contient les attributs et les méthodes de la class Event
             $events->eventType = $newEventType;
-    endif;
-
-
-    
+    endif;    
             $events->eventCourse = $newEventCourse;  
  
-
     if (isset($_POST['newEventDate'])):
           $events->eventDate = $newEventDate;
     endif;
@@ -104,11 +83,9 @@ endif;
     if (isset($_POST['newEventHour'])):
         $events->eventHour = $newEventHour;
   endif;
-
  
     $events->eventPicture = $newEventPicture;
     $events->registeredPicture = $newRegisteredPicture;
-
 
 if (isset($_POST['newEventMaxUser'])):
     $events->eventMaxUser = $newEventMaxUser;
@@ -118,13 +95,11 @@ if (isset($_POST['newEventDescription'])):
     $events->eventDescription = $newEventDescription;
 endif;
 
-
-    // modal error s'il y a une erreur
+    // alert error s'il y a une erreur
     if(!empty($error)):
         $swalErrorForm = true;
         endif; 
    
- 
     // alert success s'il n'y a pas d'erreur
         $events->updateEvent();
 

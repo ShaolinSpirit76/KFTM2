@@ -38,14 +38,6 @@ a[data-toggle="collapse"] {
 }
 
 
-/* @media (max-width: 768px) {
-  #sidebar {
-      margin-left: -250px;
-  }
-  #sidebar.active {
-      margin-left: 0;
-  }
-} */
 
 .paragraph {
     font-size: 1.1em;
@@ -98,7 +90,7 @@ transition: all 0.3s;
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    /* background: #6d7fcc; */
 }
 ul ul a {
     font-size: 0.9em !important;

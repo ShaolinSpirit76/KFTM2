@@ -7,7 +7,7 @@ class Participating extends DB{
     public $CHECKED;
     
     public function __construct(){
-        //On récupere le constructeur de la page DataBase.php qui est le parent de la class User
+        //On récupere le constructeur de la page DataBase.php qui est le parent de la class Participating
         parent::__construct();
  }
 
@@ -48,7 +48,7 @@ class Participating extends DB{
         }
      }
 
-
+     // Pour récupérer la liste des inscrits à un évènement
      public function displayEventRegistration(){
          $query = "SELECT `KFTM_USERS`.ID, `KFTM_USERS`.lastName, `KFTM_USERS`.firstName FROM `KFTM_USERS` FULL JOIN `KFTM_PARTICIPATING` ON `KFTM_PARTICIPATING`.ID_USERS = `KFTM_USERS`.ID FULL JOIN `KFTM_EVENTS` ON `KFTM_PARTICIPATING`.ID_EVENTS = `KFTM_EVENTS`.ID WHERE KFTM.PARTICIPATING.ID_EVENTS = :ID_EVENTS";
          $selectEventRegistration = $this->db->prepare($query);
@@ -59,6 +59,7 @@ class Participating extends DB{
         return $displayEventRegistration;
      }
 
+     // Pour afficher la liste des inscriptions d'un utilisateur à des évènements
      public function displayUserRegistration(){
         $query = "SELECT `KFTM_EVENTS`.eventType, `KFTM_EVENTS`.eventDate, `KFTM_EVENTS`.eventHour,`KFTM_EVENTS`.eventPicture, `KFTM_EVENTS`.registeredPicture FROM `KFTM_EVENTS` FULL JOIN `KFTM_PARTICIPATING` ON `KFTM_PARTICIPATING`.ID_EVENTS = `KFTM_EVENTS`.ID FULL JOIN `KFTM_USERS` ON `KFTM_PARTICIPATING`.ID_USERS = `KFTM_USERS`.ID WHERE KFTM.PARTICIPATING.ID_USERS = :ID_USERS";
         $selectUserRegistration = $this->db->prepare($query);
@@ -86,6 +87,7 @@ class Participating extends DB{
         return $displayCountEventInscriptions;
     }
 
+    // Permet de supprimer tous les utilisateurs inscrits pour pouvoir supprimer un évènement
     public function deleteAllParticipant(){
         $query = 'DELETE FROM `KFTM_PARTICIPATING` WHERE ID_EVENTS = :ID_EVENTS';
         $deleteAll = $this->db->prepare($query);
@@ -94,7 +96,19 @@ class Participating extends DB{
             return true;
         }
     }
+
+      // Permet de supprimer toutes les inscriptions d'un utilisateur pour pouvoir supprimer un compte
+      public function deleteAllParticipation(){
+        $query = 'DELETE FROM `KFTM_PARTICIPATING` WHERE ID_USERS = :ID';
+        $deleteAll = $this->db->prepare($query);
+        $deleteAll->bindValue(':ID', $this->ID_USERS, PDO::PARAM_INT);
+        if($deleteAll->execute()){
+            return true;
+        }
+    }
     
+    
+    // Permet d'obtenir le nombre d'évènement publiés
     public function participantsNumber(){
         $query = 'SELECT COUNT(*) AS number FROM `KFTM_PARTICIPATING` WHERE ID_EVENTS = :ID';
         $number = $this->db->prepare($query);
@@ -104,6 +118,7 @@ class Participating extends DB{
         return $participantsNumber;
     }
 
+    // Permet d'obtenir le nombre d'inscription à un évènement
     public function participationNumber(){
         $query = 'SELECT COUNT(*) AS number FROM `KFTM_PARTICIPATING` WHERE ID_USERS = :ID';
         $participation = $this->db->prepare($query);
@@ -113,14 +128,7 @@ class Participating extends DB{
         return $participationNumber;
     }
 
-    public function deleteAllParticipation(){
-        $query = 'DELETE FROM `KFTM_PARTICIPATING` WHERE ID_USERS = :ID';
-        $deleteAll = $this->db->prepare($query);
-        $deleteAll->bindValue(':ID', $this->ID_USERS, PDO::PARAM_INT);
-        if($deleteAll->execute()){
-            return true;
-        }
-    }
+  
     
 }
 

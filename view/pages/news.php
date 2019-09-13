@@ -1,7 +1,7 @@
 <?php
-require_once '../../controller/newsController.php';
+require_once '../../controller/newsControllerStart.php';
 include '../templates/head.php';
-
+require_once '../../controller/newsController.php';
 ?>
 
 <h1 class="police text-center" id="ourCircleTitle">Les évènements du moment</h1>

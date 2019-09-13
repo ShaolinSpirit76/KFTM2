@@ -3,6 +3,12 @@ session_start();
 require '../../model/DataBase.php'; 
 require '../../model/User.php';
 
+$User = new User();
+//$User est un nouvel objet de la classe User.
+// On dit que l'on instancie la classe User.
+$displayUsersResult = $User->displayUser();
+
+
 // Variable pour le css
 $PageCSS = '../../assets/CSS/PageCSS/ourCircle.css';
 
@@ -32,9 +38,7 @@ $admin = '../../admin/admin.php';
        
 
 
-$User = new User();
 
-$displayUsersResult = $User->displayUser();
 
 
 

@@ -1,6 +1,6 @@
 <?php
 //class User qui hérite de DataBase.php (DB)
-// Je crée une classe users dont le parent est database donc users hérite de tous les attributs
+// Je crée une classe User dont le parent est DB, donc User hérite de tous ses attributs.
 // La class User va permettre d'accéder à la table KFTM_USERS de la database ThieuLam.
 class User extends DB{
 // Attributs en public
@@ -128,8 +128,8 @@ class User extends DB{
         endif;
     }
     
-    // Méthode qui permet, en même temps d'afficher les membres inscrits,
-    // et de le faire de façon hiérarchique grâce au rankNumber, qui relie
+    // Méthode qui permet, à la fois d'afficher les membres inscrits,
+    // mais de le faire de façon hiérarchique grâce au rankNumber, qui relie
     // un int croissant en fonction du grade.
      public function displayUser(){
         $query = 'SELECT * FROM `KFTM_USERS` ORDER BY `rankNumber` ASC';

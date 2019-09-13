@@ -1,9 +1,9 @@
 <?php
-  require_once '../../controller/contactControllerStart.php';
-  include '../templates/head.php';
-  include '../../controller/regex.php';
-  require_once '../../controller/contactController.php';
-  ?>
+require_once '../../controller/contactControllerStart.php';
+include '../templates/head.php';
+include '../../controller/regex.php';
+require_once '../../controller/contactController.php';
+?>
 
 
 

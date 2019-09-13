@@ -7,27 +7,21 @@ include '../view/templates/headHome.php';
 include 'navbarAdmin.php';
 ?>
 
-
-
-
 <!-- Début formulaire d'inscription -->
 
 <div id="newEventTitle">
-<h1 class="police text-white text-center font-weight-bolder">Modification de l'évènement </h1>
+<h1 class="police text-center text-white font-weight-bolder space">Modification de l'évènement </h1>
 </div>
-
 
 <form method="POST" action="updateEvent.php" class="formColor police2" id="newEventForm" name="newEventForm" 
 enctype="multipart/form-data">
               
       <fieldset>
 
-
 <div class="space">
-
       
        <!-- Condition à gérer pour n'afficher le label que si l'évènement est autre -->
-       <div class="form-group font-weight-bolder text-center"><label for="eventType">Nom de l'évènement : <?= $showUpdateEventResult[0]['eventType'] ?></label>
+       <div class="form-group font-weight-bolder text-white text-center"><label for="eventType"><p>Nom de l'évènement : <?= $showUpdateEventResult[0]['eventType'] ?></p></label>
       <select id="eventType" name="newEventType" class="inputNewEvent form-control mx-auto" required>
             <option selected disabled>Choisissez</option>
                 <option value="Tournoi" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Tournoi' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Tournoi' ? 'selected' : '') ?> >Tournoi</option> 
@@ -41,19 +35,17 @@ enctype="multipart/form-data">
                 <option value="Autre" <?= isset($_POST['eventType']) && $_POST['eventType'] == 'Autre' ? 'selected' : ($showUpdateEventResult[0]['eventType'] == 'Autre' ? 'selected' : '') ?> >Autre </option>
 </select>
 
-
-<div class="form-group font-weight-bolder text-center"><input name="otherEventType" value="<?= isset($_POST['otherEventType']) && !empty($_POST['otherEventType']) ? $_POST['otherEventType'] : $showUpdateEventResult[0]['eventType'] ?>" type="text" id="otherEventType" placeholder="Veuillez préciser..." />
+<div class="form-group font-weight-bolder text-white text-center"><input name="otherEventType" value="<?= isset($_POST['otherEventType']) && !empty($_POST['otherEventType']) ? $_POST['otherEventType'] : $showUpdateEventResult[0]['eventType'] ?>" type="text" id="otherEventType" placeholder="Veuillez préciser..." />
 </div>
        </div>
 </div>
 
-
 <div id="eventCourse" class="space">
-<fieldset class="form-group font-weight-bolder">
+<fieldset class="form-group font-weight-bolder text-white">
 
 <legend class="col-form-label col-sm-2 pt-0 mx-auto">Groupe concerné : <?= $showUpdateEventResult[0]['eventCourse'] ?></legend>
 <div class="row">
-<div class="col-sm-10 text-center">
+<div class="col-sm-10 offset-sm-1 text-center">
 
 <div class="form-check">
   <input type="radio" class="form-check-input" id="Kung-Fu" name="newEventCourse" value="Kung-Fu">
@@ -80,40 +72,41 @@ enctype="multipart/form-data">
 </fieldset>
 </div>
 
-
 <div class="space">
 
-<div class="form-group font-weight-bolder text-center"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventDate']))? $_POST['eventDate'] : $showUpdateEventResult[0]['eventDate']?>" type="date" name="newEventDate" id="eventDate" placeholder="jj/mm/aaaa" required  />
-</div>
-
-</div>
-
-<div class="space">
-
-<div class="form-group font-weight-bolder text-center"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventHour']))? $_POST['eventHour'] : $showUpdateEventResult[0]['eventHour']?>" type="time" name="newEventHour" id="eventHour" required />
+<div class="form-group font-weight-bolder text-white text-center"><label for="eventDate">Date de l'évènement : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventDate']))? $_POST['eventDate'] : $showUpdateEventResult[0]['eventDate']?>" type="date" name="newEventDate" id="eventDate" placeholder="jj/mm/aaaa" required  />
 </div>
 
 </div>
 
 <div class="space">
 
-<div class="form-group font-weight-bolder text-center"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventMaxUser']))? $_POST['eventMaxUser'] : $showUpdateEventResult[0]['eventMaxUser']?>" type="number" min="1" max="100" name="newEventMaxUser" id="eventMaxUser" />
+<div class="form-group font-weight-bolder text-white text-center"><label for="eventHour">Heure : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventHour']))? $_POST['eventHour'] : $showUpdateEventResult[0]['eventHour']?>" type="time" name="newEventHour" id="eventHour" required />
 </div>
 
 </div>
 
+<div class="space">
+
+<div class="form-group font-weight-bolder text-white text-center"><label for="eventMaxUser">Nombre de participants maximal : </label> <input class="inputNewEvent form-control mx-auto" value="<?= (!empty($_POST['eventMaxUser']))? $_POST['eventMaxUser'] : $showUpdateEventResult[0]['eventMaxUser']?>" type="number" min="1" max="100" name="newEventMaxUser" id="eventMaxUser" />
+</div>
+
+</div>
 
 <div class="space">
 
 
 <?php if ( (!empty($showUpdateEventResult[0]['eventPicture'])) || (!empty($showUpdateEventResult[0]['registeredPicture'])) ): ?>
             
-<div class="form-group font-weight-bolder space"><label for="picture" class="font-weight-bolder">Affiche : </label>
+<div class="form-group font-weight-bolder text-white space text-center"><label for="picture" class="font-weight-bolder">Affiche : </label>
  
   <a href="affiches/<?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" target="_blank" title="Cliquez pour agrandir"><img src="affiches/<?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" class="img-fluid rounded" alt="Affiche : <?=(isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture']?>" width="15%" height="15%" /></a>
-<?php
-// Nous faisons un echo du nom de l'image
-echo (isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture'] ?><br /><button type="button" class="badge badge-secondary mx-auto" id="updatePicture">Changer l'affiche</button>
+
+ <!-- Nous faisons un echo du nom de l'image -->
+<p> <?php echo (isset($showUpdateEventResult[0]['eventPicture'])) ? $showUpdateEventResult[0]['eventPicture'] : $showUpdateEventResult[0]['registeredPicture'] ?> </p>
+
+<button type="button" class="badge badge-secondary mx-auto" id="updatePicture">Changer l'affiche</button>
+
 </div>
     
     <div id="newPic">
@@ -146,18 +139,17 @@ echo($_FILES['newEventPicture']['name']);
 
                   ?>
 
-<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="pictureChoice">Ajouter une affiche : </label>
 
 <input type="button" class="mx-auto" id="personalPictureChoice" value="Personnelle" />
   
   <input type="button" class="mx-auto" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
 
-</div>
- 
+</div> 
 
 <div id="personalPicture" class="space">
                  
-<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="eventPicture">Affiche de l'évènement : </label></li>
         <input type="file" class="form-control-file mx-auto text-center" name="newEventPicture" id="eventPicture" />
 </div>
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
@@ -165,7 +157,7 @@ echo($_FILES['newEventPicture']['name']);
 
 <div id="registeredPicture" class="space">
 
-<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="registeredPicture">Affiche de l'évènement : </label>
 
 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
@@ -220,7 +212,7 @@ echo($_FILES['firstPicture']['name']);
 
  ?>
 
-<div class="form-group font-weight-bolder space"> <label for="pictureChoice">Ajouter une affiche : </label>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="pictureChoice">Ajouter une affiche : </label>
 <input type="button" id="personalPictureChoice" value="Personnelle" />
 
 <input type="button" id="registeredPictureChoice" value="Modèles pré-enregistrés" />
@@ -228,7 +220,7 @@ echo($_FILES['firstPicture']['name']);
 
 <div id="personalPicture" class="space">
                  
-<div class="form-group font-weight-bolder space"> <label for="eventPicture">Affiche de l'évènement : </label></li>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="eventPicture">Affiche de l'évènement : </label></li>
         <input type="file" class="form-control-file mx-auto text-center" name="firstPicture" id="eventPicture" />
 </div>
         <small><i><br />Un .jpg, c'est mieux ;)</i></small>
@@ -236,7 +228,7 @@ echo($_FILES['firstPicture']['name']);
 
 <div id="registeredPicture" class="space">
 
-<div class="form-group font-weight-bolder space"> <label for="registeredPicture">Affiche de l'évènement : </label></li>
+<div class="form-group font-weight-bolder text-white space text-center"> <label for="registeredPicture">Affiche de l'évènement : </label></li>
 
 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#tournoi">
   <span >Tournoi</span></button>
@@ -258,29 +250,24 @@ echo($_FILES['firstPicture']['name']);
 
 </div>
 
-
 <?php endif; ?>
 
-
-
-
-<div class="form-group font-weight-bolder text-justify">
+<div class="form-group font-weight-bolder text-white text-justify">
+<div class="col-sm-10 offset-sm-1 text-center">
 <label for="newEventDescription">Description de l'évènement :</label> 
 <!--Pour le maxlenght du textarea, il ne commence qu'à 18 caractères. Il faut donc mettre le nombre souhaité +18-->
                 <textarea id="eventDescription" class="form-control" name="newEventDescription" rows="5" cols="33" maxlength="2018">
                 <?= (!empty($_POST['eventDescription']))? $_POST['eventDescription'] : $showUpdateEventResult[0]['eventDescription']?></textarea>
                 <p class="card-text"><small class=" "><i>Max. 2000 caractères (~ 300 mots)<br /><br /></i></small></p>
 </div>
-
-
+</div>
 
 <div class="form-group row">
 <div class="col-sm-10">
-<p><br /><button id="submitUpdateEventForm" type="submit" name="submitUpdateEventForm" class="police float-right rounded">Créer</button></p>
+<p><br /><button id="submitUpdateEventForm" type="submit" name="submitUpdateEventForm" class="police float-right rounded">Modifier</button></p>
 </div>
 </div>
-</fieldset>
-  
+</fieldset>  
 
 <!-- Modal Tournoi -->
 <div class="modal fade" id="tournoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -544,32 +531,7 @@ echo($_FILES['firstPicture']['name']);
   </div>
 </div>
 
-
-
-
-
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 include '../view/templates/footerAdmin.php';
