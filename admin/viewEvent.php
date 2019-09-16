@@ -33,6 +33,8 @@ include 'navbarAdmin.php';
 
 <button name="changeEvent" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Modifier</button>
 
+<button name="viewInscription" title="Récupérer la liste des inscrits" class="btn btn-primary text-center mx-auto" value="<?= $displayEvent['ID'] ?>" type="submit">Inscriptions</button>
+
 <button type="button" id="eventDeleteButton" class="badge badge-secondary btn btn-primary" data-toggle="modal" data-target="#deleteEvent<?=$displayEvent['ID']?>">Supprimer</button>
 
 <br /><br />

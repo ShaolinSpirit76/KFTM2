@@ -9,6 +9,7 @@ $_POST = array_map('strip_tags', $_POST); // Ligne à mettre absolument pour la 
 // On crée un tableau error qui s'auto-incrémentera avec la valeur de l'erreur que nous lui assignerons au cas par cas, si la regex n'est pas franchie. Chaque cellule remplie comptera pour 1.
 $error = [];
 $user = new User();
+$participation = new Participating();
 
 // On teste les regex si le formulaire est rempli
 if (count($_POST) > 0):
@@ -478,7 +479,7 @@ $IDmodifSuccess = true;
             $error['errorCheckPassword'] = 'Ceci n\'est pas votre mot de passe actuel.';
             $mdpFailed = true; 
         else:
-
+            $participation->deleteAllParticipation();
             $deleteSuccess = true;
             $user->deleteUser();
             // fonction pour supprimer la photo du dossier miniatures

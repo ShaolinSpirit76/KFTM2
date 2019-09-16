@@ -152,7 +152,7 @@ echo($_FILES['newEventPicture']['name']);
 <div class="form-group font-weight-bolder text-white space text-center"> <label for="eventPicture">Affiche de l'évènement : </label></li>
         <input type="file" class="form-control-file mx-auto text-center" name="newEventPicture" id="eventPicture" />
 </div>
-        <small><i><br />Un .jpg, c'est mieux ;)</i></small>
+        <p class="text-center text-white"><small>Un .jpg, c'est mieux ;)</small></p>
 </div>
 
 <div id="registeredPicture" class="space">
@@ -223,7 +223,7 @@ echo($_FILES['firstPicture']['name']);
 <div class="form-group font-weight-bolder text-white space text-center"> <label for="eventPicture">Affiche de l'évènement : </label></li>
         <input type="file" class="form-control-file mx-auto text-center" name="firstPicture" id="eventPicture" />
 </div>
-        <small><i><br />Un .jpg, c'est mieux ;)</i></small>
+        <p class="text-center text-white"><small>Un .jpg, c'est mieux ;)</small></p>
 </div>
 
 <div id="registeredPicture" class="space">
